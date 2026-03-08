@@ -3,612 +3,486 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Celeste — Icon Concepts v5</title>
+  <title>Celeste — Monogram C Iterations</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: #111014;
       color: #e8e4f0;
-      min-height: 100vh;
       padding: 60px 24px 100px;
     }
     header { text-align: center; margin-bottom: 64px; }
-    .eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #6b6080; margin-bottom: 14px; }
-    h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
-    .subtitle { color: #4a4560; font-size: 0.84rem; max-width: 500px; margin: 0 auto; line-height: 1.7; }
-
-    /* iPhone home screen mockup */
-    .homescreen {
-      max-width: 560px;
-      margin: 0 auto 72px;
-      background: #1a1820;
-      border-radius: 20px;
-      padding: 20px 20px 16px;
-    }
-    .homescreen-label {
-      font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
-      color: #3a3650; margin-bottom: 14px; text-align: center;
-    }
-    .app-row {
-      display: flex; gap: 14px; align-items: flex-end; justify-content: center;
-      flex-wrap: wrap;
-    }
-    .app-slot { display: flex; flex-direction: column; align-items: center; gap: 5px; }
-    .app-slot span { font-size: 8px; color: #3a3650; }
-    .app-icon-real { width: 56px; height: 56px; border-radius: 12px; overflow: hidden; }
-    .app-icon-real svg { width: 100%; height: 100%; display: block; }
+    .eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #5a5570; margin-bottom: 14px; }
+    h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+    .subtitle { color: #4a4560; font-size: 0.84rem; }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 60px 36px;
-      max-width: 1080px;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 56px 28px;
+      max-width: 1100px;
       margin: 0 auto;
     }
-    .card { display: flex; flex-direction: column; align-items: center; gap: 22px; }
+    .card { display: flex; flex-direction: column; align-items: center; gap: 18px; }
 
     .icon-wrap {
-      width: 174px; height: 174px;
-      border-radius: 39px; overflow: hidden;
-      box-shadow: 0 24px 56px rgba(0,0,0,0.6);
+      width: 170px; height: 170px;
+      border-radius: 38px; overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
     }
     .icon-wrap svg { width: 100%; height: 100%; display: block; }
 
-    .sizes { display: flex; align-items: flex-end; gap: 10px; }
+    .sizes { display: flex; align-items: flex-end; gap: 9px; }
     .size-item { display: flex; flex-direction: column; align-items: center; gap: 5px; }
     .size-item span { font-size: 9px; color: #2e2a3e; }
-    .mini-icon { overflow: hidden; }
-    .mini-icon svg { display: block; }
+    .mini { overflow: hidden; }
+    .mini svg { display: block; }
 
     .label { text-align: center; }
-    .label h2 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
-    .label p { font-size: 0.76rem; color: #5a5570; line-height: 1.65; max-width: 200px; }
-    .label em { display: block; font-size: 0.7rem; color: #3a3650; font-style: normal; margin-top: 5px; letter-spacing: 0.3px; }
+    .label h2 { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+    .label p  { font-size: 0.73rem; color: #4a4560; line-height: 1.6; max-width: 185px; }
 
-    footer { text-align: center; margin-top: 80px; font-size: 0.72rem; color: #1e1c2a; }
+    footer { text-align: center; margin-top: 80px; font-size: 0.7rem; color: #1e1c2a; }
   </style>
 </head>
 <body>
 
 <header>
-  <p class="eyebrow">Celeste · v5</p>
-  <h1>New Directions</h1>
-  <p class="subtitle">Designed to hold its own next to Instagram, TikTok, Spotify. Bold silhouettes, high contrast, one clear idea per icon.</p>
+  <p class="eyebrow">Celeste · Monogram C</p>
+  <h1>Eight Iterations</h1>
+  <p class="subtitle">Weight, angle, terminals, colour, detail — one letter, many personalities.</p>
 </header>
 
-<!-- iPhone homescreen mockup showing Celeste next to real apps -->
-<div class="homescreen">
-  <p class="homescreen-label">How it sits on your home screen</p>
-  <div class="app-row">
-
-    <!-- Instagram approximation -->
-    <div class="app-slot">
-      <div class="app-icon-real">
-        <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#f09433"/>
-              <stop offset="25%" stop-color="#e6683c"/>
-              <stop offset="50%" stop-color="#dc2743"/>
-              <stop offset="75%" stop-color="#cc2366"/>
-              <stop offset="100%" stop-color="#bc1888"/>
-            </linearGradient>
-          </defs>
-          <rect width="56" height="56" fill="url(#ig)"/>
-          <rect x="14" y="14" width="28" height="28" rx="8" fill="none" stroke="white" stroke-width="2.5"/>
-          <circle cx="28" cy="28" r="7" fill="none" stroke="white" stroke-width="2.5"/>
-          <circle cx="38" cy="18" r="2" fill="white"/>
-        </svg>
-      </div>
-      <span>Instagram</span>
-    </div>
-
-    <!-- TikTok approximation -->
-    <div class="app-slot">
-      <div class="app-icon-real">
-        <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
-          <rect width="56" height="56" fill="#010101"/>
-          <path d="M32,10 L32,32 C32,36 28,39 24,37 C20,35 20,30 24,29 C26,28 28,29 28,29 L28,24 C28,24 22,23 19,27 C15,32 17,40 23,42 C29,44 36,40 36,33 L36,18 C38,20 42,21 44,21 L44,16 C40,16 36,13 32,10 Z" fill="white"/>
-          <path d="M34,10 L34,32 C34,36 30,39 26,37" fill="none" stroke="#fe2c55" stroke-width="2"/>
-          <path d="M30,10 L30,32 C30,36 26,39 22,37" fill="none" stroke="#25f4ee" stroke-width="2"/>
-        </svg>
-      </div>
-      <span>TikTok</span>
-    </div>
-
-    <!-- Spotify approximation -->
-    <div class="app-slot">
-      <div class="app-icon-real">
-        <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
-          <rect width="56" height="56" rx="0" fill="#1DB954"/>
-          <circle cx="28" cy="28" r="18" fill="#1DB954"/>
-          <path d="M18,22 Q28,18 38,22" fill="none" stroke="black" stroke-width="2.8" stroke-linecap="round"/>
-          <path d="M20,27 Q28,24 36,27" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M22,32 Q28,30 34,32" fill="none" stroke="black" stroke-width="2.2" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <span>Spotify</span>
-    </div>
-
-    <!-- CELESTE placeholder slot -->
-    <div class="app-slot">
-      <div class="app-icon-real" style="border:1.5px dashed #3a3650;">
-        <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
-          <rect width="56" height="56" fill="#1a1820"/>
-          <text x="28" y="33" font-size="11" fill="#3a3650" text-anchor="middle" font-family="system-ui">Celeste</text>
-        </svg>
-      </div>
-      <span>Celeste</span>
-    </div>
-
-    <!-- WhatsApp approximation -->
-    <div class="app-slot">
-      <div class="app-icon-real">
-        <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
-          <rect width="56" height="56" fill="#25D366"/>
-          <path d="M28,12 C19,12 12,19 12,28 C12,31 13,34 15,37 L12,44 L19,41 C22,43 25,44 28,44 C37,44 44,37 44,28 C44,19 37,12 28,12 Z" fill="white"/>
-          <path d="M22,24 C22,24 21,22 23,22 C25,22 25,24 25,24 L27,28 C27,28 29,32 25,32 C23,32 20,29 19,27 C18,25 20,22 22,22" fill="#25D366"/>
-        </svg>
-      </div>
-      <span>WhatsApp</span>
-    </div>
-
-  </div>
-</div>
-
-<!-- THE 6 CONCEPTS -->
 <div class="grid">
 
-  <!-- ══════════════════════
-       1. DUALITY (two circles)
-       Sisterhood / mind+body / sun+moon
-  ══════════════════════ -->
+  <!-- ═══════════════════════════════
+       1. HEAVY — thick, confident, dark bg
+  ═══════════════════════════════ -->
   <div class="card">
     <div class="icon-wrap">
       <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-        <!-- Rich dark bordeaux background -->
-        <rect width="180" height="180" fill="#0f0810"/>
-        <!-- Left circle: mauve -->
-        <circle cx="74" cy="90" r="42" fill="#c9a8c0"/>
-        <!-- Right circle: warm ivory, overlaps -->
-        <circle cx="106" cy="90" r="42" fill="#e8ddd0"/>
-        <!-- Overlap blend zone — darker mix -->
-        <clipPath id="right-clip">
-          <circle cx="106" cy="90" r="42"/>
-        </clipPath>
-        <circle cx="74" cy="90" r="42" fill="#b8927a" clip-path="url(#right-clip)" opacity="0.55"/>
-        <!-- Small stars above -->
-        <circle cx="90" cy="30" r="2"   fill="#c9a8c0" opacity="0.5"/>
-        <circle cx="78" cy="22" r="1.2" fill="#e8ddd0" opacity="0.4"/>
-        <circle cx="102" cy="22" r="1.2" fill="#e8ddd0" opacity="0.4"/>
-        <circle cx="34"  cy="50" r="1"  fill="#c9a8c0" opacity="0.3"/>
-        <circle cx="146" cy="50" r="1"  fill="#e8ddd0" opacity="0.3"/>
+        <rect width="180" height="180" fill="#100e14"/>
+        <!-- Very thick C -->
+        <path d="M144,62 A60,60 0 1 0 144,118"
+              fill="none" stroke="#e8ddd0" stroke-width="32" stroke-linecap="round"/>
       </svg>
     </div>
-
     <div class="sizes">
       <div class="size-item">
-        <div class="mini-icon" style="width:56px;height:56px;border-radius:12px;">
-          <svg viewBox="0 0 180 180" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0f0810"/>
-            <circle cx="74"  cy="90" r="42" fill="#c9a8c0"/>
-            <circle cx="106" cy="90" r="42" fill="#e8ddd0"/>
-            <clipPath id="rc2"><circle cx="106" cy="90" r="42"/></clipPath>
-            <circle cx="74" cy="90" r="42" fill="#b8927a" clip-path="url(#rc2)" opacity="0.55"/>
+        <div class="mini" style="width:54px;height:54px;border-radius:12px;">
+          <svg viewBox="0 0 180 180" width="54" height="54" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#100e14"/>
+            <path d="M144,62 A60,60 0 1 0 144,118" fill="none" stroke="#e8ddd0" stroke-width="32" stroke-linecap="round"/>
           </svg>
-        </div>
-        <span>60pt</span>
+        </div><span>60pt</span>
       </div>
       <div class="size-item">
-        <div class="mini-icon" style="width:38px;height:38px;border-radius:8px;">
-          <svg viewBox="0 0 180 180" width="38" height="38" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0f0810"/>
-            <circle cx="74"  cy="90" r="42" fill="#c9a8c0"/>
-            <circle cx="106" cy="90" r="42" fill="#e8ddd0"/>
+        <div class="mini" style="width:37px;height:37px;border-radius:8px;">
+          <svg viewBox="0 0 180 180" width="37" height="37" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#100e14"/>
+            <path d="M144,62 A60,60 0 1 0 144,118" fill="none" stroke="#e8ddd0" stroke-width="32" stroke-linecap="round"/>
           </svg>
-        </div>
-        <span>40pt</span>
+        </div><span>40pt</span>
       </div>
       <div class="size-item">
-        <div class="mini-icon" style="width:28px;height:28px;border-radius:6px;">
-          <svg viewBox="0 0 180 180" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0f0810"/>
-            <circle cx="74"  cy="90" r="42" fill="#c9a8c0"/>
-            <circle cx="106" cy="90" r="42" fill="#e8ddd0"/>
+        <div class="mini" style="width:27px;height:27px;border-radius:6px;">
+          <svg viewBox="0 0 180 180" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#100e14"/>
+            <path d="M144,62 A60,60 0 1 0 144,118" fill="none" stroke="#e8ddd0" stroke-width="32" stroke-linecap="round"/>
           </svg>
-        </div>
-        <span>29pt</span>
+        </div><span>29pt</span>
       </div>
     </div>
     <div class="label">
-      <h2>Duality</h2>
-      <p>Two overlapping circles — mauve and ivory. Mind & body. You & the cosmos. Simple enough to tattoo.</p>
-      <em>DNA: sisterhood · duality · connection</em>
+      <h2>Heavy</h2>
+      <p>Max weight. Ivory on near-black. Commands attention — like a luxury brand stamp.</p>
     </div>
   </div>
 
 
-  <!-- ══════════════════════
-       2. DAWN ARC
-       Daily ritual / new beginning
-  ══════════════════════ -->
+  <!-- ═══════════════════════════════
+       2. FINE — thin, elegant, more air
+  ═══════════════════════════════ -->
   <div class="card">
     <div class="icon-wrap">
       <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-        <!-- Deep slate-black -->
-        <rect width="180" height="180" fill="#090c14"/>
-        <!-- Ground line -->
-        <rect x="24" y="110" width="132" height="2" fill="#c9a8c0" opacity="0.2" rx="1"/>
-        <!-- Sun half-circle rising from line -->
-        <path d="M48,110 A42,42 0 0 1 132,110" fill="#e8c4a0" stroke="none"/>
-        <!-- Rays: short bold lines radiating up -->
-        <g stroke="#e8c4a0" stroke-width="3" stroke-linecap="round">
-          <line x1="90" y1="24" x2="90" y2="38"/>
-          <line x1="122" y1="32" x2="115" y2="44"/>
-          <line x1="146" y1="56" x2="135" y2="64"/>
-          <line x1="58"  y1="32" x2="65"  y2="44"/>
-          <line x1="34"  y1="56" x2="45"  y2="64"/>
-        </g>
-        <!-- Thin horizon glow line -->
-        <rect x="24" y="109" width="132" height="3" fill="#e8c4a0" opacity="0.35" rx="1.5"/>
-        <!-- Stars fading above horizon -->
-        <circle cx="44"  cy="58" r="1.5" fill="white" opacity="0.4"/>
-        <circle cx="138" cy="62" r="1.5" fill="white" opacity="0.35"/>
-        <circle cx="90"  cy="52" r="1"   fill="white" opacity="0.25"/>
-        <!-- Bottom dark zone -->
-        <rect x="0" y="112" width="180" height="68" fill="#090c14"/>
+        <rect width="180" height="180" fill="#100e14"/>
+        <!-- Thin C with wide open gap -->
+        <path d="M138,58 A56,56 0 1 0 138,122"
+              fill="none" stroke="#e8ddd0" stroke-width="7" stroke-linecap="round"/>
+        <!-- Terminal dots — mauve -->
+        <circle cx="138" cy="58"  r="5.5" fill="#c9a8c0"/>
+        <circle cx="138" cy="122" r="5.5" fill="#c9a8c0"/>
       </svg>
     </div>
-
     <div class="sizes">
       <div class="size-item">
-        <div class="mini-icon" style="width:56px;height:56px;border-radius:12px;">
-          <svg viewBox="0 0 180 180" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#090c14"/>
-            <rect x="0" y="112" width="180" height="68" fill="#090c14"/>
-            <path d="M48,110 A42,42 0 0 1 132,110" fill="#e8c4a0"/>
-            <g stroke="#e8c4a0" stroke-width="3.5" stroke-linecap="round">
-              <line x1="90" y1="24" x2="90" y2="40"/>
-              <line x1="122" y1="32" x2="114" y2="46"/>
-              <line x1="58" y1="32" x2="66" y2="46"/>
+        <div class="mini" style="width:54px;height:54px;border-radius:12px;">
+          <svg viewBox="0 0 180 180" width="54" height="54" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#100e14"/>
+            <path d="M138,58 A56,56 0 1 0 138,122" fill="none" stroke="#e8ddd0" stroke-width="7" stroke-linecap="round"/>
+            <circle cx="138" cy="58"  r="5.5" fill="#c9a8c0"/>
+            <circle cx="138" cy="122" r="5.5" fill="#c9a8c0"/>
+          </svg>
+        </div><span>60pt</span>
+      </div>
+      <div class="size-item">
+        <div class="mini" style="width:37px;height:37px;border-radius:8px;">
+          <svg viewBox="0 0 180 180" width="37" height="37" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#100e14"/>
+            <path d="M138,58 A56,56 0 1 0 138,122" fill="none" stroke="#e8ddd0" stroke-width="9" stroke-linecap="round"/>
+            <circle cx="138" cy="58"  r="6" fill="#c9a8c0"/>
+            <circle cx="138" cy="122" r="6" fill="#c9a8c0"/>
+          </svg>
+        </div><span>40pt</span>
+      </div>
+      <div class="size-item">
+        <div class="mini" style="width:27px;height:27px;border-radius:6px;">
+          <svg viewBox="0 0 180 180" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#100e14"/>
+            <path d="M138,58 A56,56 0 1 0 138,122" fill="none" stroke="#e8ddd0" stroke-width="12" stroke-linecap="round"/>
+          </svg>
+        </div><span>29pt</span>
+      </div>
+    </div>
+    <div class="label">
+      <h2>Fine + Dots</h2>
+      <p>Thin ivory stroke, mauve terminal dots. Light, refined, jewellery-like. More delicate than editorial.</p>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════
+       3. STAR TERMINAL — C with a star at the open end
+  ═══════════════════════════════ -->
+  <div class="card">
+    <div class="icon-wrap">
+      <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+        <rect width="180" height="180" fill="#100e14"/>
+        <!-- Medium C, flat cut terminals -->
+        <path d="M142,65 A58,58 0 1 0 142,115"
+              fill="none" stroke="#c9a8c0" stroke-width="18" stroke-linecap="butt"/>
+        <!-- 4-point star at top terminal -->
+        <g transform="translate(142,65)">
+          <polygon points="0,-14 3,-3 14,0 3,3 0,14 -3,3 -14,0 -3,-3" fill="#e8ddd0"/>
+        </g>
+        <!-- Small circle at bottom terminal -->
+        <circle cx="142" cy="115" r="9" fill="#e8ddd0"/>
+        <circle cx="142" cy="115" r="4" fill="#100e14"/>
+      </svg>
+    </div>
+    <div class="sizes">
+      <div class="size-item">
+        <div class="mini" style="width:54px;height:54px;border-radius:12px;">
+          <svg viewBox="0 0 180 180" width="54" height="54" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#100e14"/>
+            <path d="M142,65 A58,58 0 1 0 142,115" fill="none" stroke="#c9a8c0" stroke-width="18" stroke-linecap="butt"/>
+            <g transform="translate(142,65)">
+              <polygon points="0,-13 3,-3 13,0 3,3 0,13 -3,3 -13,0 -3,-3" fill="#e8ddd0"/>
+            </g>
+            <circle cx="142" cy="115" r="9" fill="#e8ddd0"/>
+            <circle cx="142" cy="115" r="4" fill="#100e14"/>
+          </svg>
+        </div><span>60pt</span>
+      </div>
+      <div class="size-item">
+        <div class="mini" style="width:37px;height:37px;border-radius:8px;">
+          <svg viewBox="0 0 180 180" width="37" height="37" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#100e14"/>
+            <path d="M142,65 A58,58 0 1 0 142,115" fill="none" stroke="#c9a8c0" stroke-width="18" stroke-linecap="butt"/>
+            <g transform="translate(142,65)">
+              <polygon points="0,-13 3,-3 13,0 3,3 0,13 -3,3 -13,0 -3,-3" fill="#e8ddd0"/>
             </g>
           </svg>
-        </div>
-        <span>60pt</span>
+        </div><span>40pt</span>
       </div>
       <div class="size-item">
-        <div class="mini-icon" style="width:38px;height:38px;border-radius:8px;">
-          <svg viewBox="0 0 180 180" width="38" height="38" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#090c14"/>
-            <rect x="0" y="112" width="180" height="68" fill="#090c14"/>
-            <path d="M48,110 A42,42 0 0 1 132,110" fill="#e8c4a0"/>
+        <div class="mini" style="width:27px;height:27px;border-radius:6px;">
+          <svg viewBox="0 0 180 180" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#100e14"/>
+            <path d="M142,65 A58,58 0 1 0 142,115" fill="none" stroke="#c9a8c0" stroke-width="18" stroke-linecap="butt"/>
           </svg>
-        </div>
-        <span>40pt</span>
-      </div>
-      <div class="size-item">
-        <div class="mini-icon" style="width:28px;height:28px;border-radius:6px;">
-          <svg viewBox="0 0 180 180" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#090c14"/>
-            <rect x="0" y="112" width="180" height="68" fill="#090c14"/>
-            <path d="M48,110 A42,42 0 0 1 132,110" fill="#e8c4a0"/>
-          </svg>
-        </div>
-        <span>29pt</span>
+        </div><span>29pt</span>
       </div>
     </div>
     <div class="label">
-      <h2>Dawn</h2>
-      <p>A sun rising from the horizon — the original daily ritual. Warm ivory-peach. Immediate, hopeful, grounding.</p>
-      <em>DNA: daily use · new day · ritual · guidance</em>
+      <h2>Star Terminal</h2>
+      <p>Mauve C with a 4-point star at the top and a hollow circle at the bottom. Celestial punctuation on the letterform.</p>
     </div>
   </div>
 
 
-  <!-- ══════════════════════
-       3. PULSE / SIGNAL
-       AI guidance · pro help · responsiveness
-  ══════════════════════ -->
+  <!-- ═══════════════════════════════
+       4. DOUBLE RING — C inside C
+  ═══════════════════════════════ -->
   <div class="card">
     <div class="icon-wrap">
       <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-        <!-- Near black -->
-        <rect width="180" height="180" fill="#08090e"/>
-        <!-- Concentric arcs — open top half — like a signal/broadcast -->
-        <!-- Outermost arc -->
-        <path d="M30,110 A60,60 0 0 1 150,110" fill="none" stroke="#c9a8c0" stroke-width="3" stroke-linecap="round" opacity="0.25"/>
-        <!-- Middle arc -->
-        <path d="M46,110 A44,44 0 0 1 134,110" fill="none" stroke="#c9a8c0" stroke-width="3.5" stroke-linecap="round" opacity="0.5"/>
-        <!-- Inner arc -->
-        <path d="M62,110 A28,28 0 0 1 118,110" fill="none" stroke="#c9a8c0" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
-        <!-- Centre dot — the source -->
-        <circle cx="90" cy="110" r="8" fill="#c9a8c0"/>
-        <circle cx="90" cy="110" r="3.5" fill="#f0e8ee"/>
-        <!-- Horizon baseline -->
-        <rect x="24" y="109" width="132" height="1.5" fill="#c9a8c0" opacity="0.15" rx="1"/>
-        <!-- Tiny constellation above -->
-        <circle cx="56"  cy="52" r="1.5" fill="#c9a8c0" opacity="0.45"/>
-        <circle cx="90"  cy="42" r="2"   fill="#c9a8c0" opacity="0.35"/>
-        <circle cx="124" cy="52" r="1.5" fill="#c9a8c0" opacity="0.45"/>
-        <line x1="56" y1="52" x2="90" y2="42"  stroke="#c9a8c0" stroke-width="0.8" opacity="0.2"/>
-        <line x1="90" y1="42" x2="124" y2="52" stroke="#c9a8c0" stroke-width="0.8" opacity="0.2"/>
+        <rect width="180" height="180" fill="#0d0c11"/>
+        <!-- Outer C — thin, ivory -->
+        <path d="M152,60 A68,68 0 1 0 152,120"
+              fill="none" stroke="#e8ddd0" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+        <!-- Inner C — medium, mauve -->
+        <path d="M140,66 A54,54 0 1 0 140,114"
+              fill="none" stroke="#c9a8c0" stroke-width="14" stroke-linecap="round"/>
+        <!-- Terminal caps on inner C — ivory -->
+        <circle cx="140" cy="66"  r="7" fill="#e8ddd0"/>
+        <circle cx="140" cy="114" r="7" fill="#e8ddd0"/>
       </svg>
     </div>
-
     <div class="sizes">
       <div class="size-item">
-        <div class="mini-icon" style="width:56px;height:56px;border-radius:12px;">
-          <svg viewBox="0 0 180 180" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#08090e"/>
-            <path d="M30,110 A60,60 0 0 1 150,110" fill="none" stroke="#c9a8c0" stroke-width="3" stroke-linecap="round" opacity="0.25"/>
-            <path d="M46,110 A44,44 0 0 1 134,110" fill="none" stroke="#c9a8c0" stroke-width="3.5" stroke-linecap="round" opacity="0.5"/>
-            <path d="M62,110 A28,28 0 0 1 118,110" fill="none" stroke="#c9a8c0" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
-            <circle cx="90" cy="110" r="8" fill="#c9a8c0"/>
+        <div class="mini" style="width:54px;height:54px;border-radius:12px;">
+          <svg viewBox="0 0 180 180" width="54" height="54" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#0d0c11"/>
+            <path d="M152,60 A68,68 0 1 0 152,120" fill="none" stroke="#e8ddd0" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+            <path d="M140,66 A54,54 0 1 0 140,114" fill="none" stroke="#c9a8c0" stroke-width="14" stroke-linecap="round"/>
+            <circle cx="140" cy="66"  r="7" fill="#e8ddd0"/>
+            <circle cx="140" cy="114" r="7" fill="#e8ddd0"/>
           </svg>
-        </div>
-        <span>60pt</span>
+        </div><span>60pt</span>
       </div>
       <div class="size-item">
-        <div class="mini-icon" style="width:38px;height:38px;border-radius:8px;">
-          <svg viewBox="0 0 180 180" width="38" height="38" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#08090e"/>
-            <path d="M46,110 A44,44 0 0 1 134,110" fill="none" stroke="#c9a8c0" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
-            <path d="M62,110 A28,28 0 0 1 118,110" fill="none" stroke="#c9a8c0" stroke-width="4.5" stroke-linecap="round" opacity="0.9"/>
-            <circle cx="90" cy="110" r="8" fill="#c9a8c0"/>
+        <div class="mini" style="width:37px;height:37px;border-radius:8px;">
+          <svg viewBox="0 0 180 180" width="37" height="37" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#0d0c11"/>
+            <path d="M140,66 A54,54 0 1 0 140,114" fill="none" stroke="#c9a8c0" stroke-width="14" stroke-linecap="round"/>
+            <circle cx="140" cy="66"  r="7" fill="#e8ddd0"/>
+            <circle cx="140" cy="114" r="7" fill="#e8ddd0"/>
           </svg>
-        </div>
-        <span>40pt</span>
+        </div><span>40pt</span>
       </div>
       <div class="size-item">
-        <div class="mini-icon" style="width:28px;height:28px;border-radius:6px;">
-          <svg viewBox="0 0 180 180" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#08090e"/>
-            <path d="M62,110 A28,28 0 0 1 118,110" fill="none" stroke="#c9a8c0" stroke-width="5" stroke-linecap="round"/>
-            <circle cx="90" cy="110" r="9" fill="#c9a8c0"/>
+        <div class="mini" style="width:27px;height:27px;border-radius:6px;">
+          <svg viewBox="0 0 180 180" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#0d0c11"/>
+            <path d="M140,66 A54,54 0 1 0 140,114" fill="none" stroke="#c9a8c0" stroke-width="14" stroke-linecap="round"/>
           </svg>
-        </div>
-        <span>29pt</span>
+        </div><span>29pt</span>
       </div>
     </div>
     <div class="label">
-      <h2>Signal</h2>
-      <p>Concentric arcs broadcasting from a single point — AI guidance reaching you. Looks like WiFi, like a heartbeat, like intuition.</p>
-      <em>DNA: AI guidance · pro help · daily signal</em>
+      <h2>Double Ring</h2>
+      <p>A faint outer orbit circles a bold mauve C. Depth without noise. The outer ring reads as atmosphere — like a halo.</p>
     </div>
   </div>
 
 
-  <!-- ══════════════════════
-       4. BLOOM
-       Growth · wellbeing · feminine
-  ══════════════════════ -->
+  <!-- ═══════════════════════════════
+       5. OPEN WIDE — shallow crescent C, cream bg
+  ═══════════════════════════════ -->
   <div class="card">
     <div class="icon-wrap">
       <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-        <!-- Deep warm dark -->
-        <rect width="180" height="180" fill="#0e0a08"/>
-        <!-- 4 rounded petals: N S E W -->
-        <!-- Each petal = tall ellipse rotated -->
-        <ellipse cx="90" cy="90" rx="18" ry="52" fill="#c9a8c0"/>
-        <ellipse cx="90" cy="90" rx="18" ry="52" fill="#c9a8c0" transform="rotate(90,90,90)"/>
-        <!-- Diagonal petals, slightly thinner and shorter -->
-        <ellipse cx="90" cy="90" rx="13" ry="42" fill="#dfc4d8" transform="rotate(45,90,90)"/>
-        <ellipse cx="90" cy="90" rx="13" ry="42" fill="#dfc4d8" transform="rotate(135,90,90)"/>
-        <!-- Centre circle -->
-        <circle cx="90" cy="90" r="16" fill="#f0e6ea"/>
-        <!-- Inner dot -->
-        <circle cx="90" cy="90" r="6"  fill="#c9a8c0"/>
-        <!-- Tiny stars at petal tips -->
-        <circle cx="90" cy="38" r="2.5" fill="#f0e6ea" opacity="0.7"/>
-        <circle cx="90" cy="142" r="2.5" fill="#f0e6ea" opacity="0.7"/>
-        <circle cx="38" cy="90"  r="2.5" fill="#f0e6ea" opacity="0.7"/>
-        <circle cx="142" cy="90" r="2.5" fill="#f0e6ea" opacity="0.7"/>
+        <!-- Warm cream background — stands out from black phones -->
+        <rect width="180" height="180" fill="#f0ebe2"/>
+        <!-- Very wide open C — almost a crescent arc, dark -->
+        <path d="M128,44 A62,62 0 1 0 128,136"
+              fill="none" stroke="#1a1520" stroke-width="24" stroke-linecap="round"/>
+        <!-- Mauve accent dot between the two terminals -->
+        <circle cx="138" cy="90" r="6" fill="#c9a8c0"/>
       </svg>
     </div>
-
     <div class="sizes">
       <div class="size-item">
-        <div class="mini-icon" style="width:56px;height:56px;border-radius:12px;">
-          <svg viewBox="0 0 180 180" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0e0a08"/>
-            <ellipse cx="90" cy="90" rx="18" ry="52" fill="#c9a8c0"/>
-            <ellipse cx="90" cy="90" rx="18" ry="52" fill="#c9a8c0" transform="rotate(90,90,90)"/>
-            <ellipse cx="90" cy="90" rx="13" ry="42" fill="#dfc4d8" transform="rotate(45,90,90)"/>
-            <ellipse cx="90" cy="90" rx="13" ry="42" fill="#dfc4d8" transform="rotate(135,90,90)"/>
-            <circle cx="90" cy="90" r="16" fill="#f0e6ea"/>
-            <circle cx="90" cy="90" r="6"  fill="#c9a8c0"/>
+        <div class="mini" style="width:54px;height:54px;border-radius:12px;">
+          <svg viewBox="0 0 180 180" width="54" height="54" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#f0ebe2"/>
+            <path d="M128,44 A62,62 0 1 0 128,136" fill="none" stroke="#1a1520" stroke-width="24" stroke-linecap="round"/>
+            <circle cx="138" cy="90" r="6" fill="#c9a8c0"/>
           </svg>
-        </div>
-        <span>60pt</span>
+        </div><span>60pt</span>
       </div>
       <div class="size-item">
-        <div class="mini-icon" style="width:38px;height:38px;border-radius:8px;">
-          <svg viewBox="0 0 180 180" width="38" height="38" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0e0a08"/>
-            <ellipse cx="90" cy="90" rx="18" ry="52" fill="#c9a8c0"/>
-            <ellipse cx="90" cy="90" rx="18" ry="52" fill="#c9a8c0" transform="rotate(90,90,90)"/>
-            <ellipse cx="90" cy="90" rx="13" ry="42" fill="#dfc4d8" transform="rotate(45,90,90)"/>
-            <ellipse cx="90" cy="90" rx="13" ry="42" fill="#dfc4d8" transform="rotate(135,90,90)"/>
-            <circle cx="90" cy="90" r="16" fill="#f0e6ea"/>
+        <div class="mini" style="width:37px;height:37px;border-radius:8px;">
+          <svg viewBox="0 0 180 180" width="37" height="37" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#f0ebe2"/>
+            <path d="M128,44 A62,62 0 1 0 128,136" fill="none" stroke="#1a1520" stroke-width="24" stroke-linecap="round"/>
           </svg>
-        </div>
-        <span>40pt</span>
+        </div><span>40pt</span>
       </div>
       <div class="size-item">
-        <div class="mini-icon" style="width:28px;height:28px;border-radius:6px;">
-          <svg viewBox="0 0 180 180" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0e0a08"/>
-            <ellipse cx="90" cy="90" rx="18" ry="52" fill="#c9a8c0"/>
-            <ellipse cx="90" cy="90" rx="18" ry="52" fill="#c9a8c0" transform="rotate(90,90,90)"/>
-            <ellipse cx="90" cy="90" rx="13" ry="42" fill="#dfc4d8" transform="rotate(45,90,90)"/>
-            <ellipse cx="90" cy="90" rx="13" ry="42" fill="#dfc4d8" transform="rotate(135,90,90)"/>
-            <circle cx="90" cy="90" r="14" fill="#f0e6ea"/>
+        <div class="mini" style="width:27px;height:27px;border-radius:6px;">
+          <svg viewBox="0 0 180 180" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#f0ebe2"/>
+            <path d="M128,44 A62,62 0 1 0 128,136" fill="none" stroke="#1a1520" stroke-width="24" stroke-linecap="round"/>
           </svg>
-        </div>
-        <span>29pt</span>
+        </div><span>29pt</span>
       </div>
     </div>
     <div class="label">
-      <h2>Bloom</h2>
-      <p>An 8-petal flower — two layers, two tones of mauve. Growth, wellbeing, blooming into yourself. Organic and warm.</p>
-      <em>DNA: wellbeing · growth · feminine · daily</em>
+      <h2>Light Mode</h2>
+      <p>Warm cream background — the only light icon in the set. Unique on a dark home screen. Dark C, mauve centre dot.</p>
     </div>
   </div>
 
 
-  <!-- ══════════════════════
-       5. BOLD C — typographic brand mark
-       Premium · ownable · professional
-  ══════════════════════ -->
+  <!-- ═══════════════════════════════
+       6. ORBIT DOT — C with planet dot circling it
+  ═══════════════════════════════ -->
   <div class="card">
     <div class="icon-wrap">
       <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-        <!-- Warm charcoal — not pure black -->
+        <rect width="180" height="180" fill="#0d0c11"/>
+        <!-- Faint elliptical orbit path -->
+        <ellipse cx="88" cy="90" rx="76" ry="76" fill="none" stroke="#c9a8c0" stroke-width="1" opacity="0.15" stroke-dasharray="4,6"/>
+        <!-- C — medium weight, mauve -->
+        <path d="M140,66 A54,54 0 1 0 140,114"
+              fill="none" stroke="#c9a8c0" stroke-width="16" stroke-linecap="round"/>
+        <!-- Orbiting dot — ivory, positioned top-right -->
+        <circle cx="148" cy="46" r="10" fill="#e8ddd0"/>
+        <!-- Tiny shadow/depth dot inside -->
+        <circle cx="151" cy="44" r="3.5" fill="#c9a8c0" opacity="0.4"/>
+      </svg>
+    </div>
+    <div class="sizes">
+      <div class="size-item">
+        <div class="mini" style="width:54px;height:54px;border-radius:12px;">
+          <svg viewBox="0 0 180 180" width="54" height="54" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#0d0c11"/>
+            <path d="M140,66 A54,54 0 1 0 140,114" fill="none" stroke="#c9a8c0" stroke-width="16" stroke-linecap="round"/>
+            <circle cx="148" cy="46" r="10" fill="#e8ddd0"/>
+          </svg>
+        </div><span>60pt</span>
+      </div>
+      <div class="size-item">
+        <div class="mini" style="width:37px;height:37px;border-radius:8px;">
+          <svg viewBox="0 0 180 180" width="37" height="37" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#0d0c11"/>
+            <path d="M140,66 A54,54 0 1 0 140,114" fill="none" stroke="#c9a8c0" stroke-width="16" stroke-linecap="round"/>
+            <circle cx="148" cy="46" r="10" fill="#e8ddd0"/>
+          </svg>
+        </div><span>40pt</span>
+      </div>
+      <div class="size-item">
+        <div class="mini" style="width:27px;height:27px;border-radius:6px;">
+          <svg viewBox="0 0 180 180" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#0d0c11"/>
+            <path d="M140,66 A54,54 0 1 0 140,114" fill="none" stroke="#c9a8c0" stroke-width="16" stroke-linecap="round"/>
+            <circle cx="148" cy="46" r="10" fill="#e8ddd0"/>
+          </svg>
+        </div><span>29pt</span>
+      </div>
+    </div>
+    <div class="label">
+      <h2>Orbit</h2>
+      <p>A bold mauve C with an ivory dot in orbit. The dot is a moon, a planet, a companion — Celeste as a celestial body.</p>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════
+       7. FILLED NEGATIVE — white C punched out of mauve circle
+  ═══════════════════════════════ -->
+  <div class="card">
+    <div class="icon-wrap">
+      <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+        <rect width="180" height="180" fill="#0d0c11"/>
+        <!-- Mauve filled circle -->
+        <circle cx="90" cy="90" r="72" fill="#c9a8c0"/>
+        <!-- C punched out in background colour — negative space -->
+        <path d="M134,64 A52,52 0 1 0 134,116"
+              fill="none" stroke="#0d0c11" stroke-width="22" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="sizes">
+      <div class="size-item">
+        <div class="mini" style="width:54px;height:54px;border-radius:12px;">
+          <svg viewBox="0 0 180 180" width="54" height="54" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#0d0c11"/>
+            <circle cx="90" cy="90" r="72" fill="#c9a8c0"/>
+            <path d="M134,64 A52,52 0 1 0 134,116" fill="none" stroke="#0d0c11" stroke-width="22" stroke-linecap="round"/>
+          </svg>
+        </div><span>60pt</span>
+      </div>
+      <div class="size-item">
+        <div class="mini" style="width:37px;height:37px;border-radius:8px;">
+          <svg viewBox="0 0 180 180" width="37" height="37" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#0d0c11"/>
+            <circle cx="90" cy="90" r="72" fill="#c9a8c0"/>
+            <path d="M134,64 A52,52 0 1 0 134,116" fill="none" stroke="#0d0c11" stroke-width="22" stroke-linecap="round"/>
+          </svg>
+        </div><span>40pt</span>
+      </div>
+      <div class="size-item">
+        <div class="mini" style="width:27px;height:27px;border-radius:6px;">
+          <svg viewBox="0 0 180 180" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#0d0c11"/>
+            <circle cx="90" cy="90" r="72" fill="#c9a8c0"/>
+            <path d="M134,64 A52,52 0 1 0 134,116" fill="none" stroke="#0d0c11" stroke-width="22" stroke-linecap="round"/>
+          </svg>
+        </div><span>29pt</span>
+      </div>
+    </div>
+    <div class="label">
+      <h2>Negative Space</h2>
+      <p>C punched out of a solid mauve circle. Flips the figure-ground — the C is air, not ink. Bold and graphic.</p>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════
+       8. TILTED — rotated 15° for energy
+  ═══════════════════════════════ -->
+  <div class="card">
+    <div class="icon-wrap">
+      <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
         <rect width="180" height="180" fill="#100e14"/>
-        <!-- Thick C letterform — like a luxury brand -->
-        <!-- Outer circle, cut right side, with rounded ends -->
-        <path d="
-          M148,66
-          A62,62 0 1 0 148,114
-        " fill="none" stroke="#e8ddd0" stroke-width="28" stroke-linecap="round"/>
-        <!-- Tiny celeste dot at each terminal -->
-        <circle cx="148" cy="66"  r="6" fill="#c9a8c0"/>
-        <circle cx="148" cy="114" r="6" fill="#c9a8c0"/>
-      </svg>
-    </div>
-
-    <div class="sizes">
-      <div class="size-item">
-        <div class="mini-icon" style="width:56px;height:56px;border-radius:12px;">
-          <svg viewBox="0 0 180 180" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#100e14"/>
-            <path d="M148,66 A62,62 0 1 0 148,114" fill="none" stroke="#e8ddd0" stroke-width="28" stroke-linecap="round"/>
-            <circle cx="148" cy="66"  r="6" fill="#c9a8c0"/>
-            <circle cx="148" cy="114" r="6" fill="#c9a8c0"/>
-          </svg>
-        </div>
-        <span>60pt</span>
-      </div>
-      <div class="size-item">
-        <div class="mini-icon" style="width:38px;height:38px;border-radius:8px;">
-          <svg viewBox="0 0 180 180" width="38" height="38" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#100e14"/>
-            <path d="M148,66 A62,62 0 1 0 148,114" fill="none" stroke="#e8ddd0" stroke-width="28" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <span>40pt</span>
-      </div>
-      <div class="size-item">
-        <div class="mini-icon" style="width:28px;height:28px;border-radius:6px;">
-          <svg viewBox="0 0 180 180" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#100e14"/>
-            <path d="M148,66 A62,62 0 1 0 148,114" fill="none" stroke="#e8ddd0" stroke-width="28" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <span>29pt</span>
-      </div>
-    </div>
-    <div class="label">
-      <h2>Monogram C</h2>
-      <p>A thick, confident C on dark charcoal — ivory stroke, mauve terminals. The Chanel energy. Works as an icon and a brand mark simultaneously.</p>
-      <em>DNA: premium · professional · ownable · brand</em>
-    </div>
-  </div>
-
-
-  <!-- ══════════════════════
-       6. SPIRAL
-       Growth · intelligence · golden ratio
-  ══════════════════════ -->
-  <div class="card">
-    <div class="icon-wrap">
-      <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-        <!-- Deep slate -->
-        <rect width="180" height="180" fill="#0a0c10"/>
-        <!-- Fibonacci spiral approximation using arcs -->
-        <!-- Quarter circles of increasing radius from centre -->
-        <!-- Start small at centre, spiral outward -->
-
-        <!-- Arc 1 — r8, centre 98,90 -->
-        <path d="M98,82 A8,8 0 0 1 106,90" fill="none" stroke="#c9a8c0" stroke-width="3.5" stroke-linecap="round"/>
-        <!-- Arc 2 — r13, centre 85,90 -->
-        <path d="M85,77 A13,13 0 0 0 98,90" fill="none" stroke="#c9a8c0" stroke-width="3.5" stroke-linecap="round"/>
-        <!-- Arc 3 — r21, centre 85,111 -->
-        <path d="M64,111 A21,21 0 0 1 85,90" fill="none" stroke="#c9a8c0" stroke-width="3.5" stroke-linecap="round"/>
-        <!-- Arc 4 — r34, centre 119,111 -->
-        <path d="M119,77 A34,34 0 0 0 85,111" fill="none" stroke="#c9a8c0" stroke-width="3.5" stroke-linecap="round"/>
-        <!-- Arc 5 — r55, centre 119,56 -->
-        <path d="M64,56 A55,55 0 0 1 119,111" fill="none" stroke="#c9a8c0" stroke-width="3.5" stroke-linecap="round"/>
-        <!-- Arc 6 — outer sweep -->
-        <path d="M30,115 A89,89 0 0 0 119,56" fill="none" stroke="#c9a8c0" stroke-width="3.5" stroke-linecap="round" opacity="0.6"/>
-
-        <!-- Centre dot -->
-        <circle cx="98" cy="87" r="4" fill="#e8ddd0"/>
-
-        <!-- Star at the open end -->
-        <g transform="translate(30,118)">
-          <polygon points="0,-7 1.4,-1.4 7,0 1.4,1.4 0,7 -1.4,1.4 -7,0 -1.4,-1.4" fill="#e8ddd0" opacity="0.7"/>
+        <!-- C rotated ~20° — feels alive, not static -->
+        <g transform="rotate(-22, 90, 90)">
+          <path d="M144,62 A60,60 0 1 0 144,118"
+                fill="none" stroke="#e8ddd0" stroke-width="22" stroke-linecap="round"/>
+          <!-- Mauve terminal dots -->
+          <circle cx="144" cy="62"  r="6" fill="#c9a8c0"/>
+          <circle cx="144" cy="118" r="6" fill="#c9a8c0"/>
         </g>
-
-        <!-- Faint grid squares (golden ratio boxes) -->
-        <rect x="85" y="82" width="21" height="21" fill="none" stroke="#c9a8c0" stroke-width="0.6" opacity="0.12"/>
-        <rect x="64" y="82" width="21" height="21" fill="none" stroke="#c9a8c0" stroke-width="0.6" opacity="0.12" transform="translate(0,8)"/>
-        <rect x="64" y="56" width="55" height="34" fill="none" stroke="#c9a8c0" stroke-width="0.6" opacity="0.08"/>
       </svg>
     </div>
-
     <div class="sizes">
       <div class="size-item">
-        <div class="mini-icon" style="width:56px;height:56px;border-radius:12px;">
-          <svg viewBox="0 0 180 180" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0a0c10"/>
-            <path d="M98,82 A8,8 0 0 1 106,90" fill="none" stroke="#c9a8c0" stroke-width="3.5" stroke-linecap="round"/>
-            <path d="M85,77 A13,13 0 0 0 98,90" fill="none" stroke="#c9a8c0" stroke-width="3.5" stroke-linecap="round"/>
-            <path d="M64,111 A21,21 0 0 1 85,90" fill="none" stroke="#c9a8c0" stroke-width="3.5" stroke-linecap="round"/>
-            <path d="M119,77 A34,34 0 0 0 85,111" fill="none" stroke="#c9a8c0" stroke-width="3.5" stroke-linecap="round"/>
-            <path d="M64,56 A55,55 0 0 1 119,111" fill="none" stroke="#c9a8c0" stroke-width="3.5" stroke-linecap="round"/>
-            <path d="M30,115 A89,89 0 0 0 119,56" fill="none" stroke="#c9a8c0" stroke-width="3.5" stroke-linecap="round" opacity="0.6"/>
-            <circle cx="98" cy="87" r="4" fill="#e8ddd0"/>
+        <div class="mini" style="width:54px;height:54px;border-radius:12px;">
+          <svg viewBox="0 0 180 180" width="54" height="54" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#100e14"/>
+            <g transform="rotate(-22, 90, 90)">
+              <path d="M144,62 A60,60 0 1 0 144,118" fill="none" stroke="#e8ddd0" stroke-width="22" stroke-linecap="round"/>
+              <circle cx="144" cy="62"  r="6" fill="#c9a8c0"/>
+              <circle cx="144" cy="118" r="6" fill="#c9a8c0"/>
+            </g>
           </svg>
-        </div>
-        <span>60pt</span>
+        </div><span>60pt</span>
       </div>
       <div class="size-item">
-        <div class="mini-icon" style="width:38px;height:38px;border-radius:8px;">
-          <svg viewBox="0 0 180 180" width="38" height="38" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0a0c10"/>
-            <path d="M64,111 A21,21 0 0 1 85,90" fill="none" stroke="#c9a8c0" stroke-width="4" stroke-linecap="round"/>
-            <path d="M119,77 A34,34 0 0 0 85,111" fill="none" stroke="#c9a8c0" stroke-width="4" stroke-linecap="round"/>
-            <path d="M64,56 A55,55 0 0 1 119,111" fill="none" stroke="#c9a8c0" stroke-width="4" stroke-linecap="round"/>
-            <circle cx="98" cy="87" r="5" fill="#e8ddd0"/>
+        <div class="mini" style="width:37px;height:37px;border-radius:8px;">
+          <svg viewBox="0 0 180 180" width="37" height="37" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#100e14"/>
+            <g transform="rotate(-22, 90, 90)">
+              <path d="M144,62 A60,60 0 1 0 144,118" fill="none" stroke="#e8ddd0" stroke-width="22" stroke-linecap="round"/>
+            </g>
           </svg>
-        </div>
-        <span>40pt</span>
+        </div><span>40pt</span>
       </div>
       <div class="size-item">
-        <div class="mini-icon" style="width:28px;height:28px;border-radius:6px;">
-          <svg viewBox="0 0 180 180" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0a0c10"/>
-            <path d="M119,77 A34,34 0 0 0 85,111" fill="none" stroke="#c9a8c0" stroke-width="5" stroke-linecap="round"/>
-            <path d="M64,56 A55,55 0 0 1 119,111" fill="none" stroke="#c9a8c0" stroke-width="5" stroke-linecap="round"/>
-            <circle cx="98" cy="87" r="6" fill="#e8ddd0"/>
+        <div class="mini" style="width:27px;height:27px;border-radius:6px;">
+          <svg viewBox="0 0 180 180" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#100e14"/>
+            <g transform="rotate(-22, 90, 90)">
+              <path d="M144,62 A60,60 0 1 0 144,118" fill="none" stroke="#e8ddd0" stroke-width="22" stroke-linecap="round"/>
+            </g>
           </svg>
-        </div>
-        <span>29pt</span>
+        </div><span>29pt</span>
       </div>
     </div>
     <div class="label">
-      <h2>Golden Spiral</h2>
-      <p>Fibonacci spiral — the mathematics of nature, shells, galaxies, and the cosmos. Intellectual depth made beautiful.</p>
-      <em>DNA: cosmos · intelligence · growth · depth</em>
+      <h2>Tilted</h2>
+      <p>Same Heavy C rotated 22°. A slight tilt makes it feel dynamic — less brand stamp, more personality. Opening faces upward.</p>
     </div>
   </div>
 
 </div>
 
 <footer>
-  <p>Celeste · Icon concepts v5 · The Girl Club / Nexwork · 2025</p>
+  <p>Celeste · Monogram C iterations · The Girl Club / Nexwork · 2025</p>
 </footer>
 
 </body>
