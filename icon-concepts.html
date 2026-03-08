@@ -3,486 +3,915 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Celeste — Monogram C Iterations</title>
+  <title>Celeste — Full Design Journey</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #111014;
+      background: #0e0c14;
       color: #e8e4f0;
-      padding: 60px 24px 100px;
+      padding-bottom: 120px;
     }
-    header { text-align: center; margin-bottom: 64px; }
-    .eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #5a5570; margin-bottom: 14px; }
-    h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
-    .subtitle { color: #4a4560; font-size: 0.84rem; }
 
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 72px;
+      border-bottom: 1px solid #1a1828;
+    }
+    .hero-eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #5a5570; margin-bottom: 16px; }
+    .hero h1 { font-size: 2.6rem; font-weight: 700; margin-bottom: 12px; }
+    .hero p { color: #4a4560; font-size: 0.88rem; max-width: 480px; margin: 0 auto; line-height: 1.7; }
+
+    /* ── Section headers ── */
+    .section {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 72px 24px 0;
+    }
+    .section-header { margin-bottom: 48px; }
+    .section-num { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #3a3650; margin-bottom: 8px; }
+    .section-header h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 6px; }
+    .section-header p { font-size: 0.82rem; color: #4a4560; line-height: 1.6; max-width: 560px; }
+    .divider { width: 100%; height: 1px; background: #1a1828; margin-top: 80px; }
+
+    /* ── Grid ── */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 56px 28px;
-      max-width: 1100px;
-      margin: 0 auto;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 48px 24px;
     }
-    .card { display: flex; flex-direction: column; align-items: center; gap: 18px; }
-
-    .icon-wrap {
-      width: 170px; height: 170px;
-      border-radius: 38px; overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    .grid-tight {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 40px 20px;
     }
-    .icon-wrap svg { width: 100%; height: 100%; display: block; }
 
-    .sizes { display: flex; align-items: flex-end; gap: 9px; }
-    .size-item { display: flex; flex-direction: column; align-items: center; gap: 5px; }
-    .size-item span { font-size: 9px; color: #2e2a3e; }
-    .mini { overflow: hidden; }
-    .mini svg { display: block; }
+    /* ── Card ── */
+    .card { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .icon-lg {
+      width: 160px; height: 160px;
+      border-radius: 36px; overflow: hidden;
+      box-shadow: 0 16px 44px rgba(0,0,0,0.55);
+      flex-shrink: 0;
+    }
+    .icon-lg svg { width: 100%; height: 100%; display: block; }
+    .icon-sm {
+      width: 130px; height: 130px;
+      border-radius: 28px; overflow: hidden;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+      flex-shrink: 0;
+    }
+    .icon-sm svg { width: 100%; height: 100%; display: block; }
 
     .label { text-align: center; }
-    .label h2 { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
-    .label p  { font-size: 0.73rem; color: #4a4560; line-height: 1.6; max-width: 185px; }
+    .label h3 { font-size: 0.85rem; font-weight: 600; margin-bottom: 3px; }
+    .label p { font-size: 0.7rem; color: #4a4560; line-height: 1.55; max-width: 160px; }
 
-    footer { text-align: center; margin-top: 80px; font-size: 0.7rem; color: #1e1c2a; }
+    .tag {
+      display: inline-block; font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 20px; margin-bottom: 6px;
+    }
+    .tag-origin  { background: rgba(155,109,255,0.1); color: #9b6dff; border: 1px solid rgba(155,109,255,0.2); }
+    .tag-color   { background: rgba(201,168,192,0.1); color: #c9a8c0; border: 1px solid rgba(201,168,192,0.2); }
+    .tag-new     { background: rgba(94,234,212,0.08); color: #5eead4; border: 1px solid rgba(94,234,212,0.18); }
+    .tag-other   { background: rgba(251,191,36,0.08); color: #fbbf24; border: 1px solid rgba(251,191,36,0.18); }
+    .tag-mono    { background: rgba(232,221,208,0.08); color: #e8ddd0; border: 1px solid rgba(232,221,208,0.18); }
+
+    /* timeline connector */
+    .timeline-line {
+      width: 1px; height: 48px; background: #1a1828; margin: 0 auto;
+    }
+    .timeline-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #2a2840; margin: 0 auto 48px;
+    }
+
+    footer { text-align: center; padding: 80px 24px 0; font-size: 0.7rem; color: #1e1c2a; }
   </style>
 </head>
 <body>
 
-<header>
-  <p class="eyebrow">Celeste · Monogram C</p>
-  <h1>Eight Iterations</h1>
-  <p class="subtitle">Weight, angle, terminals, colour, detail — one letter, many personalities.</p>
-</header>
+<!-- ═══════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════ -->
+<div class="hero">
+  <p class="hero-eyebrow">Celeste · App Icon</p>
+  <h1>The Full Design Journey</h1>
+  <p>Every concept, colour direction, and iteration — from the first idea to where we are now. Scroll to find your icon.</p>
+</div>
 
-<div class="grid">
 
-  <!-- ═══════════════════════════════
-       1. HEAVY — thick, confident, dark bg
-  ═══════════════════════════════ -->
-  <div class="card">
-    <div class="icon-wrap">
-      <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-        <rect width="180" height="180" fill="#100e14"/>
-        <!-- Very thick C -->
-        <path d="M144,62 A60,60 0 1 0 144,118"
-              fill="none" stroke="#e8ddd0" stroke-width="32" stroke-linecap="round"/>
-      </svg>
-    </div>
-    <div class="sizes">
-      <div class="size-item">
-        <div class="mini" style="width:54px;height:54px;border-radius:12px;">
-          <svg viewBox="0 0 180 180" width="54" height="54" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#100e14"/>
-            <path d="M144,62 A60,60 0 1 0 144,118" fill="none" stroke="#e8ddd0" stroke-width="32" stroke-linecap="round"/>
-          </svg>
-        </div><span>60pt</span>
-      </div>
-      <div class="size-item">
-        <div class="mini" style="width:37px;height:37px;border-radius:8px;">
-          <svg viewBox="0 0 180 180" width="37" height="37" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#100e14"/>
-            <path d="M144,62 A60,60 0 1 0 144,118" fill="none" stroke="#e8ddd0" stroke-width="32" stroke-linecap="round"/>
-          </svg>
-        </div><span>40pt</span>
-      </div>
-      <div class="size-item">
-        <div class="mini" style="width:27px;height:27px;border-radius:6px;">
-          <svg viewBox="0 0 180 180" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#100e14"/>
-            <path d="M144,62 A60,60 0 1 0 144,118" fill="none" stroke="#e8ddd0" stroke-width="32" stroke-linecap="round"/>
-          </svg>
-        </div><span>29pt</span>
-      </div>
-    </div>
-    <div class="label">
-      <h2>Heavy</h2>
-      <p>Max weight. Ivory on near-black. Commands attention — like a luxury brand stamp.</p>
-    </div>
+<!-- ═══════════════════════════════════════════════════════
+     01 — ORIGIN: THE FIRST LUNA
+═══════════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <p class="section-num">01 — Origin</p>
+    <h2>The First Luna</h2>
+    <p>The original concept. A glowing crescent on deep cosmic purple. This is where the direction became clear — but the colour needed work.</p>
   </div>
 
-
-  <!-- ═══════════════════════════════
-       2. FINE — thin, elegant, more air
-  ═══════════════════════════════ -->
-  <div class="card">
-    <div class="icon-wrap">
-      <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-        <rect width="180" height="180" fill="#100e14"/>
-        <!-- Thin C with wide open gap -->
-        <path d="M138,58 A56,56 0 1 0 138,122"
-              fill="none" stroke="#e8ddd0" stroke-width="7" stroke-linecap="round"/>
-        <!-- Terminal dots — mauve -->
-        <circle cx="138" cy="58"  r="5.5" fill="#c9a8c0"/>
-        <circle cx="138" cy="122" r="5.5" fill="#c9a8c0"/>
-      </svg>
-    </div>
-    <div class="sizes">
-      <div class="size-item">
-        <div class="mini" style="width:54px;height:54px;border-radius:12px;">
-          <svg viewBox="0 0 180 180" width="54" height="54" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#100e14"/>
-            <path d="M138,58 A56,56 0 1 0 138,122" fill="none" stroke="#e8ddd0" stroke-width="7" stroke-linecap="round"/>
-            <circle cx="138" cy="58"  r="5.5" fill="#c9a8c0"/>
-            <circle cx="138" cy="122" r="5.5" fill="#c9a8c0"/>
-          </svg>
-        </div><span>60pt</span>
+  <div class="grid">
+    <!-- Original Luna v1 -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bg1o" cx="40%" cy="30%" r="80%">
+              <stop offset="0%" stop-color="#1a0d35"/>
+              <stop offset="100%" stop-color="#060410"/>
+            </radialGradient>
+            <radialGradient id="mg1" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#f5e8ff"/>
+              <stop offset="60%" stop-color="#d4a8ff"/>
+              <stop offset="100%" stop-color="#9b60e8"/>
+            </radialGradient>
+          </defs>
+          <rect width="200" height="200" fill="url(#bg1o)"/>
+          <g fill="white" opacity="0.5">
+            <circle cx="30" cy="25" r="1.2"/><circle cx="170" cy="30" r="1"/><circle cx="180" cy="75" r="1.4"/>
+            <circle cx="20" cy="130" r="0.8"/><circle cx="170" cy="150" r="0.7"/><circle cx="110" cy="25" r="0.8"/>
+          </g>
+          <circle cx="105" cy="100" r="62" fill="url(#mg1)"/>
+          <circle cx="128" cy="88" r="55" fill="#0e0820"/>
+          <g transform="translate(168,42)" fill="white" opacity="0.9">
+            <polygon points="0,-6 1.2,-1.2 6,0 1.2,1.2 0,6 -1.2,1.2 -6,0 -1.2,-1.2"/>
+          </g>
+        </svg>
       </div>
-      <div class="size-item">
-        <div class="mini" style="width:37px;height:37px;border-radius:8px;">
-          <svg viewBox="0 0 180 180" width="37" height="37" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#100e14"/>
-            <path d="M138,58 A56,56 0 1 0 138,122" fill="none" stroke="#e8ddd0" stroke-width="9" stroke-linecap="round"/>
-            <circle cx="138" cy="58"  r="6" fill="#c9a8c0"/>
-            <circle cx="138" cy="122" r="6" fill="#c9a8c0"/>
-          </svg>
-        </div><span>40pt</span>
+      <div class="label">
+        <span class="tag tag-origin">Origin</span>
+        <h3>Luna v1</h3>
+        <p>Violet gradient. The spark that set the direction. Too abstract but the shape was right.</p>
       </div>
-      <div class="size-item">
-        <div class="mini" style="width:27px;height:27px;border-radius:6px;">
-          <svg viewBox="0 0 180 180" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#100e14"/>
-            <path d="M138,58 A56,56 0 1 0 138,122" fill="none" stroke="#e8ddd0" stroke-width="12" stroke-linecap="round"/>
-          </svg>
-        </div><span>29pt</span>
-      </div>
-    </div>
-    <div class="label">
-      <h2>Fine + Dots</h2>
-      <p>Thin ivory stroke, mauve terminal dots. Light, refined, jewellery-like. More delicate than editorial.</p>
     </div>
   </div>
+</div>
+
+<div class="divider"></div>
 
 
-  <!-- ═══════════════════════════════
-       3. STAR TERMINAL — C with a star at the open end
-  ═══════════════════════════════ -->
-  <div class="card">
-    <div class="icon-wrap">
-      <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-        <rect width="180" height="180" fill="#100e14"/>
-        <!-- Medium C, flat cut terminals -->
-        <path d="M142,65 A58,58 0 1 0 142,115"
-              fill="none" stroke="#c9a8c0" stroke-width="18" stroke-linecap="butt"/>
-        <!-- 4-point star at top terminal -->
-        <g transform="translate(142,65)">
-          <polygon points="0,-14 3,-3 14,0 3,3 0,14 -3,3 -14,0 -3,-3" fill="#e8ddd0"/>
-        </g>
-        <!-- Small circle at bottom terminal -->
-        <circle cx="142" cy="115" r="9" fill="#e8ddd0"/>
-        <circle cx="142" cy="115" r="4" fill="#100e14"/>
-      </svg>
-    </div>
-    <div class="sizes">
-      <div class="size-item">
-        <div class="mini" style="width:54px;height:54px;border-radius:12px;">
-          <svg viewBox="0 0 180 180" width="54" height="54" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#100e14"/>
-            <path d="M142,65 A58,58 0 1 0 142,115" fill="none" stroke="#c9a8c0" stroke-width="18" stroke-linecap="butt"/>
-            <g transform="translate(142,65)">
-              <polygon points="0,-13 3,-3 13,0 3,3 0,13 -3,3 -13,0 -3,-3" fill="#e8ddd0"/>
-            </g>
-            <circle cx="142" cy="115" r="9" fill="#e8ddd0"/>
-            <circle cx="142" cy="115" r="4" fill="#100e14"/>
-          </svg>
-        </div><span>60pt</span>
-      </div>
-      <div class="size-item">
-        <div class="mini" style="width:37px;height:37px;border-radius:8px;">
-          <svg viewBox="0 0 180 180" width="37" height="37" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#100e14"/>
-            <path d="M142,65 A58,58 0 1 0 142,115" fill="none" stroke="#c9a8c0" stroke-width="18" stroke-linecap="butt"/>
-            <g transform="translate(142,65)">
-              <polygon points="0,-13 3,-3 13,0 3,3 0,13 -3,3 -13,0 -3,-3" fill="#e8ddd0"/>
-            </g>
-          </svg>
-        </div><span>40pt</span>
-      </div>
-      <div class="size-item">
-        <div class="mini" style="width:27px;height:27px;border-radius:6px;">
-          <svg viewBox="0 0 180 180" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#100e14"/>
-            <path d="M142,65 A58,58 0 1 0 142,115" fill="none" stroke="#c9a8c0" stroke-width="18" stroke-linecap="butt"/>
-          </svg>
-        </div><span>29pt</span>
-      </div>
-    </div>
-    <div class="label">
-      <h2>Star Terminal</h2>
-      <p>Mauve C with a 4-point star at the top and a hollow circle at the bottom. Celestial punctuation on the letterform.</p>
-    </div>
+<!-- ═══════════════════════════════════════════════════════
+     02 — LUNA COLOUR EXPLORATIONS
+═══════════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <p class="section-num">02 — Colour Explorations</p>
+    <h2>Luna Recoloured</h2>
+    <p>Same crescent shape, four different palettes. Moving away from violet toward something more delicate, professional, and warm.</p>
   </div>
 
+  <div class="grid">
 
-  <!-- ═══════════════════════════════
-       4. DOUBLE RING — C inside C
-  ═══════════════════════════════ -->
-  <div class="card">
-    <div class="icon-wrap">
-      <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-        <rect width="180" height="180" fill="#0d0c11"/>
-        <!-- Outer C — thin, ivory -->
-        <path d="M152,60 A68,68 0 1 0 152,120"
-              fill="none" stroke="#e8ddd0" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
-        <!-- Inner C — medium, mauve -->
-        <path d="M140,66 A54,54 0 1 0 140,114"
-              fill="none" stroke="#c9a8c0" stroke-width="14" stroke-linecap="round"/>
-        <!-- Terminal caps on inner C — ivory -->
-        <circle cx="140" cy="66"  r="7" fill="#e8ddd0"/>
-        <circle cx="140" cy="114" r="7" fill="#e8ddd0"/>
-      </svg>
-    </div>
-    <div class="sizes">
-      <div class="size-item">
-        <div class="mini" style="width:54px;height:54px;border-radius:12px;">
-          <svg viewBox="0 0 180 180" width="54" height="54" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0d0c11"/>
-            <path d="M152,60 A68,68 0 1 0 152,120" fill="none" stroke="#e8ddd0" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
-            <path d="M140,66 A54,54 0 1 0 140,114" fill="none" stroke="#c9a8c0" stroke-width="14" stroke-linecap="round"/>
-            <circle cx="140" cy="66"  r="7" fill="#e8ddd0"/>
-            <circle cx="140" cy="114" r="7" fill="#e8ddd0"/>
-          </svg>
-        </div><span>60pt</span>
+    <!-- Champagne & Midnight -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0a0f24"/>
+          <circle cx="88" cy="92" r="58" fill="#d4b483"/>
+          <circle cx="110" cy="80" r="49" fill="#0a0f24"/>
+          <circle cx="132" cy="52" r="5" fill="#d4b483"/>
+          <circle cx="150" cy="74" r="3" fill="#d4b483" opacity="0.6"/>
+        </svg>
       </div>
-      <div class="size-item">
-        <div class="mini" style="width:37px;height:37px;border-radius:8px;">
-          <svg viewBox="0 0 180 180" width="37" height="37" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0d0c11"/>
-            <path d="M140,66 A54,54 0 1 0 140,114" fill="none" stroke="#c9a8c0" stroke-width="14" stroke-linecap="round"/>
-            <circle cx="140" cy="66"  r="7" fill="#e8ddd0"/>
-            <circle cx="140" cy="114" r="7" fill="#e8ddd0"/>
-          </svg>
-        </div><span>40pt</span>
-      </div>
-      <div class="size-item">
-        <div class="mini" style="width:27px;height:27px;border-radius:6px;">
-          <svg viewBox="0 0 180 180" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0d0c11"/>
-            <path d="M140,66 A54,54 0 1 0 140,114" fill="none" stroke="#c9a8c0" stroke-width="14" stroke-linecap="round"/>
-          </svg>
-        </div><span>29pt</span>
+      <div class="label">
+        <span class="tag tag-color">Colour</span>
+        <h3>Champagne & Midnight</h3>
+        <p>Warm gold on deep navy.</p>
       </div>
     </div>
-    <div class="label">
-      <h2>Double Ring</h2>
-      <p>A faint outer orbit circles a bold mauve C. Depth without noise. The outer ring reads as atmosphere — like a halo.</p>
+
+    <!-- Dusty Rose & Wine -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#130810"/>
+          <circle cx="88" cy="92" r="58" fill="#e8a4b0"/>
+          <circle cx="110" cy="80" r="49" fill="#130810"/>
+          <circle cx="132" cy="52" r="5" fill="#e8a4b0"/>
+          <circle cx="150" cy="74" r="3" fill="#e8a4b0" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-color">Colour</span>
+        <h3>Dusty Rose & Wine</h3>
+        <p>Soft rose on bordeaux.</p>
+      </div>
     </div>
+
+    <!-- Pearl & Forest -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#080f0c"/>
+          <circle cx="88" cy="92" r="58" fill="#ede8df"/>
+          <circle cx="110" cy="80" r="49" fill="#080f0c"/>
+          <circle cx="132" cy="52" r="5" fill="#ede8df"/>
+          <circle cx="150" cy="74" r="3" fill="#ede8df" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-color">Colour</span>
+        <h3>Pearl & Forest</h3>
+        <p>Warm ivory on near-black sage.</p>
+      </div>
+    </div>
+
+    <!-- Mauve & Slate — CHOSEN -->
+    <div class="card">
+      <div class="icon-lg" style="box-shadow: 0 0 0 3px #c9a8c0, 0 16px 44px rgba(0,0,0,0.55);">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0d1018"/>
+          <circle cx="88" cy="92" r="58" fill="#c9a8c0"/>
+          <circle cx="110" cy="80" r="49" fill="#0d1018"/>
+          <circle cx="132" cy="52" r="5" fill="#c9a8c0"/>
+          <circle cx="150" cy="74" r="3" fill="#c9a8c0" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-color">Selected ✓</span>
+        <h3>Mauve & Slate</h3>
+        <p>Muted rose-mauve on blue-slate. The one.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     03 — LUNA NEW ITERATIONS (colours + shape variations)
+═══════════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <p class="section-num">03 — Luna Iterations · New</p>
+    <h2>Luna — Shape & Colour Variations</h2>
+    <p>Keeping the mauve & slate palette. Exploring what changes when you shift the crescent's weight, angle, proportion, and supporting elements.</p>
   </div>
 
+  <div class="grid">
 
-  <!-- ═══════════════════════════════
-       5. OPEN WIDE — shallow crescent C, cream bg
-  ═══════════════════════════════ -->
-  <div class="card">
-    <div class="icon-wrap">
-      <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-        <!-- Warm cream background — stands out from black phones -->
-        <rect width="180" height="180" fill="#f0ebe2"/>
-        <!-- Very wide open C — almost a crescent arc, dark -->
-        <path d="M128,44 A62,62 0 1 0 128,136"
-              fill="none" stroke="#1a1520" stroke-width="24" stroke-linecap="round"/>
-        <!-- Mauve accent dot between the two terminals -->
-        <circle cx="138" cy="90" r="6" fill="#c9a8c0"/>
-      </svg>
-    </div>
-    <div class="sizes">
-      <div class="size-item">
-        <div class="mini" style="width:54px;height:54px;border-radius:12px;">
-          <svg viewBox="0 0 180 180" width="54" height="54" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#f0ebe2"/>
-            <path d="M128,44 A62,62 0 1 0 128,136" fill="none" stroke="#1a1520" stroke-width="24" stroke-linecap="round"/>
-            <circle cx="138" cy="90" r="6" fill="#c9a8c0"/>
-          </svg>
-        </div><span>60pt</span>
+    <!-- A. Thin crescent — barely a sliver -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0d1018"/>
+          <circle cx="82" cy="90" r="60" fill="#c9a8c0"/>
+          <circle cx="100" cy="84" r="57" fill="#0d1018"/>
+          <circle cx="136" cy="56" r="4" fill="#c9a8c0"/>
+          <circle cx="150" cy="75" r="2.5" fill="#c9a8c0" opacity="0.5"/>
+        </svg>
       </div>
-      <div class="size-item">
-        <div class="mini" style="width:37px;height:37px;border-radius:8px;">
-          <svg viewBox="0 0 180 180" width="37" height="37" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#f0ebe2"/>
-            <path d="M128,44 A62,62 0 1 0 128,136" fill="none" stroke="#1a1520" stroke-width="24" stroke-linecap="round"/>
-          </svg>
-        </div><span>40pt</span>
-      </div>
-      <div class="size-item">
-        <div class="mini" style="width:27px;height:27px;border-radius:6px;">
-          <svg viewBox="0 0 180 180" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#f0ebe2"/>
-            <path d="M128,44 A62,62 0 1 0 128,136" fill="none" stroke="#1a1520" stroke-width="24" stroke-linecap="round"/>
-          </svg>
-        </div><span>29pt</span>
+      <div class="label">
+        <span class="tag tag-new">New</span>
+        <h3>Thin Crescent</h3>
+        <p>Barely a sliver — waxing crescent phase. Delicate, minimal, almost disappearing.</p>
       </div>
     </div>
-    <div class="label">
-      <h2>Light Mode</h2>
-      <p>Warm cream background — the only light icon in the set. Unique on a dark home screen. Dark C, mauve centre dot.</p>
+
+    <!-- B. Fat crescent — nearly full -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0d1018"/>
+          <circle cx="90" cy="90" r="60" fill="#c9a8c0"/>
+          <circle cx="108" cy="84" r="44" fill="#0d1018"/>
+          <circle cx="136" cy="52" r="5" fill="#c9a8c0"/>
+          <circle cx="152" cy="74" r="3" fill="#c9a8c0" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-new">New</span>
+        <h3>Fat Crescent</h3>
+        <p>Almost a gibbous moon — heavier, more grounded. Confident and full.</p>
+      </div>
     </div>
+
+    <!-- C. Tilted crescent — rotated 30° -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0d1018"/>
+          <g transform="rotate(30, 90, 90)">
+            <circle cx="88" cy="92" r="58" fill="#c9a8c0"/>
+            <circle cx="110" cy="80" r="49" fill="#0d1018"/>
+          </g>
+          <circle cx="148" cy="40" r="4" fill="#c9a8c0"/>
+          <circle cx="160" cy="60" r="2.5" fill="#c9a8c0" opacity="0.45"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-new">New</span>
+        <h3>Tilted</h3>
+        <p>Crescent rotated 30° — opening faces up, like a bowl catching starlight.</p>
+      </div>
+    </div>
+
+    <!-- D. Facing left -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0d1018"/>
+          <circle cx="94" cy="90" r="58" fill="#c9a8c0"/>
+          <circle cx="72" cy="80" r="49" fill="#0d1018"/>
+          <circle cx="48" cy="52" r="5" fill="#c9a8c0"/>
+          <circle cx="30" cy="74" r="3" fill="#c9a8c0" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-new">New</span>
+        <h3>Facing Left</h3>
+        <p>Waning crescent — mirrored. A different energy: introspective, releasing.</p>
+      </div>
+    </div>
+
+    <!-- E. Crescent + star inside -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0d1018"/>
+          <circle cx="88" cy="92" r="58" fill="#c9a8c0"/>
+          <circle cx="110" cy="80" r="49" fill="#0d1018"/>
+          <!-- Star nestled inside the crescent curve -->
+          <g transform="translate(68, 90)">
+            <polygon points="0,-10 2,-2 10,0 2,2 0,10 -2,2 -10,0 -2,-2" fill="#e8ddd0" opacity="0.9"/>
+          </g>
+          <circle cx="140" cy="50" r="3.5" fill="#c9a8c0"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-new">New</span>
+        <h3>Star Inside</h3>
+        <p>A 4-point star rests inside the crescent curve — the moon cradling a star.</p>
+      </div>
+    </div>
+
+    <!-- F. Double crescent (nested) -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0d1018"/>
+          <!-- Outer crescent — faint -->
+          <circle cx="88" cy="90" r="66" fill="#c9a8c0" opacity="0.25"/>
+          <circle cx="112" cy="78" r="58" fill="#0d1018"/>
+          <!-- Inner crescent — solid -->
+          <circle cx="88" cy="92" r="50" fill="#c9a8c0"/>
+          <circle cx="108" cy="82" r="42" fill="#0d1018"/>
+          <circle cx="132" cy="54" r="4" fill="#c9a8c0"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-new">New</span>
+        <h3>Double Crescent</h3>
+        <p>Two nested crescents — inner solid, outer a ghost. Depth and echo.</p>
+      </div>
+    </div>
+
+    <!-- G. Crescent on terracotta -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#160a06"/>
+          <circle cx="88" cy="92" r="58" fill="#d4937a"/>
+          <circle cx="110" cy="80" r="49" fill="#160a06"/>
+          <circle cx="132" cy="52" r="5" fill="#d4937a"/>
+          <circle cx="150" cy="74" r="3" fill="#d4937a" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-new">New</span>
+        <h3>Terracotta</h3>
+        <p>Warm earth tone — grounded, natural, seasonal. Very different from the blue-slate family.</p>
+      </div>
+    </div>
+
+    <!-- H. Crescent — silver on deep navy -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#080c18"/>
+          <circle cx="88" cy="92" r="58" fill="#d0d8e8"/>
+          <circle cx="110" cy="80" r="49" fill="#080c18"/>
+          <circle cx="132" cy="52" r="5" fill="#d0d8e8"/>
+          <circle cx="150" cy="74" r="3" fill="#d0d8e8" opacity="0.6"/>
+          <circle cx="140" cy="34" r="2" fill="#d0d8e8" opacity="0.35"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-new">New</span>
+        <h3>Silver & Navy</h3>
+        <p>Cool silver-white on deep navy. Classic, minimal, almost monochrome. Works perfectly next to TikTok.</p>
+      </div>
+    </div>
+
+    <!-- I. Crescent — blush on deep plum -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#120818"/>
+          <circle cx="88" cy="92" r="58" fill="#f0c4cc"/>
+          <circle cx="110" cy="80" r="49" fill="#120818"/>
+          <circle cx="132" cy="52" r="5" fill="#f0c4cc"/>
+          <circle cx="150" cy="74" r="3" fill="#f0c4cc" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-new">New</span>
+        <h3>Blush & Plum</h3>
+        <p>Soft blush on deep plum. The most delicately feminine of all — lightest touch.</p>
+      </div>
+    </div>
+
+    <!-- J. Crescent with orbit halo -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0d1018"/>
+          <!-- Orbit ring -->
+          <circle cx="88" cy="92" r="72" fill="none" stroke="#c9a8c0" stroke-width="1.5" opacity="0.2" stroke-dasharray="5,7"/>
+          <!-- Crescent -->
+          <circle cx="88" cy="92" r="52" fill="#c9a8c0"/>
+          <circle cx="108" cy="82" r="44" fill="#0d1018"/>
+          <!-- Orbiting dot -->
+          <circle cx="90" cy="20" r="7" fill="#e8ddd0"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-new">New</span>
+        <h3>Crescent + Orbit</h3>
+        <p>Mauve crescent with an ivory companion in orbit above it. Moon and satellite.</p>
+      </div>
+    </div>
+
+    <!-- K. Crescent — sage / muted green -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#080e0a"/>
+          <circle cx="88" cy="92" r="58" fill="#9dbfaa"/>
+          <circle cx="110" cy="80" r="49" fill="#080e0a"/>
+          <circle cx="132" cy="52" r="5" fill="#9dbfaa"/>
+          <circle cx="150" cy="74" r="3" fill="#9dbfaa" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-new">New</span>
+        <h3>Sage & Forest</h3>
+        <p>Muted sage green on dark. Earthy, grounded, healing energy. Unexpected and fresh.</p>
+      </div>
+    </div>
+
+    <!-- L. Crescent — deep ocean celeste blue -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#060c14"/>
+          <circle cx="88" cy="92" r="58" fill="#7eb8d4"/>
+          <circle cx="110" cy="80" r="49" fill="#060c14"/>
+          <circle cx="132" cy="52" r="5" fill="#7eb8d4"/>
+          <circle cx="150" cy="74" r="3" fill="#7eb8d4" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-new">New</span>
+        <h3>Celeste Blue</h3>
+        <p>The literal colour "celeste" — sky blue in Italian. The name and the icon united.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     04 — OTHER DIRECTIONS EXPLORED
+═══════════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <p class="section-num">04 — Other Directions</p>
+    <h2>Roads Not Taken</h2>
+    <p>Everything explored beyond Luna — constellation, aurora, cosmic eye, comet, orbit, duality, dawn, signal, bloom.</p>
   </div>
 
+  <div class="grid-tight">
 
-  <!-- ═══════════════════════════════
-       6. ORBIT DOT — C with planet dot circling it
-  ═══════════════════════════════ -->
-  <div class="card">
-    <div class="icon-wrap">
-      <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-        <rect width="180" height="180" fill="#0d0c11"/>
-        <!-- Faint elliptical orbit path -->
-        <ellipse cx="88" cy="90" rx="76" ry="76" fill="none" stroke="#c9a8c0" stroke-width="1" opacity="0.15" stroke-dasharray="4,6"/>
-        <!-- C — medium weight, mauve -->
-        <path d="M140,66 A54,54 0 1 0 140,114"
-              fill="none" stroke="#c9a8c0" stroke-width="16" stroke-linecap="round"/>
-        <!-- Orbiting dot — ivory, positioned top-right -->
-        <circle cx="148" cy="46" r="10" fill="#e8ddd0"/>
-        <!-- Tiny shadow/depth dot inside -->
-        <circle cx="151" cy="44" r="3.5" fill="#c9a8c0" opacity="0.4"/>
-      </svg>
-    </div>
-    <div class="sizes">
-      <div class="size-item">
-        <div class="mini" style="width:54px;height:54px;border-radius:12px;">
-          <svg viewBox="0 0 180 180" width="54" height="54" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0d0c11"/>
-            <path d="M140,66 A54,54 0 1 0 140,114" fill="none" stroke="#c9a8c0" stroke-width="16" stroke-linecap="round"/>
-            <circle cx="148" cy="46" r="10" fill="#e8ddd0"/>
-          </svg>
-        </div><span>60pt</span>
+    <!-- Constellation C -->
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0d0620"/>
+          <g stroke="#6d28d9" stroke-width="0.8" opacity="0.5">
+            <line x1="145" y1="45" x2="110" y2="38"/><line x1="110" y1="38" x2="78" y2="48"/>
+            <line x1="78" y1="48" x2="55" y2="70"/><line x1="55" y1="70" x2="48" y2="100"/>
+            <line x1="48" y1="100" x2="55" y2="130"/><line x1="55" y1="130" x2="78" y2="152"/>
+            <line x1="78" y1="152" x2="110" y2="162"/><line x1="110" y1="162" x2="145" y2="155"/>
+          </g>
+          <circle cx="145" cy="45"  r="4.5" fill="#c4b5fd"/>
+          <circle cx="48"  cy="100" r="5.5" fill="white"/>
+          <circle cx="78"  cy="48"  r="4"   fill="#c4b5fd"/>
+          <circle cx="55"  cy="70"  r="4.5" fill="#ddd6fe"/>
+          <circle cx="55"  cy="130" r="4.5" fill="#ddd6fe"/>
+          <circle cx="78"  cy="152" r="4"   fill="#c4b5fd"/>
+          <circle cx="110" cy="162" r="3.5" fill="#a78bfa"/>
+          <circle cx="145" cy="155" r="4.5" fill="#c4b5fd"/>
+        </svg>
       </div>
-      <div class="size-item">
-        <div class="mini" style="width:37px;height:37px;border-radius:8px;">
-          <svg viewBox="0 0 180 180" width="37" height="37" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0d0c11"/>
-            <path d="M140,66 A54,54 0 1 0 140,114" fill="none" stroke="#c9a8c0" stroke-width="16" stroke-linecap="round"/>
-            <circle cx="148" cy="46" r="10" fill="#e8ddd0"/>
-          </svg>
-        </div><span>40pt</span>
-      </div>
-      <div class="size-item">
-        <div class="mini" style="width:27px;height:27px;border-radius:6px;">
-          <svg viewBox="0 0 180 180" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0d0c11"/>
-            <path d="M140,66 A54,54 0 1 0 140,114" fill="none" stroke="#c9a8c0" stroke-width="16" stroke-linecap="round"/>
-            <circle cx="148" cy="46" r="10" fill="#e8ddd0"/>
-          </svg>
-        </div><span>29pt</span>
+      <div class="label">
+        <span class="tag tag-other">Explored</span>
+        <h3>Constellation C</h3>
       </div>
     </div>
-    <div class="label">
-      <h2>Orbit</h2>
-      <p>A bold mauve C with an ivory dot in orbit. The dot is a moon, a planet, a companion — Celeste as a celestial body.</p>
+
+    <!-- Aurora Star -->
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#1b0933"/>
+          <ellipse cx="90" cy="90" rx="12" ry="65" fill="#9b6dff" opacity="0.5"/>
+          <ellipse cx="90" cy="90" rx="12" ry="65" fill="#c084fc" opacity="0.5" transform="rotate(45,90,90)"/>
+          <ellipse cx="90" cy="90" rx="12" ry="65" fill="#9b6dff" opacity="0.5" transform="rotate(90,90,90)"/>
+          <ellipse cx="90" cy="90" rx="12" ry="65" fill="#c084fc" opacity="0.5" transform="rotate(135,90,90)"/>
+          <circle cx="90" cy="90" r="18" fill="#c4b5fd"/>
+          <circle cx="90" cy="90" r="8"  fill="white"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-other">Explored</span>
+        <h3>Aurora Star</h3>
+      </div>
     </div>
+
+    <!-- Cosmic Eye -->
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#160828"/>
+          <path d="M100,62 C60,62 22,100 22,100 C22,100 60,138 100,138 C140,138 178,100 178,100 C178,100 140,62 100,62 Z" fill="#0e0520" stroke="#6d28d9" stroke-width="2"/>
+          <circle cx="100" cy="100" r="32" fill="#6d28d9"/>
+          <circle cx="100" cy="100" r="14" fill="#0a0215"/>
+          <circle cx="91" cy="91" r="5" fill="white" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-other">Explored</span>
+        <h3>Cosmic Eye</h3>
+      </div>
+    </div>
+
+    <!-- North Star -->
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0d0825"/>
+          <polygon points="90,18 100,82 90,90 80,82" fill="#e879f9"/>
+          <polygon points="162,90 98,100 90,90 98,80" fill="#e879f9"/>
+          <polygon points="90,162 80,98 90,90 100,98" fill="#e879f9"/>
+          <polygon points="18,90 82,80 90,90 82,100" fill="#e879f9"/>
+          <polygon points="90,18 100,82 90,90 80,82" fill="#c084fc" transform="rotate(45,90,90)" opacity="0.7"/>
+          <polygon points="162,90 98,100 90,90 98,80" fill="#c084fc" transform="rotate(45,90,90)" opacity="0.7"/>
+          <polygon points="90,162 80,98 90,90 100,98" fill="#c084fc" transform="rotate(45,90,90)" opacity="0.7"/>
+          <polygon points="18,90 82,80 90,90 82,100" fill="#c084fc" transform="rotate(45,90,90)" opacity="0.7"/>
+          <circle cx="90" cy="90" r="10" fill="#f5d0fe"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-other">Explored</span>
+        <h3>North Star</h3>
+      </div>
+    </div>
+
+    <!-- Moon Phases -->
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#071a1a"/>
+          <circle cx="90" cy="90" r="55" fill="#5eead4"/>
+          <circle cx="114" cy="82" r="46" fill="#071a1a"/>
+          <circle cx="136" cy="52" r="5" fill="#5eead4"/>
+          <g>
+            <circle cx="62" cy="148" r="5" fill="#5eead4" opacity="0.35"/>
+            <circle cx="80" cy="148" r="5" fill="#5eead4" opacity="0.6"/>
+            <circle cx="98" cy="148" r="5" fill="#5eead4"/>
+            <circle cx="116" cy="148" r="5" fill="#5eead4" opacity="0.6"/>
+          </g>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-other">Explored</span>
+        <h3>Moon Phases</h3>
+      </div>
+    </div>
+
+    <!-- Golden C -->
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#130b00"/>
+          <circle cx="90" cy="90" r="62" fill="#fbbf24"/>
+          <circle cx="90" cy="90" r="44" fill="#130b00"/>
+          <rect x="110" y="28" width="60" height="124" fill="#130b00"/>
+          <circle cx="112" cy="38"  r="7" fill="#fbbf24"/>
+          <circle cx="112" cy="142" r="7" fill="#fbbf24"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-other">Explored</span>
+        <h3>Golden C</h3>
+      </div>
+    </div>
+
+    <!-- Comet -->
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0d1018"/>
+          <line x1="42" y1="148" x2="112" y2="78" stroke="#c9a8c0" stroke-width="12" stroke-linecap="round" opacity="0.15"/>
+          <line x1="42" y1="148" x2="112" y2="78" stroke="#c9a8c0" stroke-width="4"  stroke-linecap="round" opacity="0.4"/>
+          <circle cx="112" cy="74" r="22" fill="#c9a8c0"/>
+          <circle cx="105" cy="67" r="8"  fill="#a8c4d8" opacity="0.55"/>
+          <circle cx="112" cy="74" r="5"  fill="#f0e8ee"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-other">Explored</span>
+        <h3>Comet</h3>
+      </div>
+    </div>
+
+    <!-- Celestial C -->
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0d1018"/>
+          <circle cx="90" cy="90" r="62" fill="#c9a8c0"/>
+          <circle cx="90" cy="90" r="40" fill="#0d1018"/>
+          <rect x="88" y="28" width="70" height="124" fill="#0d1018"/>
+          <circle cx="90" cy="50"  r="11" fill="#c9a8c0"/>
+          <circle cx="90" cy="130" r="11" fill="#c9a8c0"/>
+          <g transform="translate(118,44)">
+            <polygon points="0,-9 2,-2 9,0 2,2 0,9 -2,2 -9,0 -2,-2" fill="#a8c4d8"/>
+          </g>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-other">Explored</span>
+        <h3>Celestial C</h3>
+      </div>
+    </div>
+
+    <!-- Crescent & Star -->
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0d1018"/>
+          <circle cx="82" cy="100" r="52" fill="#c9a8c0"/>
+          <circle cx="102" cy="89"  r="44" fill="#0d1018"/>
+          <g transform="translate(134,52)">
+            <polygon points="0,-22 4,-4 22,0 4,4 0,22 -4,4 -22,0 -4,-4" fill="#a8c4d8"/>
+            <circle cx="0" cy="0" r="4" fill="#daeef7"/>
+          </g>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-other">Explored</span>
+        <h3>Crescent & Star</h3>
+      </div>
+    </div>
+
+    <!-- Celeste Orbit -->
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0d1018"/>
+          <clipPath id="bh-s"><rect x="0" y="0" width="180" height="90"/></clipPath>
+          <ellipse cx="90" cy="90" rx="74" ry="22" fill="none" stroke="#a8c4d8" stroke-width="8" clip-path="url(#bh-s)" opacity="0.55"/>
+          <circle cx="90" cy="90" r="44" fill="#c9a8c0"/>
+          <clipPath id="fh-s"><rect x="0" y="90" width="180" height="90"/></clipPath>
+          <ellipse cx="90" cy="90" rx="74" ry="22" fill="none" stroke="#a8c4d8" stroke-width="8" clip-path="url(#fh-s)"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-other">Explored</span>
+        <h3>Celeste Orbit</h3>
+      </div>
+    </div>
+
+    <!-- Duality -->
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0f0810"/>
+          <circle cx="74"  cy="90" r="42" fill="#c9a8c0"/>
+          <circle cx="106" cy="90" r="42" fill="#e8ddd0"/>
+          <clipPath id="rc-s"><circle cx="106" cy="90" r="42"/></clipPath>
+          <circle cx="74" cy="90" r="42" fill="#b8927a" clip-path="url(#rc-s)" opacity="0.55"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-other">Explored</span>
+        <h3>Duality</h3>
+      </div>
+    </div>
+
+    <!-- Dawn -->
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#090c14"/>
+          <rect x="0" y="112" width="180" height="68" fill="#090c14"/>
+          <path d="M48,110 A42,42 0 0 1 132,110" fill="#e8c4a0"/>
+          <g stroke="#e8c4a0" stroke-width="3.5" stroke-linecap="round">
+            <line x1="90" y1="24" x2="90" y2="40"/>
+            <line x1="122" y1="32" x2="114" y2="46"/>
+            <line x1="58" y1="32" x2="66" y2="46"/>
+          </g>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-other">Explored</span>
+        <h3>Dawn</h3>
+      </div>
+    </div>
+
+    <!-- Signal -->
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#08090e"/>
+          <path d="M30,110 A60,60 0 0 1 150,110" fill="none" stroke="#c9a8c0" stroke-width="3" stroke-linecap="round" opacity="0.25"/>
+          <path d="M46,110 A44,44 0 0 1 134,110" fill="none" stroke="#c9a8c0" stroke-width="3.5" stroke-linecap="round" opacity="0.5"/>
+          <path d="M62,110 A28,28 0 0 1 118,110" fill="none" stroke="#c9a8c0" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+          <circle cx="90" cy="110" r="8" fill="#c9a8c0"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-other">Explored</span>
+        <h3>Signal</h3>
+      </div>
+    </div>
+
+    <!-- Bloom -->
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0e0a08"/>
+          <ellipse cx="90" cy="90" rx="18" ry="52" fill="#c9a8c0"/>
+          <ellipse cx="90" cy="90" rx="18" ry="52" fill="#c9a8c0" transform="rotate(90,90,90)"/>
+          <ellipse cx="90" cy="90" rx="13" ry="42" fill="#dfc4d8" transform="rotate(45,90,90)"/>
+          <ellipse cx="90" cy="90" rx="13" ry="42" fill="#dfc4d8" transform="rotate(135,90,90)"/>
+          <circle cx="90" cy="90" r="16" fill="#f0e6ea"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-other">Explored</span>
+        <h3>Bloom</h3>
+      </div>
+    </div>
+
+    <!-- Golden Spiral -->
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0a0c10"/>
+          <path d="M64,111 A21,21 0 0 1 85,90"  fill="none" stroke="#c9a8c0" stroke-width="4" stroke-linecap="round"/>
+          <path d="M119,77 A34,34 0 0 0 85,111" fill="none" stroke="#c9a8c0" stroke-width="4" stroke-linecap="round"/>
+          <path d="M64,56 A55,55 0 0 1 119,111" fill="none" stroke="#c9a8c0" stroke-width="4" stroke-linecap="round"/>
+          <path d="M30,115 A89,89 0 0 0 119,56" fill="none" stroke="#c9a8c0" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+          <circle cx="98" cy="87" r="5" fill="#e8ddd0"/>
+        </svg>
+      </div>
+      <div class="label">
+        <span class="tag tag-other">Explored</span>
+        <h3>Golden Spiral</h3>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     05 — MONOGRAM C ITERATIONS
+═══════════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <p class="section-num">05 — Monogram C</p>
+    <h2>The C — Eight Ways</h2>
+    <p>Weight, angle, terminals, colour, negative space — one letter shaped eight different ways.</p>
   </div>
 
+  <div class="grid-tight">
 
-  <!-- ═══════════════════════════════
-       7. FILLED NEGATIVE — white C punched out of mauve circle
-  ═══════════════════════════════ -->
-  <div class="card">
-    <div class="icon-wrap">
-      <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-        <rect width="180" height="180" fill="#0d0c11"/>
-        <!-- Mauve filled circle -->
-        <circle cx="90" cy="90" r="72" fill="#c9a8c0"/>
-        <!-- C punched out in background colour — negative space -->
-        <path d="M134,64 A52,52 0 1 0 134,116"
-              fill="none" stroke="#0d0c11" stroke-width="22" stroke-linecap="round"/>
-      </svg>
-    </div>
-    <div class="sizes">
-      <div class="size-item">
-        <div class="mini" style="width:54px;height:54px;border-radius:12px;">
-          <svg viewBox="0 0 180 180" width="54" height="54" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0d0c11"/>
-            <circle cx="90" cy="90" r="72" fill="#c9a8c0"/>
-            <path d="M134,64 A52,52 0 1 0 134,116" fill="none" stroke="#0d0c11" stroke-width="22" stroke-linecap="round"/>
-          </svg>
-        </div><span>60pt</span>
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#100e14"/>
+          <path d="M144,62 A60,60 0 1 0 144,118" fill="none" stroke="#e8ddd0" stroke-width="32" stroke-linecap="round"/>
+        </svg>
       </div>
-      <div class="size-item">
-        <div class="mini" style="width:37px;height:37px;border-radius:8px;">
-          <svg viewBox="0 0 180 180" width="37" height="37" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0d0c11"/>
-            <circle cx="90" cy="90" r="72" fill="#c9a8c0"/>
-            <path d="M134,64 A52,52 0 1 0 134,116" fill="none" stroke="#0d0c11" stroke-width="22" stroke-linecap="round"/>
-          </svg>
-        </div><span>40pt</span>
-      </div>
-      <div class="size-item">
-        <div class="mini" style="width:27px;height:27px;border-radius:6px;">
-          <svg viewBox="0 0 180 180" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0d0c11"/>
-            <circle cx="90" cy="90" r="72" fill="#c9a8c0"/>
-            <path d="M134,64 A52,52 0 1 0 134,116" fill="none" stroke="#0d0c11" stroke-width="22" stroke-linecap="round"/>
-          </svg>
-        </div><span>29pt</span>
-      </div>
+      <div class="label"><span class="tag tag-mono">C</span><h3>Heavy</h3></div>
     </div>
-    <div class="label">
-      <h2>Negative Space</h2>
-      <p>C punched out of a solid mauve circle. Flips the figure-ground — the C is air, not ink. Bold and graphic.</p>
+
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#100e14"/>
+          <path d="M138,58 A56,56 0 1 0 138,122" fill="none" stroke="#e8ddd0" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="138" cy="58"  r="5.5" fill="#c9a8c0"/>
+          <circle cx="138" cy="122" r="5.5" fill="#c9a8c0"/>
+        </svg>
+      </div>
+      <div class="label"><span class="tag tag-mono">C</span><h3>Fine + Dots</h3></div>
     </div>
+
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#100e14"/>
+          <path d="M142,65 A58,58 0 1 0 142,115" fill="none" stroke="#c9a8c0" stroke-width="18" stroke-linecap="butt"/>
+          <g transform="translate(142,65)">
+            <polygon points="0,-13 3,-3 13,0 3,3 0,13 -3,3 -13,0 -3,-3" fill="#e8ddd0"/>
+          </g>
+          <circle cx="142" cy="115" r="9" fill="#e8ddd0"/>
+          <circle cx="142" cy="115" r="4" fill="#100e14"/>
+        </svg>
+      </div>
+      <div class="label"><span class="tag tag-mono">C</span><h3>Star Terminal</h3></div>
+    </div>
+
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0d0c11"/>
+          <path d="M152,60 A68,68 0 1 0 152,120" fill="none" stroke="#e8ddd0" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+          <path d="M140,66 A54,54 0 1 0 140,114" fill="none" stroke="#c9a8c0" stroke-width="14" stroke-linecap="round"/>
+          <circle cx="140" cy="66"  r="7" fill="#e8ddd0"/>
+          <circle cx="140" cy="114" r="7" fill="#e8ddd0"/>
+        </svg>
+      </div>
+      <div class="label"><span class="tag tag-mono">C</span><h3>Double Ring</h3></div>
+    </div>
+
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#f0ebe2"/>
+          <path d="M128,44 A62,62 0 1 0 128,136" fill="none" stroke="#1a1520" stroke-width="24" stroke-linecap="round"/>
+          <circle cx="138" cy="90" r="6" fill="#c9a8c0"/>
+        </svg>
+      </div>
+      <div class="label"><span class="tag tag-mono">C</span><h3>Light Mode</h3></div>
+    </div>
+
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0d0c11"/>
+          <path d="M140,66 A54,54 0 1 0 140,114" fill="none" stroke="#c9a8c0" stroke-width="16" stroke-linecap="round"/>
+          <circle cx="148" cy="46" r="10" fill="#e8ddd0"/>
+        </svg>
+      </div>
+      <div class="label"><span class="tag tag-mono">C</span><h3>Orbit</h3></div>
+    </div>
+
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#0d0c11"/>
+          <circle cx="90" cy="90" r="72" fill="#c9a8c0"/>
+          <path d="M134,64 A52,52 0 1 0 134,116" fill="none" stroke="#0d0c11" stroke-width="22" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="label"><span class="tag tag-mono">C</span><h3>Negative Space</h3></div>
+    </div>
+
+    <div class="card">
+      <div class="icon-sm">
+        <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <rect width="180" height="180" fill="#100e14"/>
+          <g transform="rotate(-22, 90, 90)">
+            <path d="M144,62 A60,60 0 1 0 144,118" fill="none" stroke="#e8ddd0" stroke-width="22" stroke-linecap="round"/>
+            <circle cx="144" cy="62"  r="6" fill="#c9a8c0"/>
+            <circle cx="144" cy="118" r="6" fill="#c9a8c0"/>
+          </g>
+        </svg>
+      </div>
+      <div class="label"><span class="tag tag-mono">C</span><h3>Tilted</h3></div>
+    </div>
+
   </div>
-
-
-  <!-- ═══════════════════════════════
-       8. TILTED — rotated 15° for energy
-  ═══════════════════════════════ -->
-  <div class="card">
-    <div class="icon-wrap">
-      <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-        <rect width="180" height="180" fill="#100e14"/>
-        <!-- C rotated ~20° — feels alive, not static -->
-        <g transform="rotate(-22, 90, 90)">
-          <path d="M144,62 A60,60 0 1 0 144,118"
-                fill="none" stroke="#e8ddd0" stroke-width="22" stroke-linecap="round"/>
-          <!-- Mauve terminal dots -->
-          <circle cx="144" cy="62"  r="6" fill="#c9a8c0"/>
-          <circle cx="144" cy="118" r="6" fill="#c9a8c0"/>
-        </g>
-      </svg>
-    </div>
-    <div class="sizes">
-      <div class="size-item">
-        <div class="mini" style="width:54px;height:54px;border-radius:12px;">
-          <svg viewBox="0 0 180 180" width="54" height="54" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#100e14"/>
-            <g transform="rotate(-22, 90, 90)">
-              <path d="M144,62 A60,60 0 1 0 144,118" fill="none" stroke="#e8ddd0" stroke-width="22" stroke-linecap="round"/>
-              <circle cx="144" cy="62"  r="6" fill="#c9a8c0"/>
-              <circle cx="144" cy="118" r="6" fill="#c9a8c0"/>
-            </g>
-          </svg>
-        </div><span>60pt</span>
-      </div>
-      <div class="size-item">
-        <div class="mini" style="width:37px;height:37px;border-radius:8px;">
-          <svg viewBox="0 0 180 180" width="37" height="37" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#100e14"/>
-            <g transform="rotate(-22, 90, 90)">
-              <path d="M144,62 A60,60 0 1 0 144,118" fill="none" stroke="#e8ddd0" stroke-width="22" stroke-linecap="round"/>
-            </g>
-          </svg>
-        </div><span>40pt</span>
-      </div>
-      <div class="size-item">
-        <div class="mini" style="width:27px;height:27px;border-radius:6px;">
-          <svg viewBox="0 0 180 180" width="27" height="27" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#100e14"/>
-            <g transform="rotate(-22, 90, 90)">
-              <path d="M144,62 A60,60 0 1 0 144,118" fill="none" stroke="#e8ddd0" stroke-width="22" stroke-linecap="round"/>
-            </g>
-          </svg>
-        </div><span>29pt</span>
-      </div>
-    </div>
-    <div class="label">
-      <h2>Tilted</h2>
-      <p>Same Heavy C rotated 22°. A slight tilt makes it feel dynamic — less brand stamp, more personality. Opening faces upward.</p>
-    </div>
-  </div>
-
 </div>
 
 <footer>
-  <p>Celeste · Monogram C iterations · The Girl Club / Nexwork · 2025</p>
+  <p>Celeste · Complete design journey · The Girl Club / Nexwork · 2025<br>
+  <span style="color:#161422;">Privacy policy: aoibhe1.github.io/celeste-legal/privacy.html</span></p>
 </footer>
 
 </body>
