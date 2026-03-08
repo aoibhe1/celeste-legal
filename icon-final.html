@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celeste — Final Icon</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0e0c14;
+      color: #e8e4f0;
+      padding: 60px 24px 100px;
+    }
+    header { text-align: center; margin-bottom: 64px; }
+    .eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #7eb8d4; margin-bottom: 14px; }
+    h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 8px; }
+    .subtitle { color: #4a4560; font-size: 0.86rem; }
+
+    /* Hero icon — large */
+    .hero-icon {
+      width: 280px; height: 280px;
+      border-radius: 63px; overflow: hidden;
+      margin: 0 auto 48px;
+      box-shadow:
+        0 0 0 1px rgba(126,184,212,0.12),
+        0 32px 80px rgba(0,0,0,0.7),
+        0 0 120px rgba(126,184,212,0.08);
+    }
+    .hero-icon svg { width: 100%; height: 100%; display: block; }
+
+    /* Spec row */
+    .specs {
+      display: flex; justify-content: center; gap: 32px;
+      margin-bottom: 64px; flex-wrap: wrap;
+    }
+    .spec { text-align: center; }
+    .spec-val { font-size: 1.1rem; font-weight: 600; color: #7eb8d4; margin-bottom: 3px; }
+    .spec-key { font-size: 0.7rem; color: #3a3650; letter-spacing: 1px; text-transform: uppercase; }
+
+    /* Homescreen mockup */
+    .homescreen-wrap { max-width: 600px; margin: 0 auto 72px; }
+    .hs-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #2e2a3e; text-align: center; margin-bottom: 16px; }
+
+    .phone {
+      background: #12101e;
+      border-radius: 24px;
+      padding: 28px 20px 24px;
+      border: 1px solid #1e1c2e;
+    }
+    .app-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; align-items: flex-end; }
+    .app-slot { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .app-slot span { font-size: 8px; color: #2e2a3e; }
+    .app-icon { width: 60px; height: 60px; border-radius: 13px; overflow: hidden; }
+    .app-icon svg { width: 100%; height: 100%; display: block; }
+    .app-icon.featured {
+      width: 60px; height: 60px; border-radius: 13px;
+      box-shadow: 0 0 0 2px #7eb8d4, 0 8px 24px rgba(126,184,212,0.3);
+    }
+
+    /* Size grid */
+    .size-section { max-width: 700px; margin: 0 auto 64px; }
+    .size-title { font-size: 0.8rem; font-weight: 600; color: #3a3650; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; text-align: center; }
+    .size-row { display: flex; gap: 20px; align-items: flex-end; justify-content: center; flex-wrap: wrap; }
+    .size-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .size-item span { font-size: 9px; color: #2e2a3e; }
+    .sz { border-radius: calc(var(--r) * 1px); overflow: hidden; flex-shrink: 0; }
+    .sz svg { display: block; }
+
+    /* Colour palette */
+    .palette { display: flex; justify-content: center; gap: 0; margin: 0 auto 64px; max-width: 360px; border-radius: 16px; overflow: hidden; }
+    .swatch-block { flex: 1; height: 80px; display: flex; flex-direction: column; justify-content: flex-end; padding: 10px 12px; }
+    .swatch-block span { font-size: 9px; letter-spacing: 0.5px; font-family: monospace; }
+
+    /* Export note */
+    .export-box {
+      max-width: 560px; margin: 0 auto;
+      background: #0a0910; border: 1px solid #1a1828; border-radius: 16px;
+      padding: 28px 32px;
+    }
+    .export-box h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 16px; color: #7eb8d4; }
+    .export-box ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .export-box li { font-size: 0.78rem; color: #4a4560; display: flex; gap: 12px; align-items: flex-start; }
+    .export-box li::before { content: "→"; color: #2e2a3e; flex-shrink: 0; }
+
+    footer { text-align: center; margin-top: 64px; font-size: 0.7rem; color: #1e1c2a; }
+  </style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">Celeste · Final Icon</p>
+  <h1>Luna in Celeste Blue</h1>
+  <p class="subtitle">#7eb8d4 on #060c14 · Waxing crescent · Two shapes.</p>
+</header>
+
+<!-- HERO -->
+<div class="hero-icon">
+  <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" id="master-icon">
+    <!-- Background -->
+    <rect width="1024" height="1024" fill="#060c14"/>
+    <!-- Moon body -->
+    <circle cx="488" cy="512" r="332" fill="#7eb8d4"/>
+    <!-- Cutout — creates crescent -->
+    <circle cx="602" cy="448" r="282" fill="#060c14"/>
+    <!-- Accent dots -->
+    <circle cx="742" cy="288" r="28" fill="#7eb8d4"/>
+    <circle cx="846" cy="416" r="17" fill="#7eb8d4" opacity="0.55"/>
+    <circle cx="800" cy="196" r="14" fill="#7eb8d4" opacity="0.32"/>
+  </svg>
+</div>
+
+<!-- SPECS -->
+<div class="specs">
+  <div class="spec">
+    <div class="spec-val">#7eb8d4</div>
+    <div class="spec-key">Moon</div>
+  </div>
+  <div class="spec">
+    <div class="spec-val">#060c14</div>
+    <div class="spec-key">Background</div>
+  </div>
+  <div class="spec">
+    <div class="spec-val">2 shapes</div>
+    <div class="spec-key">Elements</div>
+  </div>
+  <div class="spec">
+    <div class="spec-val">1024 × 1024</div>
+    <div class="spec-key">Master size</div>
+  </div>
+</div>
+
+<!-- COLOUR PALETTE -->
+<div class="palette">
+  <div class="swatch-block" style="background:#060c14;">
+    <span style="color:#1e2a3a;">#060c14</span>
+  </div>
+  <div class="swatch-block" style="background:#0d1a24;">
+    <span style="color:#1e3040;">#0d1a24</span>
+  </div>
+  <div class="swatch-block" style="background:#7eb8d4;">
+    <span style="color:#060c14;">#7eb8d4</span>
+  </div>
+  <div class="swatch-block" style="background:#a8d0e4;">
+    <span style="color:#060c14;">#a8d0e4</span>
+  </div>
+  <div class="swatch-block" style="background:#daeef7;">
+    <span style="color:#060c14;">#daeef7</span>
+  </div>
+</div>
+
+<!-- HOMESCREEN -->
+<div class="homescreen-wrap">
+  <p class="hs-label">On your home screen</p>
+  <div class="phone">
+    <div class="app-row">
+
+      <!-- Instagram -->
+      <div class="app-slot">
+        <div class="app-icon">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="ig2" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/>
+            </linearGradient></defs>
+            <rect width="60" height="60" fill="url(#ig2)"/>
+            <rect x="15" y="15" width="30" height="30" rx="8" fill="none" stroke="white" stroke-width="2.5"/>
+            <circle cx="30" cy="30" r="7.5" fill="none" stroke="white" stroke-width="2.5"/>
+            <circle cx="41" cy="19" r="2" fill="white"/>
+          </svg>
+        </div>
+        <span>Instagram</span>
+      </div>
+
+      <!-- YouTube -->
+      <div class="app-slot">
+        <div class="app-icon">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <rect width="60" height="60" fill="white"/>
+            <rect x="8" y="18" width="44" height="28" rx="8" fill="#FF0000"/>
+            <polygon points="24,22 24,38 42,30" fill="white"/>
+          </svg>
+        </div>
+        <span>YouTube</span>
+      </div>
+
+      <!-- TikTok -->
+      <div class="app-slot">
+        <div class="app-icon">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <rect width="60" height="60" fill="#010101"/>
+            <text x="30" y="42" font-size="32" text-anchor="middle" fill="white" font-family="system-ui" font-weight="900">♪</text>
+          </svg>
+        </div>
+        <span>TikTok</span>
+      </div>
+
+      <!-- CELESTE — featured -->
+      <div class="app-slot">
+        <div class="app-icon featured">
+          <svg viewBox="0 0 1024 1024" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1024" height="1024" fill="#060c14"/>
+            <circle cx="488" cy="512" r="332" fill="#7eb8d4"/>
+            <circle cx="602" cy="448" r="282" fill="#060c14"/>
+            <circle cx="742" cy="288" r="28" fill="#7eb8d4"/>
+            <circle cx="846" cy="416" r="17" fill="#7eb8d4" opacity="0.55"/>
+          </svg>
+        </div>
+        <span style="color:#7eb8d4;font-weight:600;">Celeste</span>
+      </div>
+
+      <!-- Spotify -->
+      <div class="app-slot">
+        <div class="app-icon">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <rect width="60" height="60" fill="#1DB954"/>
+            <path d="M18,24 Q30,20 42,24" fill="none" stroke="black" stroke-width="2.8" stroke-linecap="round"/>
+            <path d="M20,30 Q30,27 40,30" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M22,36 Q30,34 38,36" fill="none" stroke="black" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span>Spotify</span>
+      </div>
+
+      <!-- Netflix -->
+      <div class="app-slot">
+        <div class="app-icon">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <rect width="60" height="60" fill="#141414"/>
+            <text x="30" y="44" font-size="38" text-anchor="middle" fill="#E50914" font-family="Georgia,serif" font-weight="900">N</text>
+          </svg>
+        </div>
+        <span>Netflix</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- SIZE GRID -->
+<div class="size-section">
+  <p class="size-title">At every size</p>
+  <div class="size-row">
+    <div class="size-item">
+      <div class="sz" style="width:83px;height:83px;--r:18;border-radius:18px;">
+        <svg viewBox="0 0 1024 1024" width="83" height="83" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#060c14"/>
+          <circle cx="488" cy="512" r="332" fill="#7eb8d4"/>
+          <circle cx="602" cy="448" r="282" fill="#060c14"/>
+          <circle cx="742" cy="288" r="28" fill="#7eb8d4"/>
+        </svg>
+      </div>
+      <span>83pt · iPad</span>
+    </div>
+    <div class="size-item">
+      <div class="sz" style="width:60px;height:60px;--r:13;border-radius:13px;">
+        <svg viewBox="0 0 1024 1024" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#060c14"/>
+          <circle cx="488" cy="512" r="332" fill="#7eb8d4"/>
+          <circle cx="602" cy="448" r="282" fill="#060c14"/>
+          <circle cx="742" cy="288" r="28" fill="#7eb8d4"/>
+        </svg>
+      </div>
+      <span>60pt · Home</span>
+    </div>
+    <div class="size-item">
+      <div class="sz" style="width:40px;height:40px;--r:9;border-radius:9px;">
+        <svg viewBox="0 0 1024 1024" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#060c14"/>
+          <circle cx="488" cy="512" r="332" fill="#7eb8d4"/>
+          <circle cx="602" cy="448" r="282" fill="#060c14"/>
+        </svg>
+      </div>
+      <span>40pt · Search</span>
+    </div>
+    <div class="size-item">
+      <div class="sz" style="width:29px;height:29px;--r:6;border-radius:6px;">
+        <svg viewBox="0 0 1024 1024" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#060c14"/>
+          <circle cx="488" cy="512" r="332" fill="#7eb8d4"/>
+          <circle cx="602" cy="448" r="282" fill="#060c14"/>
+        </svg>
+      </div>
+      <span>29pt · Settings</span>
+    </div>
+    <div class="size-item">
+      <div class="sz" style="width:20px;height:20px;--r:4;border-radius:4px;">
+        <svg viewBox="0 0 1024 1024" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#060c14"/>
+          <circle cx="488" cy="512" r="332" fill="#7eb8d4"/>
+          <circle cx="602" cy="448" r="282" fill="#060c14"/>
+        </svg>
+      </div>
+      <span>20pt · Notif</span>
+    </div>
+  </div>
+</div>
+
+<!-- NEXT STEPS -->
+<div class="export-box">
+  <h3>Next steps to use this icon</h3>
+  <ul>
+    <li>Export the SVG above as a 1024×1024 PNG — open this page, right-click the large icon, "Save image as" — or use a tool like Figma/Sketch to export at exact pixel size</li>
+    <li>In Xcode: open Runner → Assets.xcassets → AppIcon → drag the 1024×1024 PNG into the App Store slot. Xcode auto-generates all other sizes</li>
+    <li>Alternatively: use MakeAppIcon.com — upload 1024×1024, it generates all iOS sizes at once</li>
+    <li>Colours to use in-app: background #060c14 (already close to your dark theme), accent #7eb8d4 for celeste-blue highlights</li>
+  </ul>
+</div>
+
+<footer>
+  <p>Celeste · Luna in Celeste Blue · Final · The Girl Club / Nexwork · 2025</p>
+</footer>
+
+</body>
+</html>
