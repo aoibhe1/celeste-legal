@@ -3,120 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Celeste — App Icon Concepts</title>
+  <title>Celeste — Luna Colour Options</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #0c0b14;
+      background: #0c0b12;
       color: #e8e4f0;
       min-height: 100vh;
       padding: 60px 24px 100px;
     }
-
     header { text-align: center; margin-bottom: 64px; }
-    .eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #9b6dff; margin-bottom: 14px; }
+    .eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #a08060; margin-bottom: 14px; }
     h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
-    .subtitle { color: #6b6385; font-size: 0.88rem; }
+    .subtitle { color: #5a5570; font-size: 0.88rem; }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 56px 40px;
-      max-width: 1000px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 56px 32px;
+      max-width: 960px;
       margin: 0 auto;
     }
 
     .card { display: flex; flex-direction: column; align-items: center; gap: 20px; }
 
     .icon-wrap {
-      width: 180px;
-      height: 180px;
-      border-radius: 40px;
+      width: 172px;
+      height: 172px;
+      border-radius: 38px;
       overflow: hidden;
-      box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.55);
       flex-shrink: 0;
     }
     .icon-wrap svg { width: 100%; height: 100%; display: block; }
 
     .sizes { display: flex; align-items: flex-end; gap: 10px; }
     .size-item { display: flex; flex-direction: column; align-items: center; gap: 5px; }
-    .size-item span { font-size: 9px; color: #3e3a52; letter-spacing: 0.5px; }
-    .mini-icon { border-radius: 10px; overflow: hidden; }
+    .size-item span { font-size: 9px; color: #3a3650; letter-spacing: 0.5px; }
+    .mini-icon { overflow: hidden; }
     .mini-icon svg { display: block; }
 
     .label { text-align: center; }
-    .badge {
-      display: inline-block; font-size: 9px; letter-spacing: 1.5px;
-      text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-bottom: 8px;
-    }
-    .a { background: rgba(155,109,255,0.12); color: #9b6dff; border: 1px solid rgba(155,109,255,0.25); }
-    .b { background: rgba(244,184,255,0.08); color: #e879f9; border: 1px solid rgba(232,121,249,0.2); }
-    .c { background: rgba(100,220,200,0.08); color: #5eead4; border: 1px solid rgba(94,234,212,0.2); }
-    .d { background: rgba(255,200,100,0.08); color: #fbbf24; border: 1px solid rgba(251,191,36,0.2); }
+    .label h2 { font-size: 0.95rem; font-weight: 600; margin-bottom: 5px; letter-spacing: 0.3px; }
+    .label p { font-size: 0.76rem; color: #5a5570; line-height: 1.65; max-width: 190px; }
 
-    .label h2 { font-size: 1rem; font-weight: 600; margin-bottom: 5px; }
-    .label p { font-size: 0.78rem; color: #6b6385; line-height: 1.6; max-width: 200px; }
+    .swatch-row { display: flex; gap: 6px; margin-bottom: 10px; justify-content: center; }
+    .swatch { width: 14px; height: 14px; border-radius: 50%; }
 
-    footer { text-align: center; margin-top: 80px; font-size: 0.72rem; color: #2a2638; }
+    footer { text-align: center; margin-top: 80px; font-size: 0.72rem; color: #222030; }
   </style>
 </head>
 <body>
 
 <header>
-  <p class="eyebrow">Celeste App</p>
-  <h1>Icon Concepts</h1>
-  <p class="subtitle">Flat 2D designs. Pick a direction.</p>
+  <p class="eyebrow">Celeste · Luna</p>
+  <h1>Colour Directions</h1>
+  <p class="subtitle">Same shape — four palettes. Delicate, professional, sisterhood.</p>
 </header>
 
 <div class="grid">
 
-  <!-- 1. CRESCENT + DOT -->
+  <!-- ══════════════════════
+       A. CHAMPAGNE on MIDNIGHT NAVY
+       "Elegant & timeless"
+  ══════════════════════ -->
   <div class="card">
     <div class="icon-wrap">
       <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-        <!-- Background: deep plum -->
-        <rect width="180" height="180" fill="#1a0d35"/>
-        <!-- Crescent: big circle minus offset circle -->
-        <circle cx="90" cy="90" r="55" fill="#c084fc"/>
-        <circle cx="112" cy="78" r="46" fill="#1a0d35"/>
-        <!-- Small dot star -->
-        <circle cx="130" cy="56" r="6" fill="#c084fc"/>
-        <circle cx="148" cy="80" r="3.5" fill="#c084fc"/>
-        <circle cx="140" cy="36" r="2.5" fill="#c084fc" opacity="0.5"/>
+        <!-- Deep midnight navy -->
+        <rect width="180" height="180" fill="#0a0f24"/>
+        <!-- Moon: warm champagne/gold -->
+        <circle cx="88" cy="92" r="58" fill="#d4b483"/>
+        <!-- Cutout -->
+        <circle cx="110" cy="80" r="49" fill="#0a0f24"/>
+        <!-- Accent dots: same champagne, small -->
+        <circle cx="132" cy="52" r="5"   fill="#d4b483"/>
+        <circle cx="150" cy="74" r="3"   fill="#d4b483" opacity="0.6"/>
+        <circle cx="140" cy="34" r="2.5" fill="#d4b483" opacity="0.35"/>
       </svg>
     </div>
 
     <div class="sizes">
       <div class="size-item">
-        <div class="mini-icon" style="width:58px;height:58px;border-radius:12px;">
-          <svg viewBox="0 0 180 180" width="58" height="58" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#1a0d35"/>
-            <circle cx="90" cy="90" r="55" fill="#c084fc"/>
-            <circle cx="112" cy="78" r="46" fill="#1a0d35"/>
-            <circle cx="130" cy="56" r="6" fill="#c084fc"/>
+        <div class="mini-icon" style="width:56px;height:56px;border-radius:12px;">
+          <svg viewBox="0 0 180 180" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#0a0f24"/>
+            <circle cx="88" cy="92" r="58" fill="#d4b483"/>
+            <circle cx="110" cy="80" r="49" fill="#0a0f24"/>
+            <circle cx="132" cy="52" r="5" fill="#d4b483"/>
           </svg>
         </div>
         <span>60pt</span>
       </div>
       <div class="size-item">
-        <div class="mini-icon" style="width:40px;height:40px;border-radius:9px;">
-          <svg viewBox="0 0 180 180" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#1a0d35"/>
-            <circle cx="90" cy="90" r="55" fill="#c084fc"/>
-            <circle cx="112" cy="78" r="46" fill="#1a0d35"/>
-            <circle cx="130" cy="56" r="6" fill="#c084fc"/>
+        <div class="mini-icon" style="width:38px;height:38px;border-radius:8px;">
+          <svg viewBox="0 0 180 180" width="38" height="38" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#0a0f24"/>
+            <circle cx="88" cy="92" r="58" fill="#d4b483"/>
+            <circle cx="110" cy="80" r="49" fill="#0a0f24"/>
           </svg>
         </div>
         <span>40pt</span>
       </div>
       <div class="size-item">
-        <div class="mini-icon" style="width:29px;height:29px;border-radius:6px;">
-          <svg viewBox="0 0 180 180" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#1a0d35"/>
-            <circle cx="90" cy="90" r="55" fill="#c084fc"/>
-            <circle cx="112" cy="78" r="46" fill="#1a0d35"/>
+        <div class="mini-icon" style="width:28px;height:28px;border-radius:6px;">
+          <svg viewBox="0 0 180 180" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#0a0f24"/>
+            <circle cx="88" cy="92" r="58" fill="#d4b483"/>
+            <circle cx="110" cy="80" r="49" fill="#0a0f24"/>
           </svg>
         </div>
         <span>29pt</span>
@@ -124,79 +119,64 @@
     </div>
 
     <div class="label">
-      <span class="badge a">Recommended</span>
-      <h2>Luna</h2>
-      <p>Classic crescent on deep plum. Two shapes, instantly celestial. Reads perfectly at any size.</p>
+      <div class="swatch-row">
+        <div class="swatch" style="background:#0a0f24; border:1px solid #333;"></div>
+        <div class="swatch" style="background:#d4b483;"></div>
+      </div>
+      <h2>Champagne &amp; Midnight</h2>
+      <p>Warm gold on deep navy. Feels polished and premium — like a luxury brand. Timeless, not trendy.</p>
     </div>
   </div>
 
 
-  <!-- 2. FOUR-POINT STAR -->
+  <!-- ══════════════════════
+       B. DUSTY ROSE on DEEP WINE
+       "Warm sisterhood"
+  ══════════════════════ -->
   <div class="card">
     <div class="icon-wrap">
       <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-        <!-- Background: warm dark navy -->
-        <rect width="180" height="180" fill="#0d0825"/>
-        <!-- 4-point star — diamond cross -->
-        <polygon points="90,18 100,82 90,90 80,82" fill="#e879f9"/>
-        <polygon points="162,90 98,100 90,90 98,80" fill="#e879f9"/>
-        <polygon points="90,162 80,98 90,90 100,98" fill="#e879f9"/>
-        <polygon points="18,90 82,80 90,90 82,100" fill="#e879f9"/>
-        <!-- 45° rotated — shorter arms -->
-        <polygon points="90,18 100,82 90,90 80,82" fill="#c084fc" transform="rotate(45,90,90)" opacity="0.7"/>
-        <polygon points="162,90 98,100 90,90 98,80" fill="#c084fc" transform="rotate(45,90,90)" opacity="0.7"/>
-        <polygon points="90,162 80,98 90,90 100,98" fill="#c084fc" transform="rotate(45,90,90)" opacity="0.7"/>
-        <polygon points="18,90 82,80 90,90 82,100" fill="#c084fc" transform="rotate(45,90,90)" opacity="0.7"/>
-        <!-- Centre dot -->
-        <circle cx="90" cy="90" r="10" fill="#f5d0fe"/>
-        <!-- Tiny corner dots -->
-        <circle cx="32"  cy="32"  r="3" fill="#e879f9" opacity="0.4"/>
-        <circle cx="148" cy="32"  r="3" fill="#e879f9" opacity="0.4"/>
-        <circle cx="32"  cy="148" r="3" fill="#e879f9" opacity="0.4"/>
-        <circle cx="148" cy="148" r="3" fill="#e879f9" opacity="0.4"/>
+        <!-- Deep wine / dark bordeaux -->
+        <rect width="180" height="180" fill="#130810"/>
+        <!-- Moon: soft dusty rose -->
+        <circle cx="88" cy="92" r="58" fill="#e8a4b0"/>
+        <!-- Cutout -->
+        <circle cx="110" cy="80" r="49" fill="#130810"/>
+        <!-- Accent dots -->
+        <circle cx="132" cy="52" r="5"   fill="#e8a4b0"/>
+        <circle cx="150" cy="74" r="3"   fill="#e8a4b0" opacity="0.6"/>
+        <circle cx="140" cy="34" r="2.5" fill="#e8a4b0" opacity="0.35"/>
       </svg>
     </div>
 
     <div class="sizes">
       <div class="size-item">
-        <div class="mini-icon" style="width:58px;height:58px;border-radius:12px;">
-          <svg viewBox="0 0 180 180" width="58" height="58" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0d0825"/>
-            <polygon points="90,18 100,82 90,90 80,82" fill="#e879f9"/>
-            <polygon points="162,90 98,100 90,90 98,80" fill="#e879f9"/>
-            <polygon points="90,162 80,98 90,90 100,98" fill="#e879f9"/>
-            <polygon points="18,90 82,80 90,90 82,100" fill="#e879f9"/>
-            <polygon points="90,18 100,82 90,90 80,82" fill="#c084fc" transform="rotate(45,90,90)" opacity="0.7"/>
-            <polygon points="162,90 98,100 90,90 98,80" fill="#c084fc" transform="rotate(45,90,90)" opacity="0.7"/>
-            <polygon points="90,162 80,98 90,90 100,98" fill="#c084fc" transform="rotate(45,90,90)" opacity="0.7"/>
-            <polygon points="18,90 82,80 90,90 82,100" fill="#c084fc" transform="rotate(45,90,90)" opacity="0.7"/>
-            <circle cx="90" cy="90" r="10" fill="#f5d0fe"/>
+        <div class="mini-icon" style="width:56px;height:56px;border-radius:12px;">
+          <svg viewBox="0 0 180 180" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#130810"/>
+            <circle cx="88" cy="92" r="58" fill="#e8a4b0"/>
+            <circle cx="110" cy="80" r="49" fill="#130810"/>
+            <circle cx="132" cy="52" r="5" fill="#e8a4b0"/>
           </svg>
         </div>
         <span>60pt</span>
       </div>
       <div class="size-item">
-        <div class="mini-icon" style="width:40px;height:40px;border-radius:9px;">
-          <svg viewBox="0 0 180 180" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0d0825"/>
-            <polygon points="90,18 100,82 90,90 80,82" fill="#e879f9"/>
-            <polygon points="162,90 98,100 90,90 98,80" fill="#e879f9"/>
-            <polygon points="90,162 80,98 90,90 100,98" fill="#e879f9"/>
-            <polygon points="18,90 82,80 90,90 82,100" fill="#e879f9"/>
-            <circle cx="90" cy="90" r="10" fill="#f5d0fe"/>
+        <div class="mini-icon" style="width:38px;height:38px;border-radius:8px;">
+          <svg viewBox="0 0 180 180" width="38" height="38" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#130810"/>
+            <circle cx="88" cy="92" r="58" fill="#e8a4b0"/>
+            <circle cx="110" cy="80" r="49" fill="#130810"/>
           </svg>
         </div>
         <span>40pt</span>
       </div>
       <div class="size-item">
-        <div class="mini-icon" style="width:29px;height:29px;border-radius:6px;">
-          <svg viewBox="0 0 180 180" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#0d0825"/>
-            <polygon points="90,18 100,82 90,90 80,82" fill="#e879f9"/>
-            <polygon points="162,90 98,100 90,90 98,80" fill="#e879f9"/>
-            <polygon points="90,162 80,98 90,90 100,98" fill="#e879f9"/>
-            <polygon points="18,90 82,80 90,90 82,100" fill="#e879f9"/>
-            <circle cx="90" cy="90" r="10" fill="#f5d0fe"/>
+        <div class="mini-icon" style="width:28px;height:28px;border-radius:6px;">
+          <svg viewBox="0 0 180 180" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#130810"/>
+            <circle cx="88" cy="92" r="58" fill="#e8a4b0"/>
+            <circle cx="110" cy="80" r="49" fill="#130810"/>
           </svg>
         </div>
         <span>29pt</span>
@@ -204,65 +184,64 @@
     </div>
 
     <div class="label">
-      <span class="badge b">Bold</span>
-      <h2>North Star</h2>
-      <p>A sharp 8-pointed starburst — two layers of diamond arms. Graphic and modern, very strong at small sizes.</p>
+      <div class="swatch-row">
+        <div class="swatch" style="background:#130810; border:1px solid #333;"></div>
+        <div class="swatch" style="background:#e8a4b0;"></div>
+      </div>
+      <h2>Dusty Rose &amp; Wine</h2>
+      <p>Soft rose on deep bordeaux. Intimate and warm — the most "sisterhood" of the four. Feminine without being pink.</p>
     </div>
   </div>
 
 
-  <!-- 3. CRESCENT + CIRCLE (moon phase minimal) -->
+  <!-- ══════════════════════
+       C. PEARL on DEEP FOREST
+       "Calm & grounded"
+  ══════════════════════ -->
   <div class="card">
     <div class="icon-wrap">
       <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-        <!-- Background: teal-dark -->
-        <rect width="180" height="180" fill="#071a1a"/>
-        <!-- Full circle outline -->
-        <circle cx="90" cy="90" r="58" fill="none" stroke="#5eead4" stroke-width="3"/>
-        <!-- Crescent fill inside circle -->
-        <circle cx="90" cy="90" r="55" fill="#5eead4"/>
-        <circle cx="114" cy="82" r="46" fill="#071a1a"/>
-        <!-- Dot accent -->
-        <circle cx="136" cy="52" r="5" fill="#5eead4"/>
-        <circle cx="152" cy="72" r="3" fill="#5eead4"/>
-        <!-- Small circles decoration (phases row) -->
-        <circle cx="44" cy="148" r="5"  fill="#5eead4" opacity="0.15"/>
-        <circle cx="62" cy="148" r="5"  fill="#5eead4" opacity="0.35"/>
-        <circle cx="80" cy="148" r="5"  fill="#5eead4" opacity="0.6"/>
-        <circle cx="98" cy="148" r="5"  fill="#5eead4"/>
-        <circle cx="116" cy="148" r="5" fill="#5eead4" opacity="0.6"/>
-        <circle cx="134" cy="148" r="5" fill="#5eead4" opacity="0.35"/>
+        <!-- Deep forest / dark sage-black -->
+        <rect width="180" height="180" fill="#080f0c"/>
+        <!-- Moon: warm pearl/ivory -->
+        <circle cx="88" cy="92" r="58" fill="#ede8df"/>
+        <!-- Cutout -->
+        <circle cx="110" cy="80" r="49" fill="#080f0c"/>
+        <!-- Accent dots -->
+        <circle cx="132" cy="52" r="5"   fill="#ede8df"/>
+        <circle cx="150" cy="74" r="3"   fill="#ede8df" opacity="0.6"/>
+        <circle cx="140" cy="34" r="2.5" fill="#ede8df" opacity="0.35"/>
       </svg>
     </div>
 
     <div class="sizes">
       <div class="size-item">
-        <div class="mini-icon" style="width:58px;height:58px;border-radius:12px;">
-          <svg viewBox="0 0 180 180" width="58" height="58" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#071a1a"/>
-            <circle cx="90" cy="90" r="55" fill="#5eead4"/>
-            <circle cx="114" cy="82" r="46" fill="#071a1a"/>
-            <circle cx="136" cy="52" r="5" fill="#5eead4"/>
+        <div class="mini-icon" style="width:56px;height:56px;border-radius:12px;">
+          <svg viewBox="0 0 180 180" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#080f0c"/>
+            <circle cx="88" cy="92" r="58" fill="#ede8df"/>
+            <circle cx="110" cy="80" r="49" fill="#080f0c"/>
+            <circle cx="132" cy="52" r="5" fill="#ede8df"/>
           </svg>
         </div>
         <span>60pt</span>
       </div>
       <div class="size-item">
-        <div class="mini-icon" style="width:40px;height:40px;border-radius:9px;">
-          <svg viewBox="0 0 180 180" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#071a1a"/>
-            <circle cx="90" cy="90" r="55" fill="#5eead4"/>
-            <circle cx="114" cy="82" r="46" fill="#071a1a"/>
+        <div class="mini-icon" style="width:38px;height:38px;border-radius:8px;">
+          <svg viewBox="0 0 180 180" width="38" height="38" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#080f0c"/>
+            <circle cx="88" cy="92" r="58" fill="#ede8df"/>
+            <circle cx="110" cy="80" r="49" fill="#080f0c"/>
           </svg>
         </div>
         <span>40pt</span>
       </div>
       <div class="size-item">
-        <div class="mini-icon" style="width:29px;height:29px;border-radius:6px;">
-          <svg viewBox="0 0 180 180" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#071a1a"/>
-            <circle cx="90" cy="90" r="55" fill="#5eead4"/>
-            <circle cx="114" cy="82" r="46" fill="#071a1a"/>
+        <div class="mini-icon" style="width:28px;height:28px;border-radius:6px;">
+          <svg viewBox="0 0 180 180" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#080f0c"/>
+            <circle cx="88" cy="92" r="58" fill="#ede8df"/>
+            <circle cx="110" cy="80" r="49" fill="#080f0c"/>
           </svg>
         </div>
         <span>29pt</span>
@@ -270,75 +249,64 @@
     </div>
 
     <div class="label">
-      <span class="badge c">Fresh</span>
-      <h2>Moon Phases</h2>
-      <p>Teal crescent on dark background with a subtle phase-dot row. Calm and distinctive — different from every other astrology app.</p>
+      <div class="swatch-row">
+        <div class="swatch" style="background:#080f0c; border:1px solid #333;"></div>
+        <div class="swatch" style="background:#ede8df;"></div>
+      </div>
+      <h2>Pearl &amp; Forest</h2>
+      <p>Warm ivory on near-black with a green undertone. Earthy, calm, and grounded. Feels like candlelight in the dark.</p>
     </div>
   </div>
 
 
-  <!-- 4. LETTER C as crescent -->
+  <!-- ══════════════════════
+       D. BLUSH MAUVE on DEEP SLATE
+       "Modern & professional"
+  ══════════════════════ -->
   <div class="card">
     <div class="icon-wrap">
       <svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-        <!-- Background: warm dark amber-purple -->
-        <rect width="180" height="180" fill="#130b00"/>
-        <!-- Big C shape: full circle fill, then mask with offset circle -->
-        <!-- Outer ring -->
-        <circle cx="90" cy="90" r="62" fill="#fbbf24"/>
-        <!-- Inner cutout (creates ring) -->
-        <circle cx="90" cy="90" r="44" fill="#130b00"/>
-        <!-- Right side block to close into C -->
-        <rect x="110" y="28" width="60" height="124" fill="#130b00"/>
-        <!-- Open the top and bottom of the C slightly more elegantly with arcs -->
-        <!-- top horn accent dot -->
-        <circle cx="112" cy="38" r="7" fill="#fbbf24"/>
-        <!-- bottom horn accent dot -->
-        <circle cx="112" cy="142" r="7" fill="#fbbf24"/>
-        <!-- Small star top right -->
-        <polygon points="148,30 150,26 152,30 156,30 153,33 154,37 150,34 146,37 147,33 144,30"
-                 fill="#fbbf24" opacity="0.6"/>
-        <!-- Tiny dot cluster -->
-        <circle cx="142" cy="90" r="3" fill="#fbbf24" opacity="0.3"/>
-        <circle cx="152" cy="78" r="2" fill="#fbbf24" opacity="0.2"/>
-        <circle cx="155" cy="100" r="2" fill="#fbbf24" opacity="0.2"/>
+        <!-- Deep blue-slate -->
+        <rect width="180" height="180" fill="#0d1018"/>
+        <!-- Moon: warm mauve / dusty lavender-pink -->
+        <circle cx="88" cy="92" r="58" fill="#c9a8c0"/>
+        <!-- Cutout -->
+        <circle cx="110" cy="80" r="49" fill="#0d1018"/>
+        <!-- Accent dots -->
+        <circle cx="132" cy="52" r="5"   fill="#c9a8c0"/>
+        <circle cx="150" cy="74" r="3"   fill="#c9a8c0" opacity="0.6"/>
+        <circle cx="140" cy="34" r="2.5" fill="#c9a8c0" opacity="0.35"/>
       </svg>
     </div>
 
     <div class="sizes">
       <div class="size-item">
-        <div class="mini-icon" style="width:58px;height:58px;border-radius:12px;">
-          <svg viewBox="0 0 180 180" width="58" height="58" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#130b00"/>
-            <circle cx="90" cy="90" r="62" fill="#fbbf24"/>
-            <circle cx="90" cy="90" r="44" fill="#130b00"/>
-            <rect x="110" y="28" width="60" height="124" fill="#130b00"/>
-            <circle cx="112" cy="38" r="7" fill="#fbbf24"/>
-            <circle cx="112" cy="142" r="7" fill="#fbbf24"/>
+        <div class="mini-icon" style="width:56px;height:56px;border-radius:12px;">
+          <svg viewBox="0 0 180 180" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#0d1018"/>
+            <circle cx="88" cy="92" r="58" fill="#c9a8c0"/>
+            <circle cx="110" cy="80" r="49" fill="#0d1018"/>
+            <circle cx="132" cy="52" r="5" fill="#c9a8c0"/>
           </svg>
         </div>
         <span>60pt</span>
       </div>
       <div class="size-item">
-        <div class="mini-icon" style="width:40px;height:40px;border-radius:9px;">
-          <svg viewBox="0 0 180 180" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#130b00"/>
-            <circle cx="90" cy="90" r="62" fill="#fbbf24"/>
-            <circle cx="90" cy="90" r="44" fill="#130b00"/>
-            <rect x="110" y="28" width="60" height="124" fill="#130b00"/>
-            <circle cx="112" cy="38" r="7" fill="#fbbf24"/>
-            <circle cx="112" cy="142" r="7" fill="#fbbf24"/>
+        <div class="mini-icon" style="width:38px;height:38px;border-radius:8px;">
+          <svg viewBox="0 0 180 180" width="38" height="38" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#0d1018"/>
+            <circle cx="88" cy="92" r="58" fill="#c9a8c0"/>
+            <circle cx="110" cy="80" r="49" fill="#0d1018"/>
           </svg>
         </div>
         <span>40pt</span>
       </div>
       <div class="size-item">
-        <div class="mini-icon" style="width:29px;height:29px;border-radius:6px;">
-          <svg viewBox="0 0 180 180" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
-            <rect width="180" height="180" fill="#130b00"/>
-            <circle cx="90" cy="90" r="62" fill="#fbbf24"/>
-            <circle cx="90" cy="90" r="44" fill="#130b00"/>
-            <rect x="110" y="28" width="60" height="124" fill="#130b00"/>
+        <div class="mini-icon" style="width:28px;height:28px;border-radius:6px;">
+          <svg viewBox="0 0 180 180" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+            <rect width="180" height="180" fill="#0d1018"/>
+            <circle cx="88" cy="92" r="58" fill="#c9a8c0"/>
+            <circle cx="110" cy="80" r="49" fill="#0d1018"/>
           </svg>
         </div>
         <span>29pt</span>
@@ -346,16 +314,19 @@
     </div>
 
     <div class="label">
-      <span class="badge d">Unique</span>
-      <h2>Golden C</h2>
-      <p>The letter C built from a crescent arc — brand mark and moon in one shape. Gold on near-black. Confident and ownable.</p>
+      <div class="swatch-row">
+        <div class="swatch" style="background:#0d1018; border:1px solid #333;"></div>
+        <div class="swatch" style="background:#c9a8c0;"></div>
+      </div>
+      <h2>Mauve &amp; Slate</h2>
+      <p>Muted rose-mauve on dark blue-slate. The most professional of the four — sits between rose and lavender without being either.</p>
     </div>
   </div>
 
 </div>
 
 <footer>
-  <p>Celeste App — Icon Concepts v2 · The Girl Club / Nexwork · 2025</p>
+  <p>Celeste · Luna — Colour directions v3 · The Girl Club / Nexwork · 2025</p>
 </footer>
 
 </body>
