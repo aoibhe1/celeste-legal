@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Celeste — Logo Font Exploration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Serif+Display:ital@0;1&family=Cinzel:wght@400;500;600&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Pinyon+Script&family=Alex+Brush&family=Sacramento&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;1,200;1,300&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Poiret+One&family=Italiana&family=Spectral:ital,wght@0,300;0,400;1,300;1,400&family=Gwendolyn:wght@400;700&family=Luxurious+Script&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --rose:       #E91E63;
+    --coral:      #FF7043;
+    --soft-rose:  #F06292;
+    --warm-white: #FFF5F0;
+    --petal:      #FFF0F4;
+    --ink:        #2D1A1F;
+    --slate:      #6B4B52;
+    --mist:       #F0EAEA;
+  }
+
+  body {
+    background: #FAFAFA;
+    color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.5;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--warm-white);
+    padding: 64px 48px 48px;
+    border-bottom: 1px solid var(--mist);
+  }
+  .header-tag {
+    font-size: 10px; font-weight: 600; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--rose); margin-bottom: 10px;
+  }
+  .header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px; font-weight: 300;
+    color: var(--ink); margin-bottom: 8px;
+  }
+  .header-sub {
+    font-size: 13px; color: var(--slate); max-width: 520px; line-height: 1.7;
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-divider {
+    padding: 40px 48px 20px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .section-divider-line { flex: 1; height: 1px; background: var(--mist); }
+  .section-divider-label {
+    font-size: 10px; font-weight: 600; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--slate); white-space: nowrap;
+  }
+
+  /* ── FONT CARD ── */
+  .cards-wrap { padding: 0 48px 8px; display: flex; flex-direction: column; gap: 2px; }
+
+  .font-card {
+    background: white;
+    border-radius: 20px;
+    border: 1px solid var(--mist);
+    padding: 48px 52px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 16px;
+    transition: box-shadow 0.2s;
+  }
+  .font-card:hover { box-shadow: 0 8px 40px rgba(233,30,99,0.08); }
+  .font-card.warm { background: var(--warm-white); }
+  .font-card.petal { background: var(--petal); }
+
+  .font-main { }
+  .font-wordmark-lg {
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .font-lockup {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 18px;
+  }
+  .font-sizes {
+    display: flex; align-items: baseline; gap: 24px; flex-wrap: wrap;
+    border-top: 1px solid var(--mist); padding-top: 16px; margin-top: 4px;
+  }
+  .font-size-item { display: flex; flex-direction: column; gap: 2px; }
+  .font-size-sample { color: var(--ink); line-height: 1.1; }
+  .font-size-label { font-size: 9px; color: #bbb; letter-spacing: 1px; text-transform: uppercase; margin-top: 3px; }
+
+  .font-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; min-width: 180px; }
+  .font-name-tag {
+    font-size: 11px; font-weight: 600; color: var(--slate);
+    letter-spacing: 0.5px; text-align: right;
+  }
+  .font-vibe {
+    display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
+  }
+  .vibe-tag {
+    font-size: 10px; padding: 3px 10px;
+    border-radius: 100px; letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+  .vibe-rose { background: rgba(233,30,99,0.08); color: var(--rose); }
+  .vibe-coral { background: rgba(255,112,67,0.08); color: var(--coral); }
+  .vibe-slate { background: rgba(107,75,82,0.08); color: var(--slate); }
+  .vibe-ink { background: rgba(45,26,31,0.06); color: var(--ink); }
+
+  .ref-badge {
+    font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; padding: 4px 10px;
+    background: var(--rose); color: white; border-radius: 100px;
+  }
+
+  /* ── ICON SVG inline ── */
+  .icon-sm { border-radius: 22%; flex-shrink: 0; }
+
+  /* ── COMPARISON STRIP ── */
+  .comparison {
+    margin: 40px 48px 0;
+    background: var(--ink);
+    border-radius: 20px;
+    padding: 48px 52px;
+  }
+  .comparison-label {
+    font-size: 10px; font-weight: 600; letter-spacing: 3px;
+    text-transform: uppercase; color: rgba(255,255,255,0.3);
+    margin-bottom: 40px;
+  }
+  .comp-row {
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .comp-item {
+    display: flex; align-items: center;
+    padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .comp-item:last-child { border-bottom: none; }
+  .comp-word {
+    flex: 1; font-size: 36px; line-height: 1;
+    color: white;
+  }
+  .comp-font-id {
+    font-size: 10px; color: rgba(255,255,255,0.25);
+    letter-spacing: 1px; text-transform: uppercase; min-width: 200px; text-align: right;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center; padding: 64px 48px;
+    font-size: 11px; color: var(--slate); letter-spacing: 1px;
+    border-top: 1px solid var(--mist); margin-top: 48px;
+    background: var(--warm-white);
+  }
+
+  @media (max-width: 700px) {
+    .font-card { grid-template-columns: 1fr; padding: 32px 24px; }
+    .header, .section-divider, .cards-wrap, .comparison { padding-left: 24px; padding-right: 24px; }
+    .font-meta { align-items: flex-start; }
+    .vibe-tag { }
+    .comparison { margin: 24px 24px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <p class="header-tag">Celeste · Logo Font Exploration</p>
+  <h1 class="header-title">Wordmark Typography</h1>
+  <p class="header-sub">Each option is shown with the Aurora Star icon, at multiple weights, and in context. Fonts are grouped by personality — Serif, Script, and Sans / Display.</p>
+</div>
+
+<!-- helper SVG macro — reused per card via inline repetition -->
+
+<!-- ═══════════════════════ SERIF ═══════════════════════ -->
+<div class="section-divider">
+  <div class="section-divider-line"></div>
+  <span class="section-divider-label">01 · Serif — Editorial &amp; Refined</span>
+  <div class="section-divider-line"></div>
+</div>
+
+<div class="cards-wrap">
+
+  <!-- CORMORANT GARAMOND — current reference -->
+  <div class="font-card warm">
+    <div class="font-main">
+      <div class="font-wordmark-lg" style="font-family:'Cormorant Garamond',serif;font-size:80px;font-weight:300;letter-spacing:8px;text-transform:uppercase">Celeste</div>
+      <div class="font-lockup">
+        <svg viewBox="0 0 1024 1024" width="36" height="36" class="icon-sm" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g-cg" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-cg)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-cg)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-cg)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-cg)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#g-cg)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;letter-spacing:6px;text-transform:uppercase;color:var(--ink)">Celeste</span>
+      </div>
+      <div class="font-sizes">
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;letter-spacing:5px;text-transform:uppercase">Celeste</span><span class="font-size-label">Light · 300</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;letter-spacing:5px;text-transform:uppercase">Celeste</span><span class="font-size-label">Regular · 400</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:500;letter-spacing:3px;text-transform:uppercase">Celeste</span><span class="font-size-label">Medium · 500</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Cormorant Garamond',serif;font-size:28px;font-style:italic;font-weight:300;letter-spacing:3px">Celeste</span><span class="font-size-label">Light Italic</span></div>
+      </div>
+    </div>
+    <div class="font-meta">
+      <span class="ref-badge">Current Ref</span>
+      <span class="font-name-tag">Cormorant Garamond</span>
+      <div class="font-vibe">
+        <span class="vibe-rose">Elegant</span>
+        <span class="vibe-rose">Literary</span>
+        <span class="vibe-coral">Celestial</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLAYFAIR DISPLAY -->
+  <div class="font-card">
+    <div class="font-main">
+      <div class="font-wordmark-lg" style="font-family:'Playfair Display',serif;font-size:72px;font-weight:400">Celeste</div>
+      <div class="font-lockup">
+        <svg viewBox="0 0 1024 1024" width="36" height="36" class="icon-sm" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g-pd" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-pd)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-pd)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-pd)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-pd)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#g-pd)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+        <span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--ink)">Celeste</span>
+      </div>
+      <div class="font-sizes">
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Playfair Display',serif;font-size:28px;font-weight:400">Celeste</span><span class="font-size-label">Regular · 400</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Playfair Display',serif;font-size:28px;font-weight:500">Celeste</span><span class="font-size-label">Medium · 500</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700">Celeste</span><span class="font-size-label">Bold · 700</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Playfair Display',serif;font-size:28px;font-style:italic;font-weight:400">Celeste</span><span class="font-size-label">Italic</span></div>
+      </div>
+    </div>
+    <div class="font-meta">
+      <span class="font-name-tag">Playfair Display</span>
+      <div class="font-vibe">
+        <span class="vibe-ink">Editorial</span>
+        <span class="vibe-rose">High contrast</span>
+        <span class="vibe-slate">Magazine</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CINZEL -->
+  <div class="font-card petal">
+    <div class="font-main">
+      <div class="font-wordmark-lg" style="font-family:'Cinzel',serif;font-size:60px;font-weight:400;letter-spacing:12px">CELESTE</div>
+      <div class="font-lockup">
+        <svg viewBox="0 0 1024 1024" width="36" height="36" class="icon-sm" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g-cz" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-cz)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-cz)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-cz)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-cz)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#g-cz)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+        <span style="font-family:'Cinzel',serif;font-size:20px;font-weight:400;letter-spacing:8px;color:var(--ink)">CELESTE</span>
+      </div>
+      <div class="font-sizes">
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Cinzel',serif;font-size:22px;font-weight:400;letter-spacing:6px">CELESTE</span><span class="font-size-label">Regular · 400</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Cinzel',serif;font-size:22px;font-weight:500;letter-spacing:6px">CELESTE</span><span class="font-size-label">Medium · 500</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Cinzel',serif;font-size:22px;font-weight:600;letter-spacing:4px">CELESTE</span><span class="font-size-label">SemiBold · 600</span></div>
+      </div>
+    </div>
+    <div class="font-meta">
+      <span class="font-name-tag">Cinzel</span>
+      <div class="font-vibe">
+        <span class="vibe-coral">Roman / Cosmic</span>
+        <span class="vibe-ink">Monumental</span>
+        <span class="vibe-rose">Celestial</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DM SERIF DISPLAY -->
+  <div class="font-card">
+    <div class="font-main">
+      <div class="font-wordmark-lg" style="font-family:'DM Serif Display',serif;font-size:76px;font-weight:400">Celeste</div>
+      <div class="font-lockup">
+        <svg viewBox="0 0 1024 1024" width="36" height="36" class="icon-sm" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g-dm" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-dm)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-dm)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-dm)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-dm)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#g-dm)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+        <span style="font-family:'DM Serif Display',serif;font-size:22px;font-weight:400;color:var(--ink)">Celeste</span>
+      </div>
+      <div class="font-sizes">
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'DM Serif Display',serif;font-size:28px;font-weight:400">Celeste</span><span class="font-size-label">Regular</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'DM Serif Display',serif;font-size:28px;font-style:italic">Celeste</span><span class="font-size-label">Italic</span></div>
+      </div>
+    </div>
+    <div class="font-meta">
+      <span class="font-name-tag">DM Serif Display</span>
+      <div class="font-vibe">
+        <span class="vibe-slate">Modern editorial</span>
+        <span class="vibe-rose">Bold serifs</span>
+        <span class="vibe-ink">Contemporary</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EB GARAMOND -->
+  <div class="font-card warm">
+    <div class="font-main">
+      <div class="font-wordmark-lg" style="font-family:'EB Garamond',serif;font-size:80px;font-weight:400;letter-spacing:4px">Celeste</div>
+      <div class="font-lockup">
+        <svg viewBox="0 0 1024 1024" width="36" height="36" class="icon-sm" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g-eb" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-eb)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-eb)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-eb)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-eb)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#g-eb)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+        <span style="font-family:'EB Garamond',serif;font-size:22px;font-weight:400;letter-spacing:3px;color:var(--ink)">Celeste</span>
+      </div>
+      <div class="font-sizes">
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'EB Garamond',serif;font-size:28px;font-weight:400;letter-spacing:3px">Celeste</span><span class="font-size-label">Regular</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'EB Garamond',serif;font-size:28px;font-weight:500;letter-spacing:3px">Celeste</span><span class="font-size-label">Medium · 500</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'EB Garamond',serif;font-size:28px;font-style:italic;font-weight:400;letter-spacing:2px">Celeste</span><span class="font-size-label">Italic</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'EB Garamond',serif;font-size:28px;font-style:italic;font-weight:500;letter-spacing:2px">Celeste</span><span class="font-size-label">Medium Italic</span></div>
+      </div>
+    </div>
+    <div class="font-meta">
+      <span class="font-name-tag">EB Garamond</span>
+      <div class="font-vibe">
+        <span class="vibe-slate">Classical</span>
+        <span class="vibe-rose">Warm</span>
+        <span class="vibe-ink">Humanist</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHILOSOPHER -->
+  <div class="font-card">
+    <div class="font-main">
+      <div class="font-wordmark-lg" style="font-family:'Philosopher',serif;font-size:72px;font-weight:400;letter-spacing:3px">Celeste</div>
+      <div class="font-lockup">
+        <svg viewBox="0 0 1024 1024" width="36" height="36" class="icon-sm" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g-ph" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-ph)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-ph)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-ph)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-ph)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#g-ph)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+        <span style="font-family:'Philosopher',serif;font-size:22px;font-weight:400;letter-spacing:2px;color:var(--ink)">Celeste</span>
+      </div>
+      <div class="font-sizes">
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Philosopher',serif;font-size:28px;font-weight:400">Celeste</span><span class="font-size-label">Regular</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Philosopher',serif;font-size:28px;font-weight:700">Celeste</span><span class="font-size-label">Bold · 700</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Philosopher',serif;font-size:28px;font-style:italic;font-weight:400">Celeste</span><span class="font-size-label">Italic</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Philosopher',serif;font-size:28px;font-style:italic;font-weight:700">Celeste</span><span class="font-size-label">Bold Italic</span></div>
+      </div>
+    </div>
+    <div class="font-meta">
+      <span class="font-name-tag">Philosopher</span>
+      <div class="font-vibe">
+        <span class="vibe-slate">Thoughtful</span>
+        <span class="vibe-rose">Soulful</span>
+        <span class="vibe-coral">Grounded</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ITALIANA -->
+  <div class="font-card petal">
+    <div class="font-main">
+      <div class="font-wordmark-lg" style="font-family:'Italiana',serif;font-size:80px;font-weight:400;letter-spacing:6px">Celeste</div>
+      <div class="font-lockup">
+        <svg viewBox="0 0 1024 1024" width="36" height="36" class="icon-sm" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g-it" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-it)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-it)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-it)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-it)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#g-it)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+        <span style="font-family:'Italiana',serif;font-size:22px;font-weight:400;letter-spacing:4px;color:var(--ink)">Celeste</span>
+      </div>
+      <div class="font-sizes">
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Italiana',serif;font-size:28px;font-weight:400;letter-spacing:4px">Celeste</span><span class="font-size-label">Regular</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Italiana',serif;font-size:28px;font-weight:400;letter-spacing:8px">Celeste</span><span class="font-size-label">Wide spacing</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Italiana',serif;font-size:22px;font-weight:400;letter-spacing:10px;text-transform:uppercase">CELESTE</span><span class="font-size-label">All caps · wide</span></div>
+      </div>
+    </div>
+    <div class="font-meta">
+      <span class="font-name-tag">Italiana</span>
+      <div class="font-vibe">
+        <span class="vibe-rose">Fashion</span>
+        <span class="vibe-coral">Condensed</span>
+        <span class="vibe-slate">Luxe</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /cards-wrap serif -->
+
+
+<!-- ═══════════════════════ SCRIPT ═══════════════════════ -->
+<div class="section-divider">
+  <div class="section-divider-line"></div>
+  <span class="section-divider-label">02 · Script — Flowing &amp; Personal</span>
+  <div class="section-divider-line"></div>
+</div>
+
+<div class="cards-wrap">
+
+  <!-- GREAT VIBES -->
+  <div class="font-card warm">
+    <div class="font-main">
+      <div class="font-wordmark-lg" style="font-family:'Great Vibes',cursive;font-size:96px;font-weight:400">Celeste</div>
+      <div class="font-lockup">
+        <svg viewBox="0 0 1024 1024" width="36" height="36" class="icon-sm" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g-gv" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-gv)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-gv)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-gv)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-gv)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#g-gv)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+        <span style="font-family:'Great Vibes',cursive;font-size:36px;color:var(--ink)">Celeste</span>
+      </div>
+      <div class="font-sizes">
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Great Vibes',cursive;font-size:40px">Celeste</span><span class="font-size-label">40px</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Great Vibes',cursive;font-size:28px">Celeste</span><span class="font-size-label">28px</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Great Vibes',cursive;font-size:20px">Celeste</span><span class="font-size-label">20px</span></div>
+      </div>
+    </div>
+    <div class="font-meta">
+      <span class="font-name-tag">Great Vibes</span>
+      <div class="font-vibe">
+        <span class="vibe-rose">Romantic</span>
+        <span class="vibe-coral">Flowing</span>
+        <span class="vibe-slate">Calligraphic</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PINYON SCRIPT -->
+  <div class="font-card">
+    <div class="font-main">
+      <div class="font-wordmark-lg" style="font-family:'Pinyon Script',cursive;font-size:100px;font-weight:400">Celeste</div>
+      <div class="font-lockup">
+        <svg viewBox="0 0 1024 1024" width="36" height="36" class="icon-sm" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g-ps" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-ps)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-ps)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-ps)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-ps)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#g-ps)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+        <span style="font-family:'Pinyon Script',cursive;font-size:38px;color:var(--ink)">Celeste</span>
+      </div>
+      <div class="font-sizes">
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Pinyon Script',cursive;font-size:44px">Celeste</span><span class="font-size-label">44px</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Pinyon Script',cursive;font-size:30px">Celeste</span><span class="font-size-label">30px</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Pinyon Script',cursive;font-size:22px">Celeste</span><span class="font-size-label">22px</span></div>
+      </div>
+    </div>
+    <div class="font-meta">
+      <span class="font-name-tag">Pinyon Script</span>
+      <div class="font-vibe">
+        <span class="vibe-rose">Refined</span>
+        <span class="vibe-ink">Ink-drawn</span>
+        <span class="vibe-slate">Intimate</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- GWENDOLYN -->
+  <div class="font-card petal">
+    <div class="font-main">
+      <div class="font-wordmark-lg" style="font-family:'Gwendolyn',cursive;font-size:100px;font-weight:400">Celeste</div>
+      <div class="font-lockup">
+        <svg viewBox="0 0 1024 1024" width="36" height="36" class="icon-sm" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g-gw" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-gw)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-gw)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-gw)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-gw)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#g-gw)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+        <span style="font-family:'Gwendolyn',cursive;font-size:38px;color:var(--ink)">Celeste</span>
+      </div>
+      <div class="font-sizes">
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Gwendolyn',cursive;font-size:44px;font-weight:400">Celeste</span><span class="font-size-label">Regular</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Gwendolyn',cursive;font-size:44px;font-weight:700">Celeste</span><span class="font-size-label">Bold</span></div>
+      </div>
+    </div>
+    <div class="font-meta">
+      <span class="font-name-tag">Gwendolyn</span>
+      <div class="font-vibe">
+        <span class="vibe-rose">Feminine</span>
+        <span class="vibe-coral">Spirited</span>
+        <span class="vibe-slate">Modern script</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LUXURIOUS SCRIPT -->
+  <div class="font-card warm">
+    <div class="font-main">
+      <div class="font-wordmark-lg" style="font-family:'Luxurious Script',cursive;font-size:100px;font-weight:400">Celeste</div>
+      <div class="font-lockup">
+        <svg viewBox="0 0 1024 1024" width="36" height="36" class="icon-sm" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g-ls" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-ls)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-ls)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-ls)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-ls)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#g-ls)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+        <span style="font-family:'Luxurious Script',cursive;font-size:38px;color:var(--ink)">Celeste</span>
+      </div>
+      <div class="font-sizes">
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Luxurious Script',cursive;font-size:44px">Celeste</span><span class="font-size-label">44px</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Luxurious Script',cursive;font-size:30px">Celeste</span><span class="font-size-label">30px</span></div>
+      </div>
+    </div>
+    <div class="font-meta">
+      <span class="font-name-tag">Luxurious Script</span>
+      <div class="font-vibe">
+        <span class="vibe-rose">Elegant</span>
+        <span class="vibe-ink">Upscale</span>
+        <span class="vibe-slate">Ceremonial</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /cards-wrap script -->
+
+
+<!-- ═══════════════════════ SANS / DISPLAY ═══════════════════════ -->
+<div class="section-divider">
+  <div class="section-divider-line"></div>
+  <span class="section-divider-label">03 · Sans &amp; Display — Modern &amp; Geometric</span>
+  <div class="section-divider-line"></div>
+</div>
+
+<div class="cards-wrap">
+
+  <!-- RALEWAY -->
+  <div class="font-card">
+    <div class="font-main">
+      <div class="font-wordmark-lg" style="font-family:'Raleway',sans-serif;font-size:72px;font-weight:100;letter-spacing:14px;text-transform:uppercase">Celeste</div>
+      <div class="font-lockup">
+        <svg viewBox="0 0 1024 1024" width="36" height="36" class="icon-sm" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g-rw" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-rw)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-rw)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-rw)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-rw)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#g-rw)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+        <span style="font-family:'Raleway',sans-serif;font-size:18px;font-weight:200;letter-spacing:8px;text-transform:uppercase;color:var(--ink)">Celeste</span>
+      </div>
+      <div class="font-sizes">
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Raleway',sans-serif;font-size:24px;font-weight:100;letter-spacing:8px;text-transform:uppercase">CELESTE</span><span class="font-size-label">Thin · 100</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Raleway',sans-serif;font-size:24px;font-weight:200;letter-spacing:6px;text-transform:uppercase">CELESTE</span><span class="font-size-label">ExtraLight · 200</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Raleway',sans-serif;font-size:24px;font-weight:300;letter-spacing:5px;text-transform:uppercase">CELESTE</span><span class="font-size-label">Light · 300</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Raleway',sans-serif;font-size:24px;font-style:italic;font-weight:200;letter-spacing:5px;text-transform:uppercase">CELESTE</span><span class="font-size-label">ExtraLight Italic</span></div>
+      </div>
+    </div>
+    <div class="font-meta">
+      <span class="font-name-tag">Raleway</span>
+      <div class="font-vibe">
+        <span class="vibe-ink">Geometric</span>
+        <span class="vibe-rose">Airy</span>
+        <span class="vibe-coral">Fashion-forward</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- JOSEFIN SANS -->
+  <div class="font-card warm">
+    <div class="font-main">
+      <div class="font-wordmark-lg" style="font-family:'Josefin Sans',sans-serif;font-size:64px;font-weight:100;letter-spacing:18px;text-transform:uppercase">Celeste</div>
+      <div class="font-lockup">
+        <svg viewBox="0 0 1024 1024" width="36" height="36" class="icon-sm" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g-js" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-js)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-js)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-js)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-js)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#g-js)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+        <span style="font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:200;letter-spacing:10px;text-transform:uppercase;color:var(--ink)">Celeste</span>
+      </div>
+      <div class="font-sizes">
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:100;letter-spacing:8px;text-transform:uppercase">CELESTE</span><span class="font-size-label">Thin · 100</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:200;letter-spacing:6px;text-transform:uppercase">CELESTE</span><span class="font-size-label">ExtraLight · 200</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:300;letter-spacing:5px;text-transform:uppercase">CELESTE</span><span class="font-size-label">Light · 300</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Josefin Sans',sans-serif;font-size:22px;font-style:italic;font-weight:100;letter-spacing:6px;text-transform:uppercase">CELESTE</span><span class="font-size-label">Thin Italic</span></div>
+      </div>
+    </div>
+    <div class="font-meta">
+      <span class="font-name-tag">Josefin Sans</span>
+      <div class="font-vibe">
+        <span class="vibe-slate">Vintage geometric</span>
+        <span class="vibe-rose">Structured</span>
+        <span class="vibe-ink">1920s feel</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- POIRET ONE -->
+  <div class="font-card petal">
+    <div class="font-main">
+      <div class="font-wordmark-lg" style="font-family:'Poiret One',cursive;font-size:72px;font-weight:400;letter-spacing:10px">Celeste</div>
+      <div class="font-lockup">
+        <svg viewBox="0 0 1024 1024" width="36" height="36" class="icon-sm" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g-po" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-po)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-po)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-po)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-po)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#g-po)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+        <span style="font-family:'Poiret One',cursive;font-size:22px;font-weight:400;letter-spacing:6px;color:var(--ink)">Celeste</span>
+      </div>
+      <div class="font-sizes">
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Poiret One',cursive;font-size:28px;letter-spacing:6px">Celeste</span><span class="font-size-label">Regular</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Poiret One',cursive;font-size:28px;letter-spacing:12px;text-transform:uppercase">CELESTE</span><span class="font-size-label">All caps · wide</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Poiret One',cursive;font-size:22px;letter-spacing:4px">Celeste</span><span class="font-size-label">22px</span></div>
+      </div>
+    </div>
+    <div class="font-meta">
+      <span class="font-name-tag">Poiret One</span>
+      <div class="font-vibe">
+        <span class="vibe-coral">Art Deco</span>
+        <span class="vibe-rose">Decorative</span>
+        <span class="vibe-slate">Distinctive</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPECTRAL -->
+  <div class="font-card">
+    <div class="font-main">
+      <div class="font-wordmark-lg" style="font-family:'Spectral',serif;font-size:76px;font-weight:300;letter-spacing:4px">Celeste</div>
+      <div class="font-lockup">
+        <svg viewBox="0 0 1024 1024" width="36" height="36" class="icon-sm" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g-sp" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-sp)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-sp)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-sp)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#g-sp)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#g-sp)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+        <span style="font-family:'Spectral',serif;font-size:22px;font-weight:300;letter-spacing:3px;color:var(--ink)">Celeste</span>
+      </div>
+      <div class="font-sizes">
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Spectral',serif;font-size:28px;font-weight:300;letter-spacing:3px">Celeste</span><span class="font-size-label">Light · 300</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Spectral',serif;font-size:28px;font-weight:400;letter-spacing:2px">Celeste</span><span class="font-size-label">Regular · 400</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Spectral',serif;font-size:28px;font-style:italic;font-weight:300;letter-spacing:2px">Celeste</span><span class="font-size-label">Light Italic</span></div>
+        <div class="font-size-item"><span class="font-size-sample" style="font-family:'Spectral',serif;font-size:28px;font-style:italic;font-weight:400;letter-spacing:2px">Celeste</span><span class="font-size-label">Italic</span></div>
+      </div>
+    </div>
+    <div class="font-meta">
+      <span class="font-name-tag">Spectral</span>
+      <div class="font-vibe">
+        <span class="vibe-ink">Screen-optimised</span>
+        <span class="vibe-rose">Warm serif</span>
+        <span class="vibe-slate">Readable</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /cards-wrap sans -->
+
+
+<!-- ═══════════════════════ COMPARISON STRIP ═══════════════════════ -->
+<div class="comparison">
+  <p class="comparison-label">All fonts at the same size — 36px</p>
+  <div class="comp-row">
+    <div class="comp-item"><span class="comp-word" style="font-family:'Cormorant Garamond',serif;font-weight:300;letter-spacing:6px;text-transform:uppercase">Celeste</span><span class="comp-font-id">Cormorant Garamond · Light</span></div>
+    <div class="comp-item"><span class="comp-word" style="font-family:'Playfair Display',serif;font-weight:400">Celeste</span><span class="comp-font-id">Playfair Display · Regular</span></div>
+    <div class="comp-item"><span class="comp-word" style="font-family:'Cinzel',serif;font-weight:400;letter-spacing:8px">CELESTE</span><span class="comp-font-id">Cinzel · Regular</span></div>
+    <div class="comp-item"><span class="comp-word" style="font-family:'DM Serif Display',serif;font-weight:400">Celeste</span><span class="comp-font-id">DM Serif Display · Regular</span></div>
+    <div class="comp-item"><span class="comp-word" style="font-family:'EB Garamond',serif;font-weight:400;letter-spacing:3px">Celeste</span><span class="comp-font-id">EB Garamond · Regular</span></div>
+    <div class="comp-item"><span class="comp-word" style="font-family:'Philosopher',serif;font-weight:400">Celeste</span><span class="comp-font-id">Philosopher · Regular</span></div>
+    <div class="comp-item"><span class="comp-word" style="font-family:'Italiana',serif;font-weight:400;letter-spacing:4px">Celeste</span><span class="comp-font-id">Italiana · Regular</span></div>
+    <div class="comp-item"><span class="comp-word" style="font-family:'Spectral',serif;font-weight:300;letter-spacing:3px">Celeste</span><span class="comp-font-id">Spectral · Light</span></div>
+    <div class="comp-item"><span class="comp-word" style="font-family:'Great Vibes',cursive;font-size:52px">Celeste</span><span class="comp-font-id">Great Vibes</span></div>
+    <div class="comp-item"><span class="comp-word" style="font-family:'Pinyon Script',cursive;font-size:52px">Celeste</span><span class="comp-font-id">Pinyon Script</span></div>
+    <div class="comp-item"><span class="comp-word" style="font-family:'Gwendolyn',cursive;font-size:52px">Celeste</span><span class="comp-font-id">Gwendolyn</span></div>
+    <div class="comp-item"><span class="comp-word" style="font-family:'Luxurious Script',cursive;font-size:52px">Celeste</span><span class="comp-font-id">Luxurious Script</span></div>
+    <div class="comp-item"><span class="comp-word" style="font-family:'Raleway',sans-serif;font-weight:100;letter-spacing:10px;text-transform:uppercase">CELESTE</span><span class="comp-font-id">Raleway · Thin</span></div>
+    <div class="comp-item"><span class="comp-word" style="font-family:'Josefin Sans',sans-serif;font-weight:100;letter-spacing:12px;text-transform:uppercase">CELESTE</span><span class="comp-font-id">Josefin Sans · Thin</span></div>
+    <div class="comp-item"><span class="comp-word" style="font-family:'Poiret One',cursive;letter-spacing:6px">Celeste</span><span class="comp-font-id">Poiret One</span></div>
+  </div>
+</div>
+
+
+<footer>
+  Celeste · Logo Font Exploration · The Girl Club / Nexwork · 2026
+</footer>
+
+</body>
+</html>
