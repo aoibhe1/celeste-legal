@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Celeste — Icon Iterations · Light</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'DM Sans',-apple-system,sans-serif;
+  background:#F8F5F0;
+  color:#1a1612;
+  padding:60px 24px 100px;
+  -webkit-font-smoothing:antialiased;
+}
+
+header{text-align:center;margin-bottom:72px}
+.eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#7eb8d4;margin-bottom:14px}
+h1{font-size:2.2rem;font-weight:700;margin-bottom:8px;color:#1a1612}
+.subtitle{color:#a09890;font-size:0.86rem}
+
+/* nav back */
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#a09890;text-decoration:none;margin-bottom:48px;letter-spacing:0.5px}
+.back:hover{color:#7eb8d4}
+
+/* section */
+.section{max-width:760px;margin:0 auto 80px}
+.section-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c0b8b0;text-align:center;margin-bottom:32px}
+
+/* variant card */
+.variant-card{
+  background:#fff;
+  border-radius:24px;
+  padding:40px 36px 32px;
+  margin-bottom:24px;
+  border:1px solid rgba(0,0,0,0.06);
+  box-shadow:0 2px 20px rgba(0,0,0,0.04);
+}
+.variant-title{font-size:13px;font-weight:600;color:#1a1612;margin-bottom:4px}
+.variant-desc{font-size:12px;color:#a09890;margin-bottom:28px}
+
+/* hero icon row */
+.hero-row{display:flex;align-items:center;gap:40px;flex-wrap:wrap;justify-content:center}
+.big-icon{
+  width:200px;height:200px;
+  border-radius:45px;overflow:hidden;flex-shrink:0;
+  box-shadow:0 16px 60px rgba(0,0,0,0.12),0 2px 8px rgba(0,0,0,0.06);
+}
+.big-icon svg{width:100%;height:100%;display:block}
+
+/* sizes */
+.sizes{display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap}
+.sz-item{display:flex;flex-direction:column;align-items:center;gap:6px}
+.sz-item span{font-size:9px;color:#c0b8b0;letter-spacing:0.5px}
+.sz-box{overflow:hidden}
+.sz-box svg{display:block}
+
+/* colour chips */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.chip{display:flex;align-items:center;gap:7px;background:#F8F5F0;border-radius:8px;padding:6px 12px;border:1px solid rgba(0,0,0,0.06)}
+.chip-dot{width:14px;height:14px;border-radius:4px;border:1px solid rgba(0,0,0,0.08)}
+.chip-label{font-size:11px;font-weight:500;color:#6a6460;font-family:monospace}
+
+/* homescreen mockup — light phone */
+.phone-wrap{margin-top:32px}
+.hs-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#c0b8b0;text-align:center;margin-bottom:12px}
+.phone{
+  background:#e8e4e0;
+  border-radius:20px;
+  padding:20px 16px 18px;
+  border:1px solid rgba(0,0,0,0.06);
+  max-width:400px;
+  margin:0 auto;
+}
+.app-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:flex-end}
+.app-slot{display:flex;flex-direction:column;align-items:center;gap:5px}
+.app-slot span{font-size:8px;color:#6a6460}
+.app-icon{width:56px;height:56px;border-radius:13px;overflow:hidden}
+.app-icon svg{width:100%;height:100%;display:block}
+.app-icon.featured{box-shadow:0 0 0 2px #7eb8d4,0 6px 18px rgba(126,184,212,0.35)}
+
+/* comparison strip */
+.comparison{
+  max-width:760px;margin:0 auto 80px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;
+}
+.cmp-item{display:flex;flex-direction:column;align-items:center;gap:10px}
+.cmp-icon{width:100px;height:100px;border-radius:22px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+.cmp-icon svg{width:100%;height:100%;display:block}
+.cmp-label{font-size:11px;font-weight:600;color:#6a6460;text-align:center}
+.cmp-hex{font-size:9px;color:#c0b8b0;font-family:monospace;text-align:center}
+
+footer{text-align:center;margin-top:64px;font-size:11px;color:#c0b8b0}
+</style>
+</head>
+<body>
+
+<div style="max-width:760px;margin:0 auto">
+  <a class="back" href="icon-final.html">← Back to final dark</a>
+</div>
+
+<header>
+  <p class="eyebrow">Celeste · Icon Iterations</p>
+  <h1>Light Background Study</h1>
+  <p class="subtitle">Same crescent. Four light foundations. Which feels right?</p>
+</header>
+
+<!-- ── SIDE BY SIDE COMPARISON ──────────────────────────────────── -->
+<div class="section">
+  <p class="section-label">At a glance</p>
+  <div class="comparison">
+
+    <!-- Original dark (reference) -->
+    <div class="cmp-item">
+      <div class="cmp-icon" style="box-shadow:0 4px 20px rgba(0,0,0,0.25)">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#060c14"/>
+          <circle cx="512" cy="512" r="320" fill="#7eb8d4"/>
+          <circle cx="648" cy="444" r="272" fill="#060c14"/>
+          <circle cx="758" cy="270" r="26" fill="#7eb8d4"/>
+          <circle cx="858" cy="406" r="16" fill="#7eb8d4" opacity="0.55"/>
+          <circle cx="808" cy="178" r="13" fill="#7eb8d4" opacity="0.32"/>
+        </svg>
+      </div>
+      <div class="cmp-label">Original Dark</div>
+      <div class="cmp-hex">#060c14</div>
+    </div>
+
+    <!-- A: Warm Cream -->
+    <div class="cmp-item">
+      <div class="cmp-icon">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#F5EFE6"/>
+          <circle cx="512" cy="512" r="320" fill="#7eb8d4"/>
+          <circle cx="648" cy="444" r="272" fill="#F5EFE6"/>
+          <circle cx="758" cy="270" r="26" fill="#7eb8d4"/>
+          <circle cx="858" cy="406" r="16" fill="#7eb8d4" opacity="0.5"/>
+          <circle cx="808" cy="178" r="13" fill="#7eb8d4" opacity="0.28"/>
+        </svg>
+      </div>
+      <div class="cmp-label">Warm Cream</div>
+      <div class="cmp-hex">#F5EFE6</div>
+    </div>
+
+    <!-- B: Soft Cloud -->
+    <div class="cmp-item">
+      <div class="cmp-icon">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#EEF4F8"/>
+          <circle cx="512" cy="512" r="320" fill="#4A8DB0"/>
+          <circle cx="648" cy="444" r="272" fill="#EEF4F8"/>
+          <circle cx="758" cy="270" r="26" fill="#4A8DB0"/>
+          <circle cx="858" cy="406" r="16" fill="#4A8DB0" opacity="0.5"/>
+          <circle cx="808" cy="178" r="13" fill="#4A8DB0" opacity="0.28"/>
+        </svg>
+      </div>
+      <div class="cmp-label">Soft Cloud</div>
+      <div class="cmp-hex">#EEF4F8</div>
+    </div>
+
+    <!-- C: Lavender Mist -->
+    <div class="cmp-item">
+      <div class="cmp-icon">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#EDE8F5"/>
+          <circle cx="512" cy="512" r="320" fill="#7eb8d4"/>
+          <circle cx="648" cy="444" r="272" fill="#EDE8F5"/>
+          <circle cx="758" cy="270" r="26" fill="#7eb8d4"/>
+          <circle cx="858" cy="406" r="16" fill="#7eb8d4" opacity="0.5"/>
+          <circle cx="808" cy="178" r="13" fill="#7eb8d4" opacity="0.28"/>
+        </svg>
+      </div>
+      <div class="cmp-label">Lavender Mist</div>
+      <div class="cmp-hex">#EDE8F5</div>
+    </div>
+
+    <!-- D: Pure White -->
+    <div class="cmp-item">
+      <div class="cmp-icon">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#FFFFFF"/>
+          <circle cx="512" cy="512" r="320" fill="#5B9AB8"/>
+          <circle cx="648" cy="444" r="272" fill="#FFFFFF"/>
+          <circle cx="758" cy="270" r="26" fill="#5B9AB8"/>
+          <circle cx="858" cy="406" r="16" fill="#5B9AB8" opacity="0.5"/>
+          <circle cx="808" cy="178" r="13" fill="#5B9AB8" opacity="0.28"/>
+        </svg>
+      </div>
+      <div class="cmp-label">Pure White</div>
+      <div class="cmp-hex">#FFFFFF</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- VARIANT A — Warm Cream -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <p class="section-label">Variant A</p>
+  <div class="variant-card">
+    <div class="variant-title">Warm Cream — #F5EFE6</div>
+    <div class="variant-desc">Original celeste blue on a warm, skin-like background. Feels organic, grounded, feminine.</div>
+
+    <div class="hero-row">
+      <!-- Big icon -->
+      <div class="big-icon">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#F5EFE6"/>
+          <circle cx="512" cy="512" r="320" fill="#7eb8d4"/>
+          <circle cx="648" cy="444" r="272" fill="#F5EFE6"/>
+          <circle cx="758" cy="270" r="26" fill="#7eb8d4"/>
+          <circle cx="858" cy="406" r="16" fill="#7eb8d4" opacity="0.5"/>
+          <circle cx="808" cy="178" r="13" fill="#7eb8d4" opacity="0.28"/>
+        </svg>
+      </div>
+
+      <!-- Sizes + chips -->
+      <div>
+        <div class="sizes">
+          <div class="sz-item">
+            <div class="sz-box" style="width:60px;height:60px;border-radius:13px;">
+              <svg viewBox="0 0 1024 1024" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1024" height="1024" fill="#F5EFE6"/>
+                <circle cx="512" cy="512" r="320" fill="#7eb8d4"/>
+                <circle cx="648" cy="444" r="272" fill="#F5EFE6"/>
+                <circle cx="758" cy="270" r="26" fill="#7eb8d4"/>
+              </svg>
+            </div>
+            <span>60pt</span>
+          </div>
+          <div class="sz-item">
+            <div class="sz-box" style="width:40px;height:40px;border-radius:9px;">
+              <svg viewBox="0 0 1024 1024" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1024" height="1024" fill="#F5EFE6"/>
+                <circle cx="512" cy="512" r="320" fill="#7eb8d4"/>
+                <circle cx="648" cy="444" r="272" fill="#F5EFE6"/>
+              </svg>
+            </div>
+            <span>40pt</span>
+          </div>
+          <div class="sz-item">
+            <div class="sz-box" style="width:29px;height:29px;border-radius:6px;">
+              <svg viewBox="0 0 1024 1024" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1024" height="1024" fill="#F5EFE6"/>
+                <circle cx="512" cy="512" r="320" fill="#7eb8d4"/>
+                <circle cx="648" cy="444" r="272" fill="#F5EFE6"/>
+              </svg>
+            </div>
+            <span>29pt</span>
+          </div>
+          <div class="sz-item">
+            <div class="sz-box" style="width:20px;height:20px;border-radius:4px;">
+              <svg viewBox="0 0 1024 1024" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1024" height="1024" fill="#F5EFE6"/>
+                <circle cx="512" cy="512" r="320" fill="#7eb8d4"/>
+                <circle cx="648" cy="444" r="272" fill="#F5EFE6"/>
+              </svg>
+            </div>
+            <span>20pt</span>
+          </div>
+        </div>
+        <div class="chips">
+          <div class="chip"><div class="chip-dot" style="background:#F5EFE6"></div><span class="chip-label">#F5EFE6 bg</span></div>
+          <div class="chip"><div class="chip-dot" style="background:#7eb8d4"></div><span class="chip-label">#7eb8d4 moon</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Light phone mockup -->
+    <div class="phone-wrap">
+      <p class="hs-label">Light homescreen</p>
+      <div class="phone">
+        <div class="app-row">
+          <div class="app-slot">
+            <div class="app-icon">
+              <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="ig-a" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/>
+                </linearGradient></defs>
+                <rect width="60" height="60" fill="url(#ig-a)"/>
+                <rect x="15" y="15" width="30" height="30" rx="8" fill="none" stroke="white" stroke-width="2.5"/>
+                <circle cx="30" cy="30" r="7.5" fill="none" stroke="white" stroke-width="2.5"/>
+                <circle cx="41" cy="19" r="2" fill="white"/>
+              </svg>
+            </div>
+            <span>Instagram</span>
+          </div>
+          <div class="app-slot">
+            <div class="app-icon">
+              <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                <rect width="60" height="60" fill="#1DB954"/>
+                <path d="M18,24 Q30,20 42,24" fill="none" stroke="black" stroke-width="2.8" stroke-linecap="round"/>
+                <path d="M20,30 Q30,27 40,30" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M22,36 Q30,34 38,36" fill="none" stroke="black" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span>Spotify</span>
+          </div>
+          <!-- CELESTE -->
+          <div class="app-slot">
+            <div class="app-icon featured">
+              <svg viewBox="0 0 1024 1024" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1024" height="1024" fill="#F5EFE6"/>
+                <circle cx="512" cy="512" r="320" fill="#7eb8d4"/>
+                <circle cx="648" cy="444" r="272" fill="#F5EFE6"/>
+                <circle cx="758" cy="270" r="26" fill="#7eb8d4"/>
+              </svg>
+            </div>
+            <span style="color:#4A8DB0;font-weight:600">Celeste</span>
+          </div>
+          <div class="app-slot">
+            <div class="app-icon">
+              <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                <rect width="60" height="60" fill="#010101"/>
+                <text x="30" y="42" font-size="32" text-anchor="middle" fill="white" font-family="system-ui" font-weight="900">♪</text>
+              </svg>
+            </div>
+            <span>TikTok</span>
+          </div>
+          <div class="app-slot">
+            <div class="app-icon">
+              <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                <rect width="60" height="60" fill="#0088CC"/>
+                <text x="30" y="40" font-size="26" text-anchor="middle" fill="white" font-family="system-ui" font-weight="700">✈</text>
+              </svg>
+            </div>
+            <span>Telegram</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- VARIANT B — Soft Cloud -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <p class="section-label">Variant B</p>
+  <div class="variant-card">
+    <div class="variant-title">Soft Cloud — #EEF4F8 · Deeper Moon #4A8DB0</div>
+    <div class="variant-desc">Cool blue-white background. Moon deepened slightly so it reads clearly. Crisp, airy, modern.</div>
+
+    <div class="hero-row">
+      <div class="big-icon">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#EEF4F8"/>
+          <circle cx="512" cy="512" r="320" fill="#4A8DB0"/>
+          <circle cx="648" cy="444" r="272" fill="#EEF4F8"/>
+          <circle cx="758" cy="270" r="26" fill="#4A8DB0"/>
+          <circle cx="858" cy="406" r="16" fill="#4A8DB0" opacity="0.5"/>
+          <circle cx="808" cy="178" r="13" fill="#4A8DB0" opacity="0.28"/>
+        </svg>
+      </div>
+      <div>
+        <div class="sizes">
+          <div class="sz-item">
+            <div class="sz-box" style="width:60px;height:60px;border-radius:13px;">
+              <svg viewBox="0 0 1024 1024" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1024" height="1024" fill="#EEF4F8"/>
+                <circle cx="512" cy="512" r="320" fill="#4A8DB0"/>
+                <circle cx="648" cy="444" r="272" fill="#EEF4F8"/>
+                <circle cx="758" cy="270" r="26" fill="#4A8DB0"/>
+              </svg>
+            </div>
+            <span>60pt</span>
+          </div>
+          <div class="sz-item">
+            <div class="sz-box" style="width:40px;height:40px;border-radius:9px;">
+              <svg viewBox="0 0 1024 1024" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1024" height="1024" fill="#EEF4F8"/>
+                <circle cx="512" cy="512" r="320" fill="#4A8DB0"/>
+                <circle cx="648" cy="444" r="272" fill="#EEF4F8"/>
+              </svg>
+            </div>
+            <span>40pt</span>
+          </div>
+          <div class="sz-item">
+            <div class="sz-box" style="width:29px;height:29px;border-radius:6px;">
+              <svg viewBox="0 0 1024 1024" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1024" height="1024" fill="#EEF4F8"/>
+                <circle cx="512" cy="512" r="320" fill="#4A8DB0"/>
+                <circle cx="648" cy="444" r="272" fill="#EEF4F8"/>
+              </svg>
+            </div>
+            <span>29pt</span>
+          </div>
+          <div class="sz-item">
+            <div class="sz-box" style="width:20px;height:20px;border-radius:4px;">
+              <svg viewBox="0 0 1024 1024" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1024" height="1024" fill="#EEF4F8"/>
+                <circle cx="512" cy="512" r="320" fill="#4A8DB0"/>
+                <circle cx="648" cy="444" r="272" fill="#EEF4F8"/>
+              </svg>
+            </div>
+            <span>20pt</span>
+          </div>
+        </div>
+        <div class="chips">
+          <div class="chip"><div class="chip-dot" style="background:#EEF4F8;border:1px solid #cde"></div><span class="chip-label">#EEF4F8 bg</span></div>
+          <div class="chip"><div class="chip-dot" style="background:#4A8DB0"></div><span class="chip-label">#4A8DB0 moon</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-wrap">
+      <p class="hs-label">Light homescreen</p>
+      <div class="phone">
+        <div class="app-row">
+          <div class="app-slot">
+            <div class="app-icon"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig-b" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect width="60" height="60" fill="url(#ig-b)"/><rect x="15" y="15" width="30" height="30" rx="8" fill="none" stroke="white" stroke-width="2.5"/><circle cx="30" cy="30" r="7.5" fill="none" stroke="white" stroke-width="2.5"/><circle cx="41" cy="19" r="2" fill="white"/></svg></div>
+            <span>Instagram</span>
+          </div>
+          <div class="app-slot">
+            <div class="app-icon"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="#1DB954"/><path d="M18,24 Q30,20 42,24" fill="none" stroke="black" stroke-width="2.8" stroke-linecap="round"/><path d="M20,30 Q30,27 40,30" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/><path d="M22,36 Q30,34 38,36" fill="none" stroke="black" stroke-width="2.2" stroke-linecap="round"/></svg></div>
+            <span>Spotify</span>
+          </div>
+          <div class="app-slot">
+            <div class="app-icon featured">
+              <svg viewBox="0 0 1024 1024" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1024" height="1024" fill="#EEF4F8"/>
+                <circle cx="512" cy="512" r="320" fill="#4A8DB0"/>
+                <circle cx="648" cy="444" r="272" fill="#EEF4F8"/>
+                <circle cx="758" cy="270" r="26" fill="#4A8DB0"/>
+              </svg>
+            </div>
+            <span style="color:#4A8DB0;font-weight:600">Celeste</span>
+          </div>
+          <div class="app-slot">
+            <div class="app-icon"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="#010101"/><text x="30" y="42" font-size="32" text-anchor="middle" fill="white" font-family="system-ui" font-weight="900">♪</text></svg></div>
+            <span>TikTok</span>
+          </div>
+          <div class="app-slot">
+            <div class="app-icon"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="#141414"/><text x="30" y="44" font-size="38" text-anchor="middle" fill="#E50914" font-family="Georgia,serif" font-weight="900">N</text></svg></div>
+            <span>Netflix</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- VARIANT C — Lavender Mist -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <p class="section-label">Variant C</p>
+  <div class="variant-card">
+    <div class="variant-title">Lavender Mist — #EDE8F5 · Original celeste moon</div>
+    <div class="variant-desc">Soft purple-white ground. Keeps the original #7eb8d4 moon — warm meets cool. Feels mystical and approachable.</div>
+
+    <div class="hero-row">
+      <div class="big-icon">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#EDE8F5"/>
+          <circle cx="512" cy="512" r="320" fill="#7eb8d4"/>
+          <circle cx="648" cy="444" r="272" fill="#EDE8F5"/>
+          <circle cx="758" cy="270" r="26" fill="#7eb8d4"/>
+          <circle cx="858" cy="406" r="16" fill="#7eb8d4" opacity="0.5"/>
+          <circle cx="808" cy="178" r="13" fill="#7eb8d4" opacity="0.28"/>
+        </svg>
+      </div>
+      <div>
+        <div class="sizes">
+          <div class="sz-item">
+            <div class="sz-box" style="width:60px;height:60px;border-radius:13px;">
+              <svg viewBox="0 0 1024 1024" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1024" height="1024" fill="#EDE8F5"/>
+                <circle cx="512" cy="512" r="320" fill="#7eb8d4"/>
+                <circle cx="648" cy="444" r="272" fill="#EDE8F5"/>
+                <circle cx="758" cy="270" r="26" fill="#7eb8d4"/>
+              </svg>
+            </div>
+            <span>60pt</span>
+          </div>
+          <div class="sz-item">
+            <div class="sz-box" style="width:40px;height:40px;border-radius:9px;">
+              <svg viewBox="0 0 1024 1024" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1024" height="1024" fill="#EDE8F5"/>
+                <circle cx="512" cy="512" r="320" fill="#7eb8d4"/>
+                <circle cx="648" cy="444" r="272" fill="#EDE8F5"/>
+              </svg>
+            </div>
+            <span>40pt</span>
+          </div>
+          <div class="sz-item">
+            <div class="sz-box" style="width:29px;height:29px;border-radius:6px;">
+              <svg viewBox="0 0 1024 1024" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1024" height="1024" fill="#EDE8F5"/>
+                <circle cx="512" cy="512" r="320" fill="#7eb8d4"/>
+                <circle cx="648" cy="444" r="272" fill="#EDE8F5"/>
+              </svg>
+            </div>
+            <span>29pt</span>
+          </div>
+          <div class="sz-item">
+            <div class="sz-box" style="width:20px;height:20px;border-radius:4px;">
+              <svg viewBox="0 0 1024 1024" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1024" height="1024" fill="#EDE8F5"/>
+                <circle cx="512" cy="512" r="320" fill="#7eb8d4"/>
+                <circle cx="648" cy="444" r="272" fill="#EDE8F5"/>
+              </svg>
+            </div>
+            <span>20pt</span>
+          </div>
+        </div>
+        <div class="chips">
+          <div class="chip"><div class="chip-dot" style="background:#EDE8F5"></div><span class="chip-label">#EDE8F5 bg</span></div>
+          <div class="chip"><div class="chip-dot" style="background:#7eb8d4"></div><span class="chip-label">#7eb8d4 moon</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-wrap">
+      <p class="hs-label">Light homescreen</p>
+      <div class="phone">
+        <div class="app-row">
+          <div class="app-slot">
+            <div class="app-icon"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig-c" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect width="60" height="60" fill="url(#ig-c)"/><rect x="15" y="15" width="30" height="30" rx="8" fill="none" stroke="white" stroke-width="2.5"/><circle cx="30" cy="30" r="7.5" fill="none" stroke="white" stroke-width="2.5"/><circle cx="41" cy="19" r="2" fill="white"/></svg></div>
+            <span>Instagram</span>
+          </div>
+          <div class="app-slot">
+            <div class="app-icon"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="#1DB954"/><path d="M18,24 Q30,20 42,24" fill="none" stroke="black" stroke-width="2.8" stroke-linecap="round"/><path d="M20,30 Q30,27 40,30" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/><path d="M22,36 Q30,34 38,36" fill="none" stroke="black" stroke-width="2.2" stroke-linecap="round"/></svg></div>
+            <span>Spotify</span>
+          </div>
+          <div class="app-slot">
+            <div class="app-icon featured">
+              <svg viewBox="0 0 1024 1024" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1024" height="1024" fill="#EDE8F5"/>
+                <circle cx="512" cy="512" r="320" fill="#7eb8d4"/>
+                <circle cx="648" cy="444" r="272" fill="#EDE8F5"/>
+                <circle cx="758" cy="270" r="26" fill="#7eb8d4"/>
+              </svg>
+            </div>
+            <span style="color:#7eb8d4;font-weight:600">Celeste</span>
+          </div>
+          <div class="app-slot">
+            <div class="app-icon"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="#010101"/><text x="30" y="42" font-size="32" text-anchor="middle" fill="white" font-family="system-ui" font-weight="900">♪</text></svg></div>
+            <span>TikTok</span>
+          </div>
+          <div class="app-slot">
+            <div class="app-icon"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="#141414"/><text x="30" y="44" font-size="38" text-anchor="middle" fill="#E50914" font-family="Georgia,serif" font-weight="900">N</text></svg></div>
+            <span>Netflix</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- VARIANT D — Pure White + Gradient Moon -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<div class="section">
+  <p class="section-label">Variant D</p>
+  <div class="variant-card">
+    <div class="variant-title">Pure White — #FFFFFF · Gradient moon</div>
+    <div class="variant-desc">Stark white ground. Moon gets a subtle radial gradient (#7eb8d4 → #4A8DB0) for depth. Cleanest, most App Store-safe.</div>
+
+    <div class="hero-row">
+      <div class="big-icon">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="moon-d" cx="40%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#a8d4e8"/>
+              <stop offset="100%" stop-color="#4A8DB0"/>
+            </radialGradient>
+          </defs>
+          <rect width="1024" height="1024" fill="#FFFFFF"/>
+          <circle cx="512" cy="512" r="320" fill="url(#moon-d)"/>
+          <circle cx="648" cy="444" r="272" fill="#FFFFFF"/>
+          <circle cx="758" cy="270" r="26" fill="#7eb8d4"/>
+          <circle cx="858" cy="406" r="16" fill="#7eb8d4" opacity="0.5"/>
+          <circle cx="808" cy="178" r="13" fill="#7eb8d4" opacity="0.28"/>
+        </svg>
+      </div>
+      <div>
+        <div class="sizes">
+          <div class="sz-item">
+            <div class="sz-box" style="width:60px;height:60px;border-radius:13px;border:1px solid #eee">
+              <svg viewBox="0 0 1024 1024" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+                <defs><radialGradient id="moon-d2" cx="40%" cy="40%" r="60%"><stop offset="0%" stop-color="#a8d4e8"/><stop offset="100%" stop-color="#4A8DB0"/></radialGradient></defs>
+                <rect width="1024" height="1024" fill="#FFFFFF"/>
+                <circle cx="512" cy="512" r="320" fill="url(#moon-d2)"/>
+                <circle cx="648" cy="444" r="272" fill="#FFFFFF"/>
+                <circle cx="758" cy="270" r="26" fill="#7eb8d4"/>
+              </svg>
+            </div>
+            <span>60pt</span>
+          </div>
+          <div class="sz-item">
+            <div class="sz-box" style="width:40px;height:40px;border-radius:9px;border:1px solid #eee">
+              <svg viewBox="0 0 1024 1024" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                <defs><radialGradient id="moon-d3" cx="40%" cy="40%" r="60%"><stop offset="0%" stop-color="#a8d4e8"/><stop offset="100%" stop-color="#4A8DB0"/></radialGradient></defs>
+                <rect width="1024" height="1024" fill="#FFFFFF"/>
+                <circle cx="512" cy="512" r="320" fill="url(#moon-d3)"/>
+                <circle cx="648" cy="444" r="272" fill="#FFFFFF"/>
+              </svg>
+            </div>
+            <span>40pt</span>
+          </div>
+          <div class="sz-item">
+            <div class="sz-box" style="width:29px;height:29px;border-radius:6px;border:1px solid #eee">
+              <svg viewBox="0 0 1024 1024" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
+                <defs><radialGradient id="moon-d4" cx="40%" cy="40%" r="60%"><stop offset="0%" stop-color="#a8d4e8"/><stop offset="100%" stop-color="#4A8DB0"/></radialGradient></defs>
+                <rect width="1024" height="1024" fill="#FFFFFF"/>
+                <circle cx="512" cy="512" r="320" fill="url(#moon-d4)"/>
+                <circle cx="648" cy="444" r="272" fill="#FFFFFF"/>
+              </svg>
+            </div>
+            <span>29pt</span>
+          </div>
+          <div class="sz-item">
+            <div class="sz-box" style="width:20px;height:20px;border-radius:4px;border:1px solid #eee">
+              <svg viewBox="0 0 1024 1024" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                <defs><radialGradient id="moon-d5" cx="40%" cy="40%" r="60%"><stop offset="0%" stop-color="#a8d4e8"/><stop offset="100%" stop-color="#4A8DB0"/></radialGradient></defs>
+                <rect width="1024" height="1024" fill="#FFFFFF"/>
+                <circle cx="512" cy="512" r="320" fill="url(#moon-d5)"/>
+                <circle cx="648" cy="444" r="272" fill="#FFFFFF"/>
+              </svg>
+            </div>
+            <span>20pt</span>
+          </div>
+        </div>
+        <div class="chips">
+          <div class="chip"><div class="chip-dot" style="background:#fff;border:1px solid #ddd"></div><span class="chip-label">#FFFFFF bg</span></div>
+          <div class="chip"><div class="chip-dot" style="background:linear-gradient(135deg,#a8d4e8,#4A8DB0)"></div><span class="chip-label">gradient moon</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-wrap">
+      <p class="hs-label">Light homescreen</p>
+      <div class="phone">
+        <div class="app-row">
+          <div class="app-slot">
+            <div class="app-icon"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig-d" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect width="60" height="60" fill="url(#ig-d)"/><rect x="15" y="15" width="30" height="30" rx="8" fill="none" stroke="white" stroke-width="2.5"/><circle cx="30" cy="30" r="7.5" fill="none" stroke="white" stroke-width="2.5"/><circle cx="41" cy="19" r="2" fill="white"/></svg></div>
+            <span>Instagram</span>
+          </div>
+          <div class="app-slot">
+            <div class="app-icon"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="#1DB954"/><path d="M18,24 Q30,20 42,24" fill="none" stroke="black" stroke-width="2.8" stroke-linecap="round"/><path d="M20,30 Q30,27 40,30" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/><path d="M22,36 Q30,34 38,36" fill="none" stroke="black" stroke-width="2.2" stroke-linecap="round"/></svg></div>
+            <span>Spotify</span>
+          </div>
+          <div class="app-slot">
+            <div class="app-icon featured" style="border:1px solid #eee">
+              <svg viewBox="0 0 1024 1024" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+                <defs><radialGradient id="moon-d6" cx="40%" cy="40%" r="60%"><stop offset="0%" stop-color="#a8d4e8"/><stop offset="100%" stop-color="#4A8DB0"/></radialGradient></defs>
+                <rect width="1024" height="1024" fill="#FFFFFF"/>
+                <circle cx="512" cy="512" r="320" fill="url(#moon-d6)"/>
+                <circle cx="648" cy="444" r="272" fill="#FFFFFF"/>
+                <circle cx="758" cy="270" r="26" fill="#7eb8d4"/>
+              </svg>
+            </div>
+            <span style="color:#4A8DB0;font-weight:600">Celeste</span>
+          </div>
+          <div class="app-slot">
+            <div class="app-icon"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="#010101"/><text x="30" y="42" font-size="32" text-anchor="middle" fill="white" font-family="system-ui" font-weight="900">♪</text></svg></div>
+            <span>TikTok</span>
+          </div>
+          <div class="app-slot">
+            <div class="app-icon"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="#141414"/><text x="30" y="44" font-size="38" text-anchor="middle" fill="#E50914" font-family="Georgia,serif" font-weight="900">N</text></svg></div>
+            <span>Netflix</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Celeste · Light Background Iterations · The Girl Club / Nexwork · 2026</p>
+</footer>
+
+</body>
+</html>
