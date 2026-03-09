@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Celeste — Aurora Star Iterations</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',-apple-system,sans-serif;background:#0d0b14;color:#e8e4f0;padding:60px 24px 100px;-webkit-font-smoothing:antialiased}
+
+a.back{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:#3a3650;text-decoration:none;margin-bottom:48px;letter-spacing:0.5px}
+a.back:hover{color:#7eb8d4}
+
+header{text-align:center;margin-bottom:72px}
+.eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#5a5070;margin-bottom:14px}
+h1{font-size:2.2rem;font-weight:700;margin-bottom:8px}
+.subtitle{color:#3a3650;font-size:0.86rem}
+
+/* ── group ── */
+.group{max-width:900px;margin:0 auto 80px}
+.group-title{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#2e2a3e;margin-bottom:32px;padding-bottom:12px;border-bottom:1px solid #1a1828}
+
+/* ── card grid ── */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:32px}
+
+.card{display:flex;flex-direction:column;align-items:center;gap:14px}
+
+/* icon wrapper — large */
+.icon-lg{width:160px;height:160px;border-radius:36px;overflow:hidden;flex-shrink:0;
+  box-shadow:0 16px 48px rgba(0,0,0,0.6)}
+.icon-lg svg{width:100%;height:100%;display:block}
+
+/* icon — light variant wrapper */
+.icon-lg.light-card{box-shadow:0 8px 32px rgba(0,0,0,0.15)}
+
+/* sizes row */
+.sizes{display:flex;gap:10px;align-items:flex-end;justify-content:center}
+.sz-box{overflow:hidden;flex-shrink:0}
+.sz-box svg{display:block}
+
+.card-name{font-size:12px;font-weight:600;color:#e8e4f0;text-align:center}
+.card-sub{font-size:10px;color:#3a3650;text-align:center;margin-top:-8px}
+
+/* chips */
+.chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.chip{display:flex;align-items:center;gap:5px;background:#130f1e;border:1px solid #1e1a2e;border-radius:6px;padding:4px 8px}
+.chip-dot{width:10px;height:10px;border-radius:3px;border:1px solid rgba(255,255,255,0.1)}
+.chip-hex{font-size:9px;color:#3a3650;font-family:monospace}
+
+/* ── light section ── */
+.light-section{background:#F8F5F0;border-radius:24px;padding:40px 32px;margin-top:40px}
+.light-section .group-title{color:#c0b8b0;border-bottom-color:rgba(0,0,0,0.06)}
+.light-section .card-name{color:#1a1612}
+.light-section .card-sub{color:#b0a8a0}
+.light-section .chip{background:#fff;border-color:rgba(0,0,0,0.06)}
+.light-section .chip-hex{color:#a09890}
+
+/* phone mockup */
+.phone-row{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;margin-top:40px}
+.phone-wrap{text-align:center}
+.hs-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#2e2a3e;margin-bottom:10px}
+.light-section .hs-label{color:#c0b8b0}
+.phone{background:#12101e;border-radius:18px;padding:16px 14px 14px;border:1px solid #1e1c2e;display:inline-block}
+.phone.light-phone{background:#e0dcd8}
+.app-row{display:flex;gap:12px;align-items:flex-end}
+.app-slot{display:flex;flex-direction:column;align-items:center;gap:5px}
+.app-slot span{font-size:7px;color:#2e2a3e}
+.light-phone .app-slot span{color:#8a8480}
+.app-icon{width:50px;height:50px;border-radius:11px;overflow:hidden}
+.app-icon svg{width:100%;height:100%;display:block}
+.app-icon.featured{box-shadow:0 0 0 2px #7eb8d4,0 4px 16px rgba(126,184,212,0.3)}
+.app-icon.featured-purple{box-shadow:0 0 0 2px #c084fc,0 4px 16px rgba(192,132,252,0.3)}
+</style>
+</head>
+<body>
+
+<div style="max-width:900px;margin:0 auto">
+  <a class="back" href="icon-concepts.html">← Back to design journey</a>
+</div>
+
+<header>
+  <p class="eyebrow">Celeste · Aurora Star</p>
+  <h1>New Iterations</h1>
+  <p class="subtitle">Colour, form and background experiments on the 4-ray ellipse star.</p>
+</header>
+
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- GROUP 1: COLOUR — DARK BACKGROUNDS                            -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="group">
+  <p class="group-title">01 · Colour Palette — Dark Backgrounds</p>
+  <div class="grid">
+
+    <!-- ORIGINAL (reference) -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#1b0933"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#9b6dff" opacity="0.5"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#c084fc" opacity="0.5" transform="rotate(45,512,512)"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#9b6dff" opacity="0.5" transform="rotate(90,512,512)"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#c084fc" opacity="0.5" transform="rotate(135,512,512)"/>
+          <circle cx="512" cy="512" r="102" fill="#c4b5fd"/>
+          <circle cx="512" cy="512" r="46" fill="white"/>
+        </svg>
+      </div>
+      <div class="sizes">
+        <div class="sz-box" style="width:44px;height:44px;border-radius:10px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="44" height="44" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#1b0933"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#9b6dff" opacity="0.5"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#c084fc" opacity="0.5" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#9b6dff" opacity="0.5" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#c084fc" opacity="0.5" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="#c4b5fd"/><circle cx="512" cy="512" r="46" fill="white"/></svg></div>
+        <div class="sz-box" style="width:28px;height:28px;border-radius:6px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#1b0933"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#9b6dff" opacity="0.5"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#c084fc" opacity="0.5" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#9b6dff" opacity="0.5" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#c084fc" opacity="0.5" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="#c4b5fd"/><circle cx="512" cy="512" r="46" fill="white"/></svg></div>
+      </div>
+      <div class="card-name">Original Purple</div>
+      <div class="card-sub">Reference</div>
+      <div class="chips"><div class="chip"><div class="chip-dot" style="background:#1b0933"></div><span class="chip-hex">#1b0933</span></div><div class="chip"><div class="chip-dot" style="background:#c084fc"></div><span class="chip-hex">#c084fc</span></div></div>
+    </div>
+
+    <!-- CELESTE BLUE — brand palette -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#060c14"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.55"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.5" transform="rotate(45,512,512)"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.55" transform="rotate(90,512,512)"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.5" transform="rotate(135,512,512)"/>
+          <circle cx="512" cy="512" r="102" fill="#a8d4e8"/>
+          <circle cx="512" cy="512" r="46" fill="white"/>
+        </svg>
+      </div>
+      <div class="sizes">
+        <div class="sz-box" style="width:44px;height:44px;border-radius:10px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="44" height="44" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#060c14"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.55"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.5" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.55" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.5" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="#a8d4e8"/><circle cx="512" cy="512" r="46" fill="white"/></svg></div>
+        <div class="sz-box" style="width:28px;height:28px;border-radius:6px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#060c14"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.55"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.5" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.55" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.5" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="#a8d4e8"/><circle cx="512" cy="512" r="46" fill="white"/></svg></div>
+      </div>
+      <div class="card-name">Celeste Blue</div>
+      <div class="card-sub">Brand palette on dark</div>
+      <div class="chips"><div class="chip"><div class="chip-dot" style="background:#060c14"></div><span class="chip-hex">#060c14</span></div><div class="chip"><div class="chip-dot" style="background:#7eb8d4"></div><span class="chip-hex">#7eb8d4</span></div></div>
+    </div>
+
+    <!-- AURORA ROSE -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#14060e"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#e879a8" opacity="0.5"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#f9a8d4" opacity="0.45" transform="rotate(45,512,512)"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#e879a8" opacity="0.5" transform="rotate(90,512,512)"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#f9a8d4" opacity="0.45" transform="rotate(135,512,512)"/>
+          <circle cx="512" cy="512" r="102" fill="#fce7f3"/>
+          <circle cx="512" cy="512" r="46" fill="white"/>
+        </svg>
+      </div>
+      <div class="sizes">
+        <div class="sz-box" style="width:44px;height:44px;border-radius:10px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="44" height="44" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#14060e"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#e879a8" opacity="0.5"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#f9a8d4" opacity="0.45" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#e879a8" opacity="0.5" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#f9a8d4" opacity="0.45" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="#fce7f3"/><circle cx="512" cy="512" r="46" fill="white"/></svg></div>
+        <div class="sz-box" style="width:28px;height:28px;border-radius:6px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#14060e"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#e879a8" opacity="0.5"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#f9a8d4" opacity="0.45" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#e879a8" opacity="0.5" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#f9a8d4" opacity="0.45" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="#fce7f3"/><circle cx="512" cy="512" r="46" fill="white"/></svg></div>
+      </div>
+      <div class="card-name">Aurora Rose</div>
+      <div class="card-sub">Pink on deep burgundy</div>
+      <div class="chips"><div class="chip"><div class="chip-dot" style="background:#14060e"></div><span class="chip-hex">#14060e</span></div><div class="chip"><div class="chip-dot" style="background:#f9a8d4"></div><span class="chip-hex">#f9a8d4</span></div></div>
+    </div>
+
+    <!-- AURORA GOLD -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#0e0900"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#d97706" opacity="0.55"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#fbbf24" opacity="0.45" transform="rotate(45,512,512)"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#d97706" opacity="0.55" transform="rotate(90,512,512)"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#fbbf24" opacity="0.45" transform="rotate(135,512,512)"/>
+          <circle cx="512" cy="512" r="102" fill="#fde68a"/>
+          <circle cx="512" cy="512" r="46" fill="white"/>
+        </svg>
+      </div>
+      <div class="sizes">
+        <div class="sz-box" style="width:44px;height:44px;border-radius:10px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="44" height="44" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#0e0900"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#d97706" opacity="0.55"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#fbbf24" opacity="0.45" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#d97706" opacity="0.55" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#fbbf24" opacity="0.45" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="#fde68a"/><circle cx="512" cy="512" r="46" fill="white"/></svg></div>
+        <div class="sz-box" style="width:28px;height:28px;border-radius:6px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#0e0900"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#d97706" opacity="0.55"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#fbbf24" opacity="0.45" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#d97706" opacity="0.55" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#fbbf24" opacity="0.45" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="#fde68a"/><circle cx="512" cy="512" r="46" fill="white"/></svg></div>
+      </div>
+      <div class="card-name">Aurora Gold</div>
+      <div class="card-sub">Amber on deep night</div>
+      <div class="chips"><div class="chip"><div class="chip-dot" style="background:#0e0900"></div><span class="chip-hex">#0e0900</span></div><div class="chip"><div class="chip-dot" style="background:#fbbf24"></div><span class="chip-hex">#fbbf24</span></div></div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- GROUP 2: FORM EXPERIMENTS                                      -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="group">
+  <p class="group-title">02 · Form Experiments — Dark</p>
+  <div class="grid">
+
+    <!-- 6-POINT BLOOM -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#060c14"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.45"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.45" transform="rotate(30,512,512)"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.45" transform="rotate(60,512,512)"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.45" transform="rotate(90,512,512)"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.45" transform="rotate(120,512,512)"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.45" transform="rotate(150,512,512)"/>
+          <circle cx="512" cy="512" r="90" fill="#a8d4e8"/>
+          <circle cx="512" cy="512" r="40" fill="white"/>
+        </svg>
+      </div>
+      <div class="sizes">
+        <div class="sz-box" style="width:44px;height:44px;border-radius:10px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="44" height="44" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#060c14"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.45"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.45" transform="rotate(30,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.45" transform="rotate(60,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.45" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.45" transform="rotate(120,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.45" transform="rotate(150,512,512)"/><circle cx="512" cy="512" r="90" fill="#a8d4e8"/><circle cx="512" cy="512" r="40" fill="white"/></svg></div>
+        <div class="sz-box" style="width:28px;height:28px;border-radius:6px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#060c14"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.45"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.45" transform="rotate(30,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.45" transform="rotate(60,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.45" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.45" transform="rotate(120,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.45" transform="rotate(150,512,512)"/><circle cx="512" cy="512" r="90" fill="#a8d4e8"/><circle cx="512" cy="512" r="40" fill="white"/></svg></div>
+      </div>
+      <div class="card-name">6-Point Bloom</div>
+      <div class="card-sub">Celeste, 6 rays at 30°</div>
+    </div>
+
+    <!-- THIN SHARP RAYS -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#060c14"/>
+          <ellipse cx="512" cy="512" rx="34" ry="420" fill="#7eb8d4" opacity="0.6"/>
+          <ellipse cx="512" cy="512" rx="34" ry="420" fill="#a8d4e8" opacity="0.5" transform="rotate(45,512,512)"/>
+          <ellipse cx="512" cy="512" rx="34" ry="420" fill="#7eb8d4" opacity="0.6" transform="rotate(90,512,512)"/>
+          <ellipse cx="512" cy="512" rx="34" ry="420" fill="#a8d4e8" opacity="0.5" transform="rotate(135,512,512)"/>
+          <circle cx="512" cy="512" r="70" fill="#daeef7"/>
+          <circle cx="512" cy="512" r="30" fill="white"/>
+        </svg>
+      </div>
+      <div class="sizes">
+        <div class="sz-box" style="width:44px;height:44px;border-radius:10px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="44" height="44" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#060c14"/><ellipse cx="512" cy="512" rx="34" ry="420" fill="#7eb8d4" opacity="0.6"/><ellipse cx="512" cy="512" rx="34" ry="420" fill="#a8d4e8" opacity="0.5" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="34" ry="420" fill="#7eb8d4" opacity="0.6" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="34" ry="420" fill="#a8d4e8" opacity="0.5" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="70" fill="#daeef7"/><circle cx="512" cy="512" r="30" fill="white"/></svg></div>
+        <div class="sz-box" style="width:28px;height:28px;border-radius:6px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#060c14"/><ellipse cx="512" cy="512" rx="34" ry="420" fill="#7eb8d4" opacity="0.6"/><ellipse cx="512" cy="512" rx="34" ry="420" fill="#a8d4e8" opacity="0.5" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="34" ry="420" fill="#7eb8d4" opacity="0.6" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="34" ry="420" fill="#a8d4e8" opacity="0.5" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="70" fill="#daeef7"/><circle cx="512" cy="512" r="30" fill="white"/></svg></div>
+      </div>
+      <div class="card-name">Thin Sharp Rays</div>
+      <div class="card-sub">rx=34 (narrower, crisper)</div>
+    </div>
+
+    <!-- WIDE PETALS -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#1b0933"/>
+          <ellipse cx="512" cy="512" rx="140" ry="340" fill="#9b6dff" opacity="0.4"/>
+          <ellipse cx="512" cy="512" rx="140" ry="340" fill="#c084fc" opacity="0.35" transform="rotate(45,512,512)"/>
+          <ellipse cx="512" cy="512" rx="140" ry="340" fill="#9b6dff" opacity="0.4" transform="rotate(90,512,512)"/>
+          <ellipse cx="512" cy="512" rx="140" ry="340" fill="#c084fc" opacity="0.35" transform="rotate(135,512,512)"/>
+          <circle cx="512" cy="512" r="80" fill="#c4b5fd"/>
+          <circle cx="512" cy="512" r="36" fill="white"/>
+        </svg>
+      </div>
+      <div class="sizes">
+        <div class="sz-box" style="width:44px;height:44px;border-radius:10px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="44" height="44" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#1b0933"/><ellipse cx="512" cy="512" rx="140" ry="340" fill="#9b6dff" opacity="0.4"/><ellipse cx="512" cy="512" rx="140" ry="340" fill="#c084fc" opacity="0.35" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="140" ry="340" fill="#9b6dff" opacity="0.4" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="140" ry="340" fill="#c084fc" opacity="0.35" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="80" fill="#c4b5fd"/><circle cx="512" cy="512" r="36" fill="white"/></svg></div>
+        <div class="sz-box" style="width:28px;height:28px;border-radius:6px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#1b0933"/><ellipse cx="512" cy="512" rx="140" ry="340" fill="#9b6dff" opacity="0.4"/><ellipse cx="512" cy="512" rx="140" ry="340" fill="#c084fc" opacity="0.35" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="140" ry="340" fill="#9b6dff" opacity="0.4" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="140" ry="340" fill="#c084fc" opacity="0.35" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="80" fill="#c4b5fd"/><circle cx="512" cy="512" r="36" fill="white"/></svg></div>
+      </div>
+      <div class="card-name">Wide Petals</div>
+      <div class="card-sub">rx=140, fuller flower form</div>
+    </div>
+
+    <!-- MOON CORE — crescent in the centre -->
+    <div class="card">
+      <div class="icon-lg">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <rect width="1024" height="1024" fill="#060c14"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.5"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.45" transform="rotate(45,512,512)"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.5" transform="rotate(90,512,512)"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.45" transform="rotate(135,512,512)"/>
+          <!-- Moon core: filled circle + cutout -->
+          <circle cx="512" cy="512" r="110" fill="#a8d4e8"/>
+          <circle cx="554" cy="490" r="88" fill="#060c14"/>
+          <!-- Tiny accent dot -->
+          <circle cx="598" cy="414" r="14" fill="#7eb8d4"/>
+        </svg>
+      </div>
+      <div class="sizes">
+        <div class="sz-box" style="width:44px;height:44px;border-radius:10px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="44" height="44" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#060c14"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.5"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.45" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.5" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.45" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="110" fill="#a8d4e8"/><circle cx="554" cy="490" r="88" fill="#060c14"/><circle cx="598" cy="414" r="14" fill="#7eb8d4"/></svg></div>
+        <div class="sz-box" style="width:28px;height:28px;border-radius:6px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#060c14"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.5"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.45" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.5" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.45" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="110" fill="#a8d4e8"/><circle cx="554" cy="490" r="88" fill="#060c14"/><circle cx="598" cy="414" r="14" fill="#7eb8d4"/></svg></div>
+      </div>
+      <div class="card-name">Moon Core</div>
+      <div class="card-sub">Star rays + crescent centre</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- GROUP 3: LIGHT BACKGROUNDS                                     -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="light-section">
+  <div class="group" style="margin-bottom:0">
+    <p class="group-title">03 · Light Backgrounds</p>
+    <div class="grid">
+
+      <!-- CREAM + PURPLE (original palette, light bg) -->
+      <div class="card">
+        <div class="icon-lg light-card">
+          <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1024" height="1024" fill="#F5EFE6"/>
+            <ellipse cx="512" cy="512" rx="68" ry="370" fill="#9b6dff" opacity="0.35"/>
+            <ellipse cx="512" cy="512" rx="68" ry="370" fill="#c084fc" opacity="0.3" transform="rotate(45,512,512)"/>
+            <ellipse cx="512" cy="512" rx="68" ry="370" fill="#9b6dff" opacity="0.35" transform="rotate(90,512,512)"/>
+            <ellipse cx="512" cy="512" rx="68" ry="370" fill="#c084fc" opacity="0.3" transform="rotate(135,512,512)"/>
+            <circle cx="512" cy="512" r="102" fill="#c4b5fd"/>
+            <circle cx="512" cy="512" r="46" fill="white"/>
+          </svg>
+        </div>
+        <div class="sizes">
+          <div class="sz-box" style="width:44px;height:44px;border-radius:10px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="44" height="44" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#F5EFE6"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#9b6dff" opacity="0.35"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#c084fc" opacity="0.3" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#9b6dff" opacity="0.35" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#c084fc" opacity="0.3" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="#c4b5fd"/><circle cx="512" cy="512" r="46" fill="white"/></svg></div>
+          <div class="sz-box" style="width:28px;height:28px;border-radius:6px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#F5EFE6"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#9b6dff" opacity="0.35"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#c084fc" opacity="0.3" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#9b6dff" opacity="0.35" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#c084fc" opacity="0.3" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="#c4b5fd"/><circle cx="512" cy="512" r="46" fill="white"/></svg></div>
+        </div>
+        <div class="card-name">Cream + Purple</div>
+        <div class="card-sub">Original rays, warm cream bg</div>
+        <div class="chips"><div class="chip"><div class="chip-dot" style="background:#F5EFE6;border:1px solid #ddd"></div><span class="chip-hex">#F5EFE6</span></div><div class="chip"><div class="chip-dot" style="background:#c084fc"></div><span class="chip-hex">#c084fc</span></div></div>
+      </div>
+
+      <!-- CREAM + CELESTE -->
+      <div class="card">
+        <div class="icon-lg light-card">
+          <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1024" height="1024" fill="#F5EFE6"/>
+            <ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.4"/>
+            <ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35" transform="rotate(45,512,512)"/>
+            <ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.4" transform="rotate(90,512,512)"/>
+            <ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35" transform="rotate(135,512,512)"/>
+            <circle cx="512" cy="512" r="102" fill="#a8d4e8"/>
+            <circle cx="512" cy="512" r="46" fill="white"/>
+          </svg>
+        </div>
+        <div class="sizes">
+          <div class="sz-box" style="width:44px;height:44px;border-radius:10px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="44" height="44" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#F5EFE6"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.4"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.4" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="#a8d4e8"/><circle cx="512" cy="512" r="46" fill="white"/></svg></div>
+          <div class="sz-box" style="width:28px;height:28px;border-radius:6px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#F5EFE6"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.4"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.4" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="#a8d4e8"/><circle cx="512" cy="512" r="46" fill="white"/></svg></div>
+        </div>
+        <div class="card-name">Cream + Celeste</div>
+        <div class="card-sub">Brand blue on warm cream</div>
+        <div class="chips"><div class="chip"><div class="chip-dot" style="background:#F5EFE6;border:1px solid #ddd"></div><span class="chip-hex">#F5EFE6</span></div><div class="chip"><div class="chip-dot" style="background:#7eb8d4"></div><span class="chip-hex">#7eb8d4</span></div></div>
+      </div>
+
+      <!-- LAVENDER + PURPLE -->
+      <div class="card">
+        <div class="icon-lg light-card">
+          <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1024" height="1024" fill="#EDE8F5"/>
+            <ellipse cx="512" cy="512" rx="68" ry="370" fill="#7c3aed" opacity="0.3"/>
+            <ellipse cx="512" cy="512" rx="68" ry="370" fill="#a855f7" opacity="0.25" transform="rotate(45,512,512)"/>
+            <ellipse cx="512" cy="512" rx="68" ry="370" fill="#7c3aed" opacity="0.3" transform="rotate(90,512,512)"/>
+            <ellipse cx="512" cy="512" rx="68" ry="370" fill="#a855f7" opacity="0.25" transform="rotate(135,512,512)"/>
+            <circle cx="512" cy="512" r="102" fill="#c4b5fd"/>
+            <circle cx="512" cy="512" r="46" fill="white"/>
+          </svg>
+        </div>
+        <div class="sizes">
+          <div class="sz-box" style="width:44px;height:44px;border-radius:10px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="44" height="44" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#EDE8F5"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7c3aed" opacity="0.3"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#a855f7" opacity="0.25" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7c3aed" opacity="0.3" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#a855f7" opacity="0.25" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="#c4b5fd"/><circle cx="512" cy="512" r="46" fill="white"/></svg></div>
+          <div class="sz-box" style="width:28px;height:28px;border-radius:6px;overflow:hidden"><svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#EDE8F5"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7c3aed" opacity="0.3"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#a855f7" opacity="0.25" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7c3aed" opacity="0.3" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#a855f7" opacity="0.25" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="#c4b5fd"/><circle cx="512" cy="512" r="46" fill="white"/></svg></div>
+        </div>
+        <div class="card-name">Lavender + Purple</div>
+        <div class="card-sub">Tonal harmony, soft</div>
+        <div class="chips"><div class="chip"><div class="chip-dot" style="background:#EDE8F5"></div><span class="chip-hex">#EDE8F5</span></div><div class="chip"><div class="chip-dot" style="background:#a855f7"></div><span class="chip-hex">#a855f7</span></div></div>
+      </div>
+
+      <!-- WHITE + 6-POINT CELESTE -->
+      <div class="card">
+        <div class="icon-lg light-card" style="border:1px solid #eee">
+          <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1024" height="1024" fill="#FFFFFF"/>
+            <ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35"/>
+            <ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.3" transform="rotate(30,512,512)"/>
+            <ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35" transform="rotate(60,512,512)"/>
+            <ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.3" transform="rotate(90,512,512)"/>
+            <ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35" transform="rotate(120,512,512)"/>
+            <ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.3" transform="rotate(150,512,512)"/>
+            <circle cx="512" cy="512" r="90" fill="#daeef7"/>
+            <circle cx="512" cy="512" r="40" fill="white"/>
+          </svg>
+        </div>
+        <div class="sizes">
+          <div class="sz-box" style="width:44px;height:44px;border-radius:10px;overflow:hidden;border:1px solid #eee"><svg viewBox="0 0 1024 1024" width="44" height="44" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#FFFFFF"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.3" transform="rotate(30,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35" transform="rotate(60,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.3" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35" transform="rotate(120,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.3" transform="rotate(150,512,512)"/><circle cx="512" cy="512" r="90" fill="#daeef7"/><circle cx="512" cy="512" r="40" fill="white"/></svg></div>
+          <div class="sz-box" style="width:28px;height:28px;border-radius:6px;overflow:hidden;border:1px solid #eee"><svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#FFFFFF"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.3" transform="rotate(30,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35" transform="rotate(60,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.3" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35" transform="rotate(120,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.3" transform="rotate(150,512,512)"/><circle cx="512" cy="512" r="90" fill="#daeef7"/><circle cx="512" cy="512" r="40" fill="white"/></svg></div>
+        </div>
+        <div class="card-name">White · 6-Point Celeste</div>
+        <div class="card-sub">Fuller bloom, cleanest</div>
+        <div class="chips"><div class="chip"><div class="chip-dot" style="background:#fff;border:1px solid #ddd"></div><span class="chip-hex">#FFFFFF</span></div><div class="chip"><div class="chip-dot" style="background:#7eb8d4"></div><span class="chip-hex">#7eb8d4</span></div></div>
+      </div>
+
+    </div>
+
+    <!-- Light phone mockup row -->
+    <div class="phone-row">
+
+      <div class="phone-wrap">
+        <p class="hs-label">Cream + Purple</p>
+        <div class="phone light-phone">
+          <div class="app-row">
+            <div class="app-slot"><div class="app-icon"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig-l1" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect width="60" height="60" fill="url(#ig-l1)"/><rect x="15" y="15" width="30" height="30" rx="8" fill="none" stroke="white" stroke-width="2.5"/><circle cx="30" cy="30" r="7.5" fill="none" stroke="white" stroke-width="2.5"/><circle cx="41" cy="19" r="2" fill="white"/></svg></div><span>Instagram</span></div>
+            <div class="app-slot">
+              <div class="app-icon featured-purple">
+                <svg viewBox="0 0 1024 1024" width="50" height="50" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#F5EFE6"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#9b6dff" opacity="0.35"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#c084fc" opacity="0.3" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#9b6dff" opacity="0.35" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#c084fc" opacity="0.3" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="#c4b5fd"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+              </div>
+              <span style="color:#9b6dff;font-weight:600">Celeste</span>
+            </div>
+            <div class="app-slot"><div class="app-icon"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="#1DB954"/><path d="M18,24 Q30,20 42,24" fill="none" stroke="black" stroke-width="2.8" stroke-linecap="round"/><path d="M20,30 Q30,27 40,30" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/><path d="M22,36 Q30,34 38,36" fill="none" stroke="black" stroke-width="2.2" stroke-linecap="round"/></svg></div><span>Spotify</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-wrap">
+        <p class="hs-label">Cream + Celeste</p>
+        <div class="phone light-phone">
+          <div class="app-row">
+            <div class="app-slot"><div class="app-icon"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig-l2" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect width="60" height="60" fill="url(#ig-l2)"/><rect x="15" y="15" width="30" height="30" rx="8" fill="none" stroke="white" stroke-width="2.5"/><circle cx="30" cy="30" r="7.5" fill="none" stroke="white" stroke-width="2.5"/><circle cx="41" cy="19" r="2" fill="white"/></svg></div><span>Instagram</span></div>
+            <div class="app-slot">
+              <div class="app-icon featured">
+                <svg viewBox="0 0 1024 1024" width="50" height="50" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#F5EFE6"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.4"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.4" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="#a8d4e8"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+              </div>
+              <span style="color:#4A8DB0;font-weight:600">Celeste</span>
+            </div>
+            <div class="app-slot"><div class="app-icon"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="#1DB954"/><path d="M18,24 Q30,20 42,24" fill="none" stroke="black" stroke-width="2.8" stroke-linecap="round"/><path d="M20,30 Q30,27 40,30" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/><path d="M22,36 Q30,34 38,36" fill="none" stroke="black" stroke-width="2.2" stroke-linecap="round"/></svg></div><span>Spotify</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-wrap">
+        <p class="hs-label">White · 6-Point</p>
+        <div class="phone light-phone">
+          <div class="app-row">
+            <div class="app-slot"><div class="app-icon"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig-l3" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect width="60" height="60" fill="url(#ig-l3)"/><rect x="15" y="15" width="30" height="30" rx="8" fill="none" stroke="white" stroke-width="2.5"/><circle cx="30" cy="30" r="7.5" fill="none" stroke="white" stroke-width="2.5"/><circle cx="41" cy="19" r="2" fill="white"/></svg></div><span>Instagram</span></div>
+            <div class="app-slot">
+              <div class="app-icon featured" style="border:1px solid #eee">
+                <svg viewBox="0 0 1024 1024" width="50" height="50" xmlns="http://www.w3.org/2000/svg"><rect width="1024" height="1024" fill="#FFFFFF"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.3" transform="rotate(30,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35" transform="rotate(60,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.3" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#7eb8d4" opacity="0.35" transform="rotate(120,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="#4A8DB0" opacity="0.3" transform="rotate(150,512,512)"/><circle cx="512" cy="512" r="90" fill="#daeef7"/><circle cx="512" cy="512" r="40" fill="white"/></svg>
+              </div>
+              <span style="color:#4A8DB0;font-weight:600">Celeste</span>
+            </div>
+            <div class="app-slot"><div class="app-icon"><svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="#1DB954"/><path d="M18,24 Q30,20 42,24" fill="none" stroke="black" stroke-width="2.8" stroke-linecap="round"/><path d="M20,30 Q30,27 40,30" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/><path d="M22,36 Q30,34 38,36" fill="none" stroke="black" stroke-width="2.2" stroke-linecap="round"/></svg></div><span>Spotify</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer style="text-align:center;margin-top:64px;font-size:11px;color:#2e2a3e">
+  Celeste · Aurora Star Iterations · The Girl Club / Nexwork · 2026
+</footer>
+
+</body>
+</html>
