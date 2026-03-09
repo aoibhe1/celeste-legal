@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Celeste × DM Serif Display — Brand Sample</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --rose:       #E91E63;
+    --coral:      #FF7043;
+    --soft-rose:  #F06292;
+    --warm-white: #FFF5F0;
+    --petal:      #FFF0F4;
+    --deep-rose:  #AD1457;
+    --ink:        #2D1A1F;
+    --slate:      #6B4B52;
+    --mist:       #F0EAEA;
+    --dm: 'DM Serif Display', serif;
+    --ui: 'Inter', sans-serif;
+  }
+
+  body { background: #F8F4F2; font-family: var(--ui); color: var(--ink); }
+
+  /* ── reusable icon SVG wrapper ── */
+  .icon { display: inline-block; border-radius: 22%; overflow: hidden; flex-shrink: 0; }
+
+  /* ═══ SECTION LABELS ═══ */
+  .page-section { margin: 0 auto 64px; max-width: 1100px; padding: 0 32px; }
+  .section-tag {
+    font-size: 10px; font-weight: 600; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--slate);
+    margin-bottom: 20px; display: block;
+  }
+
+  /* ═══════════════════════════════════
+     01  HERO — APP SPLASH
+  ═══════════════════════════════════ */
+  .hero {
+    background: var(--warm-white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 65% 20%, rgba(233,30,99,.09) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 40% at 25% 80%, rgba(255,112,67,.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: var(--ui);
+    font-size: 10px; font-weight: 600; letter-spacing: 4px;
+    text-transform: uppercase; color: var(--rose);
+    margin-bottom: 28px; position: relative; z-index: 1;
+  }
+  .hero-icon { margin-bottom: 32px; position: relative; z-index: 1; }
+  .hero-title {
+    font-family: var(--dm);
+    font-size: clamp(56px, 9vw, 112px);
+    line-height: 1.0;
+    color: var(--ink);
+    margin-bottom: 12px;
+    position: relative; z-index: 1;
+  }
+  .hero-title em { font-style: italic; color: var(--rose); }
+  .hero-tagline {
+    font-family: var(--dm);
+    font-style: italic;
+    font-size: clamp(18px, 2.5vw, 26px);
+    color: var(--slate);
+    margin-bottom: 48px;
+    position: relative; z-index: 1;
+  }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--rose); color: white;
+    padding: 16px 32px; border-radius: 100px;
+    font-family: var(--ui); font-size: 14px; font-weight: 500;
+    letter-spacing: 0.5px; text-decoration: none;
+    position: relative; z-index: 1;
+    box-shadow: 0 8px 24px rgba(233,30,99,0.3);
+  }
+  .hero-sub {
+    font-size: 12px; color: var(--slate); margin-top: 16px;
+    position: relative; z-index: 1;
+  }
+
+  /* ═══════════════════════════════════
+     02  APP STORE CARD
+  ═══════════════════════════════════ */
+  .store-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 16px 64px rgba(45,26,31,0.12);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .store-left {
+    padding: 52px 48px;
+    background: var(--warm-white);
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .store-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(233,30,99,0.08);
+    padding: 6px 14px; border-radius: 100px;
+    font-family: var(--ui); font-size: 11px; font-weight: 600;
+    color: var(--rose); letter-spacing: 0.5px; margin-bottom: 28px;
+    width: fit-content;
+  }
+  .store-title {
+    font-family: var(--dm);
+    font-size: 42px; line-height: 1.1;
+    color: var(--ink); margin-bottom: 16px;
+  }
+  .store-title em { font-style: italic; color: var(--rose); }
+  .store-desc {
+    font-family: var(--ui); font-size: 14px; color: var(--slate);
+    line-height: 1.75; margin-bottom: 36px;
+  }
+  .store-stars {
+    display: flex; align-items: center; gap: 8px;
+    font-family: var(--ui); font-size: 13px; color: var(--slate);
+  }
+  .store-stars span { color: var(--coral); font-size: 16px; letter-spacing: -1px; }
+  .store-right {
+    background: var(--ink);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 52px 40px; gap: 24px;
+    position: relative; overflow: hidden;
+  }
+  .store-right::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 40%, rgba(233,30,99,.18) 0%, transparent 65%);
+  }
+  .store-screen-title {
+    font-family: var(--dm); font-size: 24px; font-style: italic;
+    color: rgba(255,255,255,0.9); text-align: center; position: relative; z-index: 1;
+  }
+  .store-feature {
+    font-family: var(--ui); font-size: 12px; color: rgba(255,255,255,0.4);
+    letter-spacing: 1px; text-transform: uppercase; position: relative; z-index: 1;
+  }
+
+  /* ═══════════════════════════════════
+     03  MARKETING EDITORIAL
+  ═══════════════════════════════════ */
+  .editorial {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(45,26,31,0.08);
+  }
+  .ed-left {
+    background: linear-gradient(150deg, #E91E63, #F06292 50%, #FF7043);
+    padding: 64px 52px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    min-height: 500px;
+  }
+  .ed-wordmark {
+    font-family: var(--dm); font-size: 18px; font-weight: 400;
+    color: rgba(255,255,255,0.9); letter-spacing: 3px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .ed-headline {
+    font-family: var(--dm);
+    font-size: 52px; line-height: 1.05;
+    color: white; margin: 0;
+  }
+  .ed-headline em { font-style: italic; opacity: 0.85; }
+  .ed-bottom { display: flex; flex-direction: column; gap: 6px; }
+  .ed-caption {
+    font-family: var(--ui); font-size: 12px; font-weight: 400;
+    color: rgba(255,255,255,0.6); letter-spacing: 0.5px;
+  }
+  .ed-right {
+    padding: 64px 52px;
+    background: white;
+    display: flex; flex-direction: column; justify-content: center; gap: 32px;
+  }
+  .ed-pull {
+    font-family: var(--dm); font-size: 28px; font-style: italic;
+    line-height: 1.35; color: var(--ink);
+    border-left: 2px solid var(--rose); padding-left: 24px;
+  }
+  .ed-body {
+    font-family: var(--ui); font-size: 14px; color: var(--slate);
+    line-height: 1.8;
+  }
+  .ed-features { display: flex; flex-direction: column; gap: 12px; }
+  .ed-feat {
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--ui); font-size: 13px; color: var(--slate);
+  }
+  .ed-feat-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--rose); flex-shrink: 0;
+  }
+
+  /* ═══════════════════════════════════
+     04  UI MOCKUPS
+  ═══════════════════════════════════ */
+  .ui-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+  .phone-mock {
+    background: var(--warm-white);
+    border-radius: 36px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(45,26,31,0.15), 0 0 0 1px rgba(45,26,31,0.06);
+    aspect-ratio: 9/19;
+    display: flex; flex-direction: column;
+  }
+  .phone-status {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 24px 8px;
+    font-family: var(--ui); font-size: 11px; font-weight: 600;
+    color: var(--ink);
+  }
+  .phone-content { flex: 1; padding: 0 20px 24px; display: flex; flex-direction: column; }
+
+  /* Home screen mock */
+  .home-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 8px 0 20px;
+  }
+  .home-nav-title {
+    font-family: var(--ui); font-size: 10px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase; color: var(--rose);
+  }
+  .home-greeting {
+    font-family: var(--dm); font-size: 28px; line-height: 1.1;
+    color: var(--ink); margin-bottom: 4px;
+  }
+  .home-greeting em { font-style: italic; color: var(--rose); }
+  .home-sub {
+    font-family: var(--ui); font-size: 11px; color: var(--slate);
+    margin-bottom: 18px;
+  }
+  .home-card {
+    background: white;
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    border: 1px solid var(--mist);
+  }
+  .home-card-label {
+    font-family: var(--ui); font-size: 9px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--rose); margin-bottom: 6px;
+  }
+  .home-card-title {
+    font-family: var(--dm); font-size: 15px; line-height: 1.3;
+    color: var(--ink);
+  }
+  .home-card-title em { font-style: italic; }
+  .home-card-body {
+    font-family: var(--ui); font-size: 10px; color: var(--slate);
+    margin-top: 5px; line-height: 1.5;
+  }
+  .emotion-row {
+    display: grid; grid-template-columns: repeat(4,1fr); gap: 6px; margin-top: auto;
+  }
+  .emotion-btn {
+    background: white; border-radius: 10px; border: 1px solid var(--mist);
+    padding: 8px 4px; display: flex; flex-direction: column;
+    align-items: center; gap: 3px;
+    font-family: var(--ui); font-size: 8px; color: var(--slate);
+  }
+
+  /* Profile screen mock */
+  .profile-mock { background: white; }
+  .profile-header {
+    background: linear-gradient(160deg, var(--warm-white), var(--petal));
+    padding: 20px 20px 16px;
+  }
+  .profile-name {
+    font-family: var(--dm); font-size: 24px; color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .profile-sign {
+    font-family: var(--dm); font-style: italic; font-size: 14px;
+    color: var(--rose);
+  }
+  .profile-pills {
+    display: flex; gap: 6px; margin-top: 10px;
+  }
+  .profile-pill {
+    background: rgba(233,30,99,0.08); color: var(--rose);
+    font-family: var(--ui); font-size: 9px; font-weight: 600;
+    padding: 3px 10px; border-radius: 100px;
+  }
+  .profile-section {
+    padding: 12px 20px 0;
+  }
+  .profile-section-title {
+    font-family: var(--dm); font-size: 16px; color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .profile-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 9px 0; border-bottom: 1px solid var(--mist);
+    font-family: var(--ui); font-size: 10px;
+  }
+  .profile-row-label { color: var(--slate); }
+  .profile-row-value { font-weight: 600; color: var(--ink); }
+
+  /* Onboarding mock */
+  .onboard-mock { background: var(--ink); }
+  .onboard-step {
+    font-family: var(--ui); font-size: 9px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: rgba(255,255,255,0.3); margin-bottom: 12px;
+  }
+  .onboard-q {
+    font-family: var(--dm); font-size: 22px; line-height: 1.2;
+    color: white; margin-bottom: 6px;
+  }
+  .onboard-q em { font-style: italic; color: var(--soft-rose); }
+  .onboard-sub {
+    font-family: var(--ui); font-size: 10px; color: rgba(255,255,255,0.4);
+    margin-bottom: 20px; line-height: 1.5;
+  }
+  .onboard-options { display: flex; flex-direction: column; gap: 8px; }
+  .onboard-opt {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; padding: 12px 14px;
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--ui); font-size: 11px; color: rgba(255,255,255,0.75);
+  }
+  .onboard-opt.selected {
+    background: rgba(233,30,99,0.18);
+    border-color: rgba(233,30,99,0.4);
+    color: white;
+  }
+  .onboard-opt-icon { font-size: 16px; }
+  .onboard-btn {
+    margin-top: auto;
+    background: var(--rose); color: white;
+    border-radius: 100px; padding: 13px;
+    font-family: var(--ui); font-size: 13px; font-weight: 500;
+    text-align: center;
+  }
+
+  /* ═══════════════════════════════════
+     05  SOCIAL / OG CARD
+  ═══════════════════════════════════ */
+  .social-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .og-card {
+    border-radius: 20px; overflow: hidden;
+    box-shadow: 0 8px 32px rgba(45,26,31,0.12);
+    aspect-ratio: 16/9;
+    background: var(--warm-white);
+    display: flex; align-items: center;
+    position: relative;
+    padding: 40px 48px;
+  }
+  .og-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(233,30,99,.1) 0%, transparent 60%);
+  }
+  .og-text { position: relative; z-index: 1; }
+  .og-eyebrow {
+    font-family: var(--ui); font-size: 10px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--rose); margin-bottom: 12px;
+  }
+  .og-title {
+    font-family: var(--dm); font-size: 32px; line-height: 1.1;
+    color: var(--ink); margin-bottom: 10px;
+  }
+  .og-title em { font-style: italic; color: var(--rose); }
+  .og-sub { font-family: var(--ui); font-size: 13px; color: var(--slate); }
+  .og-icon-abs {
+    position: absolute; right: 40px; bottom: 32px; z-index: 1;
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+  }
+  .og-brand {
+    font-family: var(--dm); font-size: 13px; color: var(--slate);
+    letter-spacing: 1px;
+  }
+
+  .ig-card {
+    border-radius: 20px; overflow: hidden;
+    box-shadow: 0 8px 32px rgba(45,26,31,0.12);
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #E91E63, #F06292 50%, #FF7043);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 48px;
+    position: relative;
+  }
+  .ig-icon { margin-bottom: 24px; }
+  .ig-quote {
+    font-family: var(--dm); font-size: 22px; font-style: italic;
+    line-height: 1.4; color: white; margin-bottom: 20px;
+  }
+  .ig-attr {
+    font-family: var(--ui); font-size: 11px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ═══════════════════════════════════
+     06  DARK MODE CARD
+  ═══════════════════════════════════ */
+  .dark-showcase {
+    background: var(--ink);
+    border-radius: 24px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+  }
+  .dark-left {
+    padding: 64px 52px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .dark-top { }
+  .dark-eyebrow {
+    font-family: var(--ui); font-size: 10px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: rgba(255,255,255,0.3); margin-bottom: 20px;
+  }
+  .dark-title {
+    font-family: var(--dm);
+    font-size: 56px; line-height: 1.05;
+    color: white; margin-bottom: 20px;
+  }
+  .dark-title em { font-style: italic; color: var(--soft-rose); }
+  .dark-body {
+    font-family: var(--ui); font-size: 14px; line-height: 1.75;
+    color: rgba(255,255,255,0.45);
+  }
+  .dark-bottom {
+    display: flex; align-items: center; gap: 16px;
+  }
+  .dark-cta {
+    background: var(--rose); color: white;
+    padding: 14px 28px; border-radius: 100px;
+    font-family: var(--ui); font-size: 13px; font-weight: 500;
+  }
+  .dark-link {
+    font-family: var(--ui); font-size: 13px;
+    color: rgba(255,255,255,0.35);
+  }
+  .dark-right {
+    padding: 64px 40px;
+    display: flex; flex-direction: column; gap: 16px;
+    justify-content: center;
+    border-left: 1px solid rgba(255,255,255,0.05);
+  }
+  .dark-stat {
+    padding: 20px 24px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .dark-stat-num {
+    font-family: var(--dm); font-size: 36px; line-height: 1;
+    color: white; margin-bottom: 4px;
+  }
+  .dark-stat-num em { font-style: italic; color: var(--soft-rose); }
+  .dark-stat-label {
+    font-family: var(--ui); font-size: 11px;
+    color: rgba(255,255,255,0.35); letter-spacing: 0.5px;
+  }
+
+  /* ═══════════════════════════════════
+     07  TYPE SCALE
+  ═══════════════════════════════════ */
+  .scale-card {
+    background: white; border-radius: 24px;
+    padding: 56px 52px;
+    box-shadow: 0 4px 24px rgba(45,26,31,0.06);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+  }
+  .scale-col { }
+  .scale-col-title {
+    font-family: var(--ui); font-size: 10px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--slate);
+    margin-bottom: 32px; padding-bottom: 12px;
+    border-bottom: 1px solid var(--mist);
+  }
+  .scale-item {
+    margin-bottom: 32px; padding-bottom: 32px;
+    border-bottom: 1px solid var(--mist);
+  }
+  .scale-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .scale-sample { line-height: 1.1; color: var(--ink); margin-bottom: 6px; }
+  .scale-meta { font-family: var(--ui); font-size: 10px; color: #bbb; letter-spacing: 0.5px; }
+
+  /* page spacing */
+  .spacer { height: 64px; }
+  .spacer-sm { height: 32px; }
+
+  @media (max-width: 760px) {
+    .store-card, .editorial, .dark-showcase, .scale-card, .social-row { grid-template-columns: 1fr; }
+    .ui-row { grid-template-columns: 1fr; }
+    .phone-mock { max-width: 320px; margin: 0 auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     01 · HERO SPLASH
+══════════════════════════════════════════════ -->
+<div class="hero">
+  <p class="hero-eyebrow">Celeste · DM Serif Display Sample</p>
+  <div class="hero-icon">
+    <svg viewBox="0 0 1024 1024" width="100" height="100" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%;box-shadow:0 16px 48px rgba(233,30,99,0.22)">
+      <defs><linearGradient id="h-g" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs>
+      <rect width="1024" height="1024" fill="#FFF5F0"/>
+      <ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#h-g)" style="mix-blend-mode:multiply"/>
+      <ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#h-g)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/>
+      <ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#h-g)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/>
+      <ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#h-g)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/>
+      <circle cx="512" cy="512" r="102" fill="url(#h-g)"/>
+      <circle cx="512" cy="512" r="46" fill="white"/>
+    </svg>
+  </div>
+  <h1 class="hero-title">Your <em>cosmic</em><br>guide home</h1>
+  <p class="hero-tagline">Astrology · Somatics · Daily Reflection</p>
+  <a class="hero-cta" href="#">Download Free ↓</a>
+  <p class="hero-sub">iOS · Available now</p>
+</div>
+
+<div class="spacer"></div>
+
+<!-- ══════════════════════════════════════════════
+     02 · APP STORE CARD
+══════════════════════════════════════════════ -->
+<div class="page-section">
+  <span class="section-tag">02 · App Store listing</span>
+  <div class="store-card">
+    <div class="store-left">
+      <div>
+        <div class="store-badge">
+          <svg viewBox="0 0 1024 1024" width="18" height="18" xmlns="http://www.w3.org/2000/svg" style="border-radius:5px"><defs><linearGradient id="sb-g" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sb-g)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sb-g)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sb-g)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sb-g)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#sb-g)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+          Celeste
+        </div>
+        <div class="store-title">Come home<br>to <em>yourself.</em></div>
+        <p class="store-desc">Daily cosmic guidance, somatic check-ins, and lunar wisdom — all in one intimate space designed for women who trust their intuition.</p>
+      </div>
+      <div>
+        <div class="store-stars">
+          <span>★★★★★</span>
+          4.9 · 2.4k ratings
+        </div>
+      </div>
+    </div>
+    <div class="store-right">
+      <svg viewBox="0 0 1024 1024" width="72" height="72" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%;position:relative;z-index:1;box-shadow:0 8px 32px rgba(0,0,0,0.3)"><defs><linearGradient id="sr-g" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sr-g)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sr-g)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sr-g)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sr-g)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#sr-g)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+      <div class="store-screen-title">Celeste</div>
+      <div class="store-feature">Wellness · Astrology</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     03 · EDITORIAL / MARKETING
+══════════════════════════════════════════════ -->
+<div class="page-section">
+  <span class="section-tag">03 · Marketing — editorial split</span>
+  <div class="editorial">
+    <div class="ed-left">
+      <div class="ed-wordmark">
+        <svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg" style="border-radius:7px"><defs><linearGradient id="ew-g" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ew-g)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ew-g)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ew-g)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ew-g)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#ew-g)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+        Celeste
+      </div>
+      <h2 class="ed-headline">The moon<br>knows what<br><em>you need.</em></h2>
+      <div class="ed-bottom">
+        <div class="ed-caption">Cosmic wellness for modern women</div>
+        <div class="ed-caption" style="opacity:0.4">The Girl Club · 2026</div>
+      </div>
+    </div>
+    <div class="ed-right">
+      <blockquote class="ed-pull">"I've never felt so understood by an app. It speaks to the parts of me I forgot existed."</blockquote>
+      <p class="ed-body">Celeste weaves together your natal chart, the lunar cycle, and daily somatic practice into one intimate experience. Not another habit tracker — a companion for your inner life.</p>
+      <div class="ed-features">
+        <div class="ed-feat"><div class="ed-feat-dot"></div>Daily guidance personalised to your sun sign & mood</div>
+        <div class="ed-feat"><div class="ed-feat-dot"></div>Live moon phase with ritual suggestions</div>
+        <div class="ed-feat"><div class="ed-feat-dot"></div>Somatic body exercises narrated by AI</div>
+        <div class="ed-feat"><div class="ed-feat-dot"></div>Full natal chart with rising & moon sign</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     04 · APP UI MOCKUPS
+══════════════════════════════════════════════ -->
+<div class="page-section">
+  <span class="section-tag">04 · App UI — DM Serif Display in screens</span>
+  <div class="ui-row">
+
+    <!-- HOME SCREEN -->
+    <div class="phone-mock">
+      <div class="phone-status">
+        <span>9:41</span>
+        <span style="letter-spacing:-1px">●●●</span>
+      </div>
+      <div class="phone-content">
+        <div class="home-nav">
+          <div class="home-nav-title">Celeste</div>
+          <svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg" style="border-radius:8px"><defs><linearGradient id="ui-g1" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ui-g1)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ui-g1)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ui-g1)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ui-g1)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#ui-g1)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+        </div>
+        <div class="home-greeting">Good morning,<br><em>Sofia.</em></div>
+        <div class="home-sub">Scorpio · New Moon energy</div>
+        <div class="home-card" style="background:rgba(233,30,99,0.05);border-color:rgba(233,30,99,0.12)">
+          <div class="home-card-label">✨ Today's Reflection</div>
+          <div class="home-card-title"><em>Release what no longer</em> serves your becoming.</div>
+          <div class="home-card-body">The cosmos invites stillness. Breathe before you act.</div>
+        </div>
+        <div class="home-card">
+          <div class="home-card-label">🌑 New Moon</div>
+          <div class="home-card-title">Set your intentions <em>tonight.</em></div>
+          <div class="home-card-body">A powerful time to plant seeds for the cycle ahead.</div>
+        </div>
+        <div style="font-family:var(--ui);font-size:10px;color:var(--slate);margin:12px 0 8px">How do you feel today?</div>
+        <div class="emotion-row">
+          <div class="emotion-btn">🌿<span>Grounded</span></div>
+          <div class="emotion-btn">🌊<span>Anxious</span></div>
+          <div class="emotion-btn">☀️<span>Open</span></div>
+          <div class="emotion-btn">✨<span>Joyful</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFILE SCREEN -->
+    <div class="phone-mock profile-mock">
+      <div class="phone-status" style="background:var(--warm-white)">
+        <span>9:41</span>
+        <span style="letter-spacing:-1px">●●●</span>
+      </div>
+      <div class="profile-header">
+        <div class="profile-name">Sofia M.</div>
+        <div class="profile-sign">Scorpio Rising · Pisces Moon</div>
+        <div class="profile-pills">
+          <div class="profile-pill">Starseed</div>
+          <div class="profile-pill" style="background:rgba(255,112,67,0.08);color:var(--coral)">340 XP</div>
+          <div class="profile-pill" style="background:rgba(107,75,82,0.08);color:var(--slate)">7🌙</div>
+        </div>
+      </div>
+      <div class="profile-section">
+        <div class="profile-section-title">Cosmic Profile</div>
+        <div class="profile-row">
+          <span class="profile-row-label">Sun Sign</span>
+          <span class="profile-row-value">Scorpio</span>
+        </div>
+        <div class="profile-row">
+          <span class="profile-row-label">Moon Sign</span>
+          <span class="profile-row-value">Pisces</span>
+        </div>
+        <div class="profile-row">
+          <span class="profile-row-label">Rising Sign</span>
+          <span class="profile-row-value">Scorpio</span>
+        </div>
+        <div class="profile-row">
+          <span class="profile-row-label">Birth date</span>
+          <span class="profile-row-value">Nov 12, 1993</span>
+        </div>
+      </div>
+      <div class="profile-section" style="margin-top:16px">
+        <div class="profile-section-title"><em style="font-style:italic;color:var(--rose)">Today's</em> energy</div>
+        <div class="home-card" style="margin-top:0;background:rgba(233,30,99,0.04);border-color:rgba(233,30,99,0.1)">
+          <div class="home-card-body" style="font-size:11px;color:var(--slate)">The depth of your feeling is your greatest compass. Trust the pull toward transformation.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ONBOARDING SCREEN -->
+    <div class="phone-mock onboard-mock">
+      <div class="phone-status" style="background:var(--ink);color:rgba(255,255,255,0.5)">
+        <span>9:41</span>
+        <span style="letter-spacing:-1px">●●●</span>
+      </div>
+      <div class="phone-content" style="padding-top:16px">
+        <div style="display:flex;gap:4px;margin-bottom:24px">
+          <div style="height:2px;border-radius:2px;background:var(--rose);flex:1"></div>
+          <div style="height:2px;border-radius:2px;background:rgba(255,255,255,0.15);flex:1"></div>
+          <div style="height:2px;border-radius:2px;background:rgba(255,255,255,0.15);flex:1"></div>
+          <div style="height:2px;border-radius:2px;background:rgba(255,255,255,0.15);flex:1"></div>
+        </div>
+        <div class="onboard-step">Step 1 of 4</div>
+        <div class="onboard-q">What's your <em>sun sign?</em></div>
+        <div class="onboard-sub">We'll use this to personalise your daily guidance and natal insights.</div>
+        <div class="onboard-options">
+          <div class="onboard-opt selected"><span class="onboard-opt-icon">♏</span> Scorpio</div>
+          <div class="onboard-opt"><span class="onboard-opt-icon">♐</span> Sagittarius</div>
+          <div class="onboard-opt"><span class="onboard-opt-icon">♑</span> Capricorn</div>
+          <div class="onboard-opt"><span class="onboard-opt-icon">♒</span> Aquarius</div>
+        </div>
+        <div style="flex:1;min-height:20px"></div>
+        <div class="onboard-btn">Continue →</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     05 · SOCIAL / OG
+══════════════════════════════════════════════ -->
+<div class="page-section">
+  <span class="section-tag">05 · Social & Open Graph</span>
+  <div class="social-row">
+
+    <div class="og-card">
+      <div class="og-text">
+        <div class="og-eyebrow">Celeste · Wellness App</div>
+        <div class="og-title">Your cosmic guide<br>to <em>coming home.</em></div>
+        <div class="og-sub">Astrology · Somatics · Daily Reflection</div>
+      </div>
+      <div class="og-icon-abs">
+        <svg viewBox="0 0 1024 1024" width="48" height="48" xmlns="http://www.w3.org/2000/svg" style="border-radius:12px"><defs><linearGradient id="og-g" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#og-g)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#og-g)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#og-g)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#og-g)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#og-g)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+        <div class="og-brand">celeste.app</div>
+      </div>
+    </div>
+
+    <div class="ig-card">
+      <div class="ig-icon">
+        <svg viewBox="0 0 1024 1024" width="56" height="56" xmlns="http://www.w3.org/2000/svg" style="border-radius:14px;box-shadow:0 4px 16px rgba(0,0,0,0.2)"><rect width="1024" height="1024" fill="#FFF5F0"/><defs><linearGradient id="ig-grd" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ig-grd)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ig-grd)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ig-grd)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ig-grd)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#ig-grd)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+      </div>
+      <div class="ig-quote">"The stars are not your destiny — they are your <em>conversation.</em>"</div>
+      <div class="ig-attr">Celeste · Daily Wisdom</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     06 · DARK MODE
+══════════════════════════════════════════════ -->
+<div class="page-section">
+  <span class="section-tag">06 · Dark mode</span>
+  <div class="dark-showcase">
+    <div class="dark-left">
+      <div class="dark-top">
+        <div class="dark-eyebrow">Celeste · Dark mode</div>
+        <h2 class="dark-title">Where ancient<br>wisdom meets<br><em>modern living.</em></h2>
+        <p class="dark-body">Astrology, somatics, and daily reflection woven into one quiet, luminous space. Designed for women who are learning to trust themselves.</p>
+      </div>
+      <div class="dark-bottom">
+        <div class="dark-cta">Get the app</div>
+        <div class="dark-link">Learn more →</div>
+      </div>
+    </div>
+    <div class="dark-right">
+      <div class="dark-stat">
+        <div class="dark-stat-num">4.9<em>★</em></div>
+        <div class="dark-stat-label">Average App Store rating</div>
+      </div>
+      <div class="dark-stat">
+        <div class="dark-stat-num">12<em>k</em></div>
+        <div class="dark-stat-label">Women on their cosmic journey</div>
+      </div>
+      <div class="dark-stat">
+        <div class="dark-stat-num">365<em>+</em></div>
+        <div class="dark-stat-label">Daily reflections & rituals</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     07 · TYPE SCALE
+══════════════════════════════════════════════ -->
+<div class="page-section">
+  <span class="section-tag">07 · Type scale — DM Serif Display + Inter</span>
+  <div class="scale-card">
+    <div class="scale-col">
+      <div class="scale-col-title">DM Serif Display — Headings</div>
+      <div class="scale-item">
+        <div class="scale-sample" style="font-family:'DM Serif Display',serif;font-size:52px">Cosmic guide</div>
+        <div class="scale-meta">Display · 52px</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-sample" style="font-family:'DM Serif Display',serif;font-size:36px">Your daily ritual</div>
+        <div class="scale-meta">H1 · 36px</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-sample" style="font-family:'DM Serif Display',serif;font-size:26px">Today's reflection</div>
+        <div class="scale-meta">H2 · 26px</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-sample" style="font-family:'DM Serif Display',serif;font-size:20px">Moon in Scorpio</div>
+        <div class="scale-meta">H3 · 20px</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-sample" style="font-family:'DM Serif Display',serif;font-size:16px">Good morning, Sofia</div>
+        <div class="scale-meta">H4 · 16px · in-app greeting</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-sample" style="font-family:'DM Serif Display',serif;font-style:italic;font-size:22px;color:var(--rose)">Release what no longer serves.</div>
+        <div class="scale-meta">Italic pull-quote · 22px · Rose</div>
+      </div>
+    </div>
+    <div class="scale-col">
+      <div class="scale-col-title">Inter — Body &amp; UI</div>
+      <div class="scale-item">
+        <div class="scale-sample" style="font-family:'Inter',sans-serif;font-size:15px;font-weight:400;line-height:1.75;color:var(--slate)">The cosmos invites you to slow down and listen to what your body already knows. You don't need to have it figured out. The moon is waning — a time for release, not accumulation.</div>
+        <div class="scale-meta">Body · 15px · 400 · lh 1.75</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-sample" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:400;line-height:1.65;color:var(--slate)">Set your intentions with care. The New Moon in Scorpio amplifies depth, transformation, and emotional honesty.</div>
+        <div class="scale-meta">Body Small · 13px · 400</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-sample" style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--rose)">Today's Reflection</div>
+        <div class="scale-meta">Label · 11px · 600 · 2px tracking</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-sample" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink)">Scorpio · Sun Sign</div>
+        <div class="scale-meta">UI Medium · 13px · 500</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-sample" style="font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:1px;color:var(--slate)">Step 2 of 4</div>
+        <div class="scale-meta">Caption · 10px · 500</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="spacer-sm"></div>
+
+<footer style="text-align:center;padding:40px;font-family:var(--ui);font-size:11px;color:var(--slate);letter-spacing:1px;border-top:1px solid var(--mist);background:var(--warm-white)">
+  Celeste · DM Serif Display Sample · The Girl Club / Nexwork · 2026
+</footer>
+
+</body>
+</html>
