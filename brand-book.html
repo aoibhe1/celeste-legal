@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Celeste — Brand Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --rose:       #E91E63;
+    --coral:      #FF7043;
+    --soft-rose:  #F06292;
+    --warm-white: #FFF5F0;
+    --petal:      #FFF0F4;
+    --deep-rose:  #AD1457;
+    --dusk:       #FF8A65;
+    --ink:        #2D1A1F;
+    --slate:      #6B4B52;
+    --mist:       #F0EAEA;
+    --snow:       #FAFAFA;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #FAFAFA;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: var(--warm-white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(233,30,99,0.07) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(255,112,67,0.06) 0%, transparent 55%);
+    pointer-events: none;
+  }
+  .cover-icon { margin-bottom: 40px; position: relative; z-index: 1; }
+  .cover-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 16px;
+    position: relative; z-index: 1;
+  }
+  .cover-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 8vw, 96px);
+    font-weight: 300;
+    letter-spacing: -1px;
+    color: var(--ink);
+    position: relative; z-index: 1;
+    line-height: 1;
+  }
+  .cover-sub {
+    font-size: 14px;
+    color: var(--slate);
+    margin-top: 20px;
+    position: relative; z-index: 1;
+    letter-spacing: 0.5px;
+  }
+  .cover-version {
+    position: absolute;
+    bottom: 40px;
+    right: 48px;
+    font-size: 11px;
+    color: var(--slate);
+    letter-spacing: 1px;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 96px 48px;
+  }
+  .section + .section { border-top: 1px solid var(--mist); }
+  .section.tinted { background: var(--warm-white); max-width: none; padding: 96px calc((100% - 1100px) / 2 + 48px); }
+  .section.dark { background: var(--ink); color: #fff; max-width: none; padding: 96px calc((100% - 1100px) / 2 + 48px); }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 48px;
+  }
+  .section.dark .section-title { color: #fff; }
+  .section.dark .section-label { color: var(--soft-rose); }
+
+  /* ── COLOR SYSTEM ── */
+  .swatch-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+  .swatch {
+    flex: 1;
+    min-width: 120px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  }
+  .swatch-color { height: 120px; }
+  .swatch-info { padding: 14px 16px; background: white; }
+  .swatch-name { font-size: 12px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+  .swatch-hex { font-size: 11px; color: var(--slate); font-family: monospace; }
+  .swatch-use { font-size: 10px; color: #aaa; margin-top: 4px; line-height: 1.4; }
+
+  .swatch-row.neutrals .swatch-color { height: 80px; }
+
+  /* ── ICON ANATOMY ── */
+  .anatomy-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .anatomy-diagram {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .anatomy-labels { display: flex; flex-direction: column; gap: 20px; justify-content: center; }
+  .anatomy-label-item { display: flex; align-items: flex-start; gap: 14px; }
+  .anatomy-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  .anatomy-label-title { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .anatomy-label-desc { font-size: 12px; color: var(--slate); margin-top: 2px; line-height: 1.5; }
+
+  /* ── CLEAR SPACE ── */
+  .clearspace-wrap {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .clearspace-box {
+    background: #f8f4f5;
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-width: 240px;
+  }
+  .cs-inner {
+    position: relative;
+    display: inline-block;
+  }
+  .cs-border {
+    position: absolute;
+    border: 1.5px dashed rgba(233,30,99,0.35);
+    border-radius: 22%;
+  }
+  .clearspace-rule {
+    flex: 1;
+    min-width: 240px;
+  }
+  .rule-item { margin-bottom: 20px; }
+  .rule-label { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--slate); margin-bottom: 4px; }
+  .rule-value { font-size: 14px; color: var(--ink); }
+
+  /* ── LOCKUPS ── */
+  .lockup-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+  .lockup-card {
+    background: white;
+    border-radius: 16px;
+    padding: 40px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+    border: 1px solid var(--mist);
+    min-height: 180px;
+  }
+  .lockup-card.dark-card { background: var(--ink); border-color: transparent; }
+  .lockup-card.rose-card { background: var(--rose); border-color: transparent; }
+  .lockup-card.warm-card { background: var(--warm-white); border-color: var(--mist); }
+  .lockup-name { font-size: 11px; color: var(--slate); letter-spacing: 1px; margin-top: 8px; text-transform: uppercase; }
+  .lockup-card.dark-card .lockup-name { color: rgba(255,255,255,0.4); }
+  .lockup-card.rose-card .lockup-name { color: rgba(255,255,255,0.6); }
+
+  /* wordmark styles */
+  .wm { font-family: 'Cormorant Garamond', serif; font-weight: 300; letter-spacing: 6px; text-transform: uppercase; }
+  .wm-dark { color: var(--ink); }
+  .wm-light { color: white; }
+  .wm-rose { color: var(--rose); }
+
+  /* horizontal lockup */
+  .lockup-h { display: flex; align-items: center; gap: 16px; }
+  /* stacked lockup */
+  .lockup-v { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+
+  /* ── TYPOGRAPHY ── */
+  .type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .type-block { }
+  .type-spec { font-size: 11px; color: var(--slate); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; border-bottom: 1px solid var(--mist); padding-bottom: 10px; }
+  .type-sample-display { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; line-height: 1.1; color: var(--ink); }
+  .type-sample-body { font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 400; color: var(--slate); line-height: 1.7; }
+  .type-pairs { margin-top: 28px; display: flex; flex-direction: column; gap: 16px; }
+  .type-pair { display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; color: var(--slate); border-bottom: 1px solid var(--mist); padding-bottom: 12px; }
+  .type-pair-name { font-weight: 500; color: var(--ink); }
+
+  /* ── SCALE ── */
+  .scale-row { display: flex; gap: 16px; align-items: flex-end; flex-wrap: wrap; margin-bottom: 40px; }
+  .scale-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .scale-label { font-size: 10px; color: var(--slate); }
+  .scale-size { font-size: 10px; color: #bbb; }
+
+  /* ── DO / DON'T ── */
+  .dont-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .do-card, .dont-card {
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .do-card { background: rgba(233,30,99,0.04); border: 1px solid rgba(233,30,99,0.1); }
+  .dont-card { background: rgba(255,112,67,0.04); border: 1px solid rgba(255,112,67,0.15); }
+  .do-badge, .dont-badge {
+    width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .do-badge { background: var(--rose); color: white; }
+  .dont-badge { background: var(--coral); color: white; }
+  .do-text, .dont-text { font-size: 13px; color: var(--slate); line-height: 1.6; }
+  .do-text strong, .dont-text strong { color: var(--ink); display: block; margin-bottom: 3px; font-size: 14px; }
+
+  /* ── APPLICATION STRIP ── */
+  .app-strip { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; }
+  .app-context {
+    flex: 1; min-width: 200px;
+    background: var(--snow);
+    border-radius: 16px;
+    border: 1px solid var(--mist);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .app-context-label { font-size: 11px; color: var(--slate); letter-spacing: 1px; text-transform: uppercase; }
+  .app-context.dark-ctx { background: #1A0A0E; border-color: transparent; }
+  .app-context.dark-ctx .app-context-label { color: rgba(255,255,255,0.3); }
+  .app-context.rose-ctx { background: linear-gradient(135deg, #E91E63, #FF7043); border-color: transparent; }
+  .app-context.rose-ctx .app-context-label { color: rgba(255,255,255,0.7); }
+
+  /* ── GRADIENT SWATCH ── */
+  .grad-row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .grad-swatch {
+    flex: 1; min-width: 160px;
+    height: 80px;
+    border-radius: 12px;
+    display: flex;
+    align-items: flex-end;
+    padding: 12px 14px;
+  }
+  .grad-swatch span { font-size: 10px; color: rgba(255,255,255,0.8); letter-spacing: 0.5px; }
+
+  /* helpers */
+  .mt16 { margin-top: 16px; }
+  .mt32 { margin-top: 32px; }
+  .mt48 { margin-top: 48px; }
+  .col2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  hr.rule { border: none; border-top: 1px solid var(--mist); margin: 48px 0; }
+
+  @media (max-width: 700px) {
+    .anatomy-wrap, .type-grid, .dont-grid, .col2 { grid-template-columns: 1fr; }
+    .section { padding: 64px 24px; }
+    .section.tinted, .section.dark { padding: 64px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════
+     COVER
+════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-icon">
+    <svg viewBox="0 0 1024 1024" width="140" height="140" xmlns="http://www.w3.org/2000/svg" style="border-radius:28%;box-shadow:0 24px 64px rgba(233,30,99,0.22),0 4px 16px rgba(0,0,0,0.08)">
+      <defs>
+        <linearGradient id="cov-g" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#E91E63"/>
+          <stop offset="50%"  stop-color="#F06292"/>
+          <stop offset="100%" stop-color="#FF7043"/>
+        </linearGradient>
+      </defs>
+      <rect width="1024" height="1024" fill="#FFF5F0"/>
+      <ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#cov-g)" style="mix-blend-mode:multiply"/>
+      <ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#cov-g)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/>
+      <ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#cov-g)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/>
+      <ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#cov-g)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/>
+      <circle cx="512" cy="512" r="102" fill="url(#cov-g)"/>
+      <circle cx="512" cy="512" r="46" fill="white"/>
+    </svg>
+  </div>
+  <p class="cover-label">Brand Identity Guidelines</p>
+  <h1 class="cover-title">Celeste</h1>
+  <p class="cover-sub">The Girl Club · Version 1.0 · 2026</p>
+  <p class="cover-version">Confidential</p>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     BRAND ESSENCE
+════════════════════════════════════════════ -->
+<div class="section tinted">
+  <p class="section-label">01 — Brand Essence</p>
+  <h2 class="section-title">Where the cosmos<br>meets the body</h2>
+
+  <div class="col2">
+    <div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.8;margin-bottom:24px">
+        Celeste is a feminine wellness app that weaves astrology, somatic practice, and daily reflection into one intimate space. It speaks to women who trust their intuition, honour their cycles, and are learning to come home to themselves.
+      </p>
+      <p style="font-size:15px;color:var(--slate);line-height:1.8">
+        The brand lives at the intersection of the ancient and the digital — warm, grounded, luminous.
+      </p>
+    </div>
+    <div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="padding:16px 20px;background:white;border-radius:12px;border-left:3px solid var(--rose)">
+          <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:var(--rose);margin-bottom:4px">FEELING</div>
+          <div style="font-size:14px;color:var(--ink)">Intimate · Luminous · Grounded · Alive</div>
+        </div>
+        <div style="padding:16px 20px;background:white;border-radius:12px;border-left:3px solid var(--coral)">
+          <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:var(--coral);margin-bottom:4px">VOICE</div>
+          <div style="font-size:14px;color:var(--ink)">Warm, poetic, never preachy — like a wise friend</div>
+        </div>
+        <div style="padding:16px 20px;background:white;border-radius:12px;border-left:3px solid var(--soft-rose)">
+          <div style="font-size:11px;font-weight:600;letter-spacing:1px;color:var(--soft-rose);margin-bottom:4px">ARCHETYPE</div>
+          <div style="font-size:14px;color:var(--ink)">The Mystic meets The Caregiver</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     THE MARK
+════════════════════════════════════════════ -->
+<div class="section">
+  <p class="section-label">02 — The Mark</p>
+  <h2 class="section-title">Aurora Star</h2>
+
+  <div class="anatomy-wrap">
+    <div class="anatomy-diagram">
+      <svg viewBox="0 0 1024 1024" width="280" height="280" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%;box-shadow:0 12px 40px rgba(233,30,99,0.16)">
+        <defs>
+          <linearGradient id="an-g" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse">
+            <stop offset="0%"   stop-color="#E91E63"/>
+            <stop offset="50%"  stop-color="#F06292"/>
+            <stop offset="100%" stop-color="#FF7043"/>
+          </linearGradient>
+        </defs>
+        <rect width="1024" height="1024" fill="#FFF5F0"/>
+        <ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#an-g)" style="mix-blend-mode:multiply"/>
+        <ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#an-g)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/>
+        <ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#an-g)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/>
+        <ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#an-g)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/>
+        <circle cx="512" cy="512" r="102" fill="url(#an-g)"/>
+        <circle cx="512" cy="512" r="46" fill="white"/>
+      </svg>
+    </div>
+
+    <div class="anatomy-labels">
+      <div class="anatomy-label-item">
+        <div class="anatomy-dot" style="background:var(--rose)"></div>
+        <div>
+          <div class="anatomy-label-title">Four ellipse rays</div>
+          <div class="anatomy-label-desc">Rotated at 0°, 45°, 90°, 135° — the star cross. Represents the four elements, cardinal directions, and the cyclical nature of cosmic energy.</div>
+        </div>
+      </div>
+      <div class="anatomy-label-item">
+        <div class="anatomy-dot" style="background:var(--coral)"></div>
+        <div>
+          <div class="anatomy-label-title">Sunset wash gradient</div>
+          <div class="anatomy-label-desc">Rose #E91E63 → Soft Rose #F06292 → Coral #FF7043, sweeping diagonally. The gradient is shared across all rays, unifying the mark.</div>
+        </div>
+      </div>
+      <div class="anatomy-label-item">
+        <div class="anatomy-dot" style="background:var(--soft-rose)"></div>
+        <div>
+          <div class="anatomy-label-title">Warm white field</div>
+          <div class="anatomy-label-desc">#FFF5F0 background. Not pure white — it holds warmth and acts as part of the palette, never just a blank container.</div>
+        </div>
+      </div>
+      <div class="anatomy-label-item">
+        <div class="anatomy-dot" style="background:white;border:1px solid var(--mist)"></div>
+        <div>
+          <div class="anatomy-label-title">White centre dot</div>
+          <div class="anatomy-label-desc">The still point. Ground zero of the star — represents self, presence, the body. Keeps the mark readable at any size.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Clear space -->
+  <hr class="rule"/>
+  <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;margin-bottom:32px">Clear Space</h3>
+  <div class="clearspace-wrap">
+    <div class="clearspace-box">
+      <div class="cs-inner">
+        <!-- outer clear space dashes -->
+        <div class="cs-border" style="inset:-28px;border-radius:0"></div>
+        <svg viewBox="0 0 1024 1024" width="120" height="120" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%;display:block">
+          <defs><linearGradient id="cs-g" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs>
+          <rect width="1024" height="1024" fill="#FFF5F0"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#cs-g)" style="mix-blend-mode:multiply"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#cs-g)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#cs-g)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/>
+          <ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#cs-g)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/>
+          <circle cx="512" cy="512" r="102" fill="url(#cs-g)"/>
+          <circle cx="512" cy="512" r="46" fill="white"/>
+        </svg>
+      </div>
+    </div>
+    <div class="clearspace-rule">
+      <div class="rule-item">
+        <div class="rule-label">Minimum clear space</div>
+        <div class="rule-value">⅕ of the icon's width on all sides. No text, logos, or graphic elements may enter this zone.</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-label">Minimum size — digital</div>
+        <div class="rule-value">28 × 28 px (the white centre dot must remain visible)</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-label">Minimum size — print</div>
+        <div class="rule-value">10 mm / 0.4 in</div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-label">Corner radius</div>
+        <div class="rule-value">22% of icon size (Apple / Google store specification)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Size scale -->
+  <hr class="rule"/>
+  <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;margin-bottom:32px">Icon Scale</h3>
+  <div class="scale-row">
+    <div class="scale-item">
+      <svg viewBox="0 0 1024 1024" width="120" height="120" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%;box-shadow:0 4px 16px rgba(233,30,99,0.12)"><defs><linearGradient id="sc-g1" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g1)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g1)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g1)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g1)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#sc-g1)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+      <span class="scale-label">App Store</span>
+      <span class="scale-size">1024 px</span>
+    </div>
+    <div class="scale-item">
+      <svg viewBox="0 0 1024 1024" width="76" height="76" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%;box-shadow:0 4px 16px rgba(233,30,99,0.12)"><defs><linearGradient id="sc-g2" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g2)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g2)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g2)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g2)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#sc-g2)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+      <span class="scale-label">Home screen</span>
+      <span class="scale-size">76 px @1×</span>
+    </div>
+    <div class="scale-item">
+      <svg viewBox="0 0 1024 1024" width="60" height="60" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%;box-shadow:0 4px 16px rgba(233,30,99,0.12)"><defs><linearGradient id="sc-g3" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g3)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g3)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g3)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g3)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#sc-g3)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+      <span class="scale-label">Spotlight</span>
+      <span class="scale-size">60 px</span>
+    </div>
+    <div class="scale-item">
+      <svg viewBox="0 0 1024 1024" width="44" height="44" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%;box-shadow:0 4px 16px rgba(233,30,99,0.12)"><defs><linearGradient id="sc-g4" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g4)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g4)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g4)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g4)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#sc-g4)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+      <span class="scale-label">Settings</span>
+      <span class="scale-size">44 px</span>
+    </div>
+    <div class="scale-item">
+      <svg viewBox="0 0 1024 1024" width="29" height="29" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%;box-shadow:0 4px 16px rgba(233,30,99,0.12)"><defs><linearGradient id="sc-g5" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g5)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g5)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g5)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g5)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#sc-g5)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+      <span class="scale-label">Notification</span>
+      <span class="scale-size">29 px</span>
+    </div>
+    <div class="scale-item">
+      <svg viewBox="0 0 1024 1024" width="20" height="20" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%;box-shadow:0 4px 16px rgba(233,30,99,0.12)"><defs><linearGradient id="sc-g6" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g6)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g6)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g6)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#sc-g6)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#sc-g6)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+      <span class="scale-label">Tab bar</span>
+      <span class="scale-size">20 px</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     COLOR SYSTEM
+════════════════════════════════════════════ -->
+<div class="section tinted">
+  <p class="section-label">03 — Color System</p>
+  <h2 class="section-title">Palette</h2>
+
+  <p style="font-size:13px;color:var(--slate);margin-bottom:36px;max-width:560px">The palette is derived directly from the app icon gradient. Every color has a function — none are decorative noise.</p>
+
+  <!-- Primary -->
+  <div style="font-size:11px;font-weight:600;letter-spacing:2px;color:var(--slate);margin-bottom:14px;text-transform:uppercase">Primary</div>
+  <div class="swatch-row">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#E91E63"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Rose</div>
+        <div class="swatch-hex">#E91E63</div>
+        <div class="swatch-use">CTAs · Primary actions · Icon gradient origin</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#F06292"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Soft Rose</div>
+        <div class="swatch-hex">#F06292</div>
+        <div class="swatch-use">Gradient midpoint · Chips · Tags · Hover states</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FF7043"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Coral</div>
+        <div class="swatch-hex">#FF7043</div>
+        <div class="swatch-use">Accent · Warmth · Streak counter · Highlights</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#AD1457"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Deep Rose</div>
+        <div class="swatch-hex">#AD1457</div>
+        <div class="swatch-use">Dark mode primary · Pressed states · Links on light</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Backgrounds -->
+  <div style="font-size:11px;font-weight:600;letter-spacing:2px;color:var(--slate);margin-top:32px;margin-bottom:14px;text-transform:uppercase">Backgrounds</div>
+  <div class="swatch-row">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FFF5F0;border-bottom:1px solid #eee"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Warm White</div>
+        <div class="swatch-hex">#FFF5F0</div>
+        <div class="swatch-use">App icon bg · Primary screen bg (light mode)</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FFF0F4;border-bottom:1px solid #eee"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Petal</div>
+        <div class="swatch-hex">#FFF0F4</div>
+        <div class="swatch-use">Card surfaces · Input backgrounds · Modals</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FFF8F5;border-bottom:1px solid #eee"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Blush</div>
+        <div class="swatch-hex">#FFF8F5</div>
+        <div class="swatch-use">Secondary surfaces · Hover backgrounds</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FF8A65"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Dusk</div>
+        <div class="swatch-hex">#FF8A65</div>
+        <div class="swatch-use">Warm accent · XP bar · Progress indicators</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Neutrals -->
+  <div style="font-size:11px;font-weight:600;letter-spacing:2px;color:var(--slate);margin-top:32px;margin-bottom:14px;text-transform:uppercase">Neutrals</div>
+  <div class="swatch-row neutrals">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#2D1A1F"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Ink</div>
+        <div class="swatch-hex">#2D1A1F</div>
+        <div class="swatch-use">Primary text · Dark bg</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#6B4B52"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Slate</div>
+        <div class="swatch-hex">#6B4B52</div>
+        <div class="swatch-use">Secondary text · Labels</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#C4A8B0"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Blush Grey</div>
+        <div class="swatch-hex">#C4A8B0</div>
+        <div class="swatch-use">Placeholders · Borders · Disabled</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#F0EAEA;border-bottom:1px solid #ddd"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Mist</div>
+        <div class="swatch-hex">#F0EAEA</div>
+        <div class="swatch-use">Dividers · Subtle borders</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FAFAFA;border-bottom:1px solid #ddd"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Snow</div>
+        <div class="swatch-hex">#FAFAFA</div>
+        <div class="swatch-use">Page background · Sheet base</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gradient tokens -->
+  <hr class="rule"/>
+  <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;margin-bottom:20px">Gradient Tokens</h3>
+  <div class="grad-row">
+    <div class="grad-swatch" style="background:linear-gradient(135deg,#E91E63,#F06292,#FF7043)">
+      <span>Sunset Wash — primary brand gradient</span>
+    </div>
+    <div class="grad-swatch" style="background:linear-gradient(135deg,#AD1457,#E91E63)">
+      <span>Deep Rose — CTAs on dark</span>
+    </div>
+    <div class="grad-swatch" style="background:linear-gradient(135deg,#FF7043,#FF8A65)">
+      <span>Dusk Coral — warm accents</span>
+    </div>
+    <div class="grad-swatch" style="background:linear-gradient(135deg,#FFF5F0,#FFF0F4)">
+      <span style="color:rgba(45,26,31,0.4)">Warm Blush — background wash</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     LOGO PLACEMENTS
+════════════════════════════════════════════ -->
+<div class="section">
+  <p class="section-label">04 — Logo Placements</p>
+  <h2 class="section-title">Lockup System</h2>
+
+  <div class="lockup-grid">
+
+    <!-- Icon only — warm white -->
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="lockup-card warm-card">
+        <svg viewBox="0 0 1024 1024" width="72" height="72" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%;box-shadow:0 6px 24px rgba(233,30,99,0.14)"><defs><linearGradient id="lk-g1" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g1)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g1)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g1)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g1)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#lk-g1)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+      </div>
+      <div class="lockup-name" style="text-align:center;color:var(--slate)">Icon only · Light</div>
+    </div>
+
+    <!-- Horizontal — light -->
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="lockup-card warm-card" style="flex-direction:row;justify-content:center">
+        <div class="lockup-h">
+          <svg viewBox="0 0 1024 1024" width="44" height="44" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%;flex-shrink:0"><defs><linearGradient id="lk-g2" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g2)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g2)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g2)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g2)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#lk-g2)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+          <span class="wm wm-dark" style="font-size:22px">Celeste</span>
+        </div>
+      </div>
+      <div class="lockup-name" style="text-align:center;color:var(--slate)">Horizontal · Light</div>
+    </div>
+
+    <!-- Stacked — light -->
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="lockup-card warm-card">
+        <div class="lockup-v">
+          <svg viewBox="0 0 1024 1024" width="56" height="56" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%"><defs><linearGradient id="lk-g3" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g3)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g3)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g3)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g3)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#lk-g3)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+          <span class="wm wm-dark" style="font-size:18px">Celeste</span>
+        </div>
+      </div>
+      <div class="lockup-name" style="text-align:center;color:var(--slate)">Stacked · Light</div>
+    </div>
+
+    <!-- Wordmark only -->
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="lockup-card warm-card">
+        <span class="wm wm-dark" style="font-size:26px">Celeste</span>
+      </div>
+      <div class="lockup-name" style="text-align:center;color:var(--slate)">Wordmark only · Light</div>
+    </div>
+
+    <!-- Icon on dark -->
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="lockup-card dark-card">
+        <svg viewBox="0 0 1024 1024" width="72" height="72" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%;box-shadow:0 6px 24px rgba(0,0,0,0.3)"><defs><linearGradient id="lk-g4" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g4)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g4)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g4)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g4)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#lk-g4)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+      </div>
+      <div class="lockup-name" style="text-align:center">Icon only · Dark</div>
+    </div>
+
+    <!-- Horizontal — dark bg -->
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="lockup-card dark-card" style="flex-direction:row;justify-content:center">
+        <div class="lockup-h">
+          <svg viewBox="0 0 1024 1024" width="44" height="44" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%;flex-shrink:0"><defs><linearGradient id="lk-g5" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g5)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g5)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g5)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g5)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#lk-g5)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+          <span class="wm wm-light" style="font-size:22px">Celeste</span>
+        </div>
+      </div>
+      <div class="lockup-name" style="text-align:center">Horizontal · Dark</div>
+    </div>
+
+    <!-- Horizontal — gradient bg -->
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="lockup-card rose-card" style="flex-direction:row;justify-content:center">
+        <div class="lockup-h">
+          <svg viewBox="0 0 1024 1024" width="44" height="44" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%;flex-shrink:0;box-shadow:0 2px 12px rgba(0,0,0,0.2)"><defs><linearGradient id="lk-g6" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g6)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g6)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g6)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#lk-g6)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#lk-g6)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+          <span class="wm wm-light" style="font-size:22px">Celeste</span>
+        </div>
+      </div>
+      <div class="lockup-name" style="text-align:center;color:var(--slate)">Horizontal · Brand gradient</div>
+    </div>
+
+    <!-- Wordmark · rose -->
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="lockup-card dark-card">
+        <span class="wm wm-light" style="font-size:26px;background:linear-gradient(135deg,#E91E63,#FF7043);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Celeste</span>
+      </div>
+      <div class="lockup-name" style="text-align:center">Wordmark · Gradient · Dark</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     TYPOGRAPHY
+════════════════════════════════════════════ -->
+<div class="section tinted">
+  <p class="section-label">05 — Typography</p>
+  <h2 class="section-title">Type System</h2>
+
+  <div class="type-grid">
+    <div class="type-block">
+      <div class="type-spec">Display — Cormorant Garamond</div>
+      <div class="type-sample-display">Align with<br><em>the cosmos</em></div>
+      <div class="type-pairs">
+        <div class="type-pair"><span class="type-pair-name">Display / Hero</span><span>52px · Weight 300 · −0.5px</span></div>
+        <div class="type-pair"><span class="type-pair-name">Heading 1</span><span>36px · Weight 400</span></div>
+        <div class="type-pair"><span class="type-pair-name">Heading 2</span><span>28px · Weight 400</span></div>
+        <div class="type-pair"><span class="type-pair-name">Wordmark</span><span>All caps · 6px letter-spacing</span></div>
+      </div>
+    </div>
+    <div class="type-block">
+      <div class="type-spec">Body &amp; UI — Inter</div>
+      <div class="type-sample-body">Today's energy invites you to slow down and listen to what your body already knows. The moon is waning — a time for release, not accumulation.</div>
+      <div class="type-pairs">
+        <div class="type-pair"><span class="type-pair-name">Body Regular</span><span>15px · Weight 400 · 1.7 lh</span></div>
+        <div class="type-pair"><span class="type-pair-name">Body Small</span><span>13px · Weight 400 · 1.6 lh</span></div>
+        <div class="type-pair"><span class="type-pair-name">Label</span><span>11px · Weight 600 · 2px ls</span></div>
+        <div class="type-pair"><span class="type-pair-name">Caption</span><span>10px · Weight 500 · 1px ls</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     DO & DON'T
+════════════════════════════════════════════ -->
+<div class="section">
+  <p class="section-label">06 — Usage</p>
+  <h2 class="section-title">Do &amp; Don't</h2>
+
+  <div class="dont-grid">
+    <div class="do-card">
+      <div class="do-badge">✓</div>
+      <div class="do-text"><strong>Use the icon with its warm white background</strong>The background is part of the mark. The icon always ships as a square tile — never as a transparent/cut-out on another colour.</div>
+    </div>
+    <div class="dont-card">
+      <div class="dont-badge">✕</div>
+      <div class="dont-text"><strong>Don't place the icon on a dark or coloured background</strong>The mix-blend-mode gradient relies on the warm white field. On dark or coloured surfaces use the full tile, not just the star shape.</div>
+    </div>
+    <div class="do-card">
+      <div class="do-badge">✓</div>
+      <div class="do-text"><strong>Use the Sunset Wash gradient consistently</strong>Rose → Soft Rose → Coral, always diagonal top-left to bottom-right. This direction is fixed — do not flip or rotate the gradient.</div>
+    </div>
+    <div class="dont-card">
+      <div class="dont-badge">✕</div>
+      <div class="dont-text"><strong>Don't recolour the icon or gradient</strong>The aurora star and its gradient are locked. Do not swap colours, apply tints, or use a single-colour version of the icon.</div>
+    </div>
+    <div class="do-card">
+      <div class="do-badge">✓</div>
+      <div class="do-text"><strong>Use Cormorant Garamond for all editorial headlines</strong>Display text, marketing copy, App Store descriptions, and the wordmark all use this typeface at weight 300–400.</div>
+    </div>
+    <div class="dont-card">
+      <div class="dont-badge">✕</div>
+      <div class="dont-text"><strong>Don't add drop shadows or effects to the icon tile</strong>The icon has its own elevation through the warm background. External shadows double-dip and look unintentional. Let the tile stand on its own.</div>
+    </div>
+    <div class="do-card">
+      <div class="do-badge">✓</div>
+      <div class="do-text"><strong>Maintain the white centre dot at all sizes</strong>At 20px the dot is the visual anchor that makes the icon legible. Never clip or remove it to "simplify" small-size rendering.</div>
+    </div>
+    <div class="dont-card">
+      <div class="dont-badge">✕</div>
+      <div class="dont-text"><strong>Don't use the icon below 20 × 20 px</strong>Below this threshold the star structure collapses. Use the wordmark or the Celeste monogram "C" instead.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     APPLICATION
+════════════════════════════════════════════ -->
+<div class="section dark">
+  <p class="section-label">07 — Application</p>
+  <h2 class="section-title">In Context</h2>
+
+  <div class="app-strip">
+
+    <div class="app-context">
+      <p class="app-context-label">iOS Light Home Screen</p>
+      <svg viewBox="0 0 1024 1024" width="64" height="64" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%;box-shadow:0 4px 16px rgba(233,30,99,0.2)"><defs><linearGradient id="ap-g1" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ap-g1)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ap-g1)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ap-g1)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ap-g1)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#ap-g1)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--ink);letter-spacing:0.5px">Celeste</span>
+    </div>
+
+    <div class="app-context dark-ctx">
+      <p class="app-context-label">iOS Dark Home Screen</p>
+      <svg viewBox="0 0 1024 1024" width="64" height="64" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%;box-shadow:0 4px 20px rgba(0,0,0,0.4)"><defs><linearGradient id="ap-g2" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ap-g2)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ap-g2)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ap-g2)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ap-g2)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#ap-g2)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(255,255,255,0.85);letter-spacing:0.5px">Celeste</span>
+    </div>
+
+    <div class="app-context rose-ctx">
+      <p class="app-context-label">Brand gradient surface</p>
+      <svg viewBox="0 0 1024 1024" width="64" height="64" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%;box-shadow:0 4px 16px rgba(0,0,0,0.2)"><defs><linearGradient id="ap-g3" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ap-g3)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ap-g3)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ap-g3)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ap-g3)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#ap-g3)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(255,255,255,0.9);letter-spacing:0.5px">Celeste</span>
+    </div>
+
+    <div class="app-context" style="background:#F5EFE6">
+      <p class="app-context-label">Warm cream print</p>
+      <svg viewBox="0 0 1024 1024" width="64" height="64" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%"><defs><linearGradient id="ap-g4" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ap-g4)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ap-g4)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ap-g4)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ap-g4)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#ap-g4)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--ink);letter-spacing:0.5px">Celeste</span>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer style="text-align:center;padding:48px;background:var(--warm-white)">
+  <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg" style="border-radius:22%;margin-bottom:12px;display:inline-block"><defs><linearGradient id="ft-g" x1="142" y1="142" x2="882" y2="882" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#E91E63"/><stop offset="50%" stop-color="#F06292"/><stop offset="100%" stop-color="#FF7043"/></linearGradient></defs><rect width="1024" height="1024" fill="#FFF5F0"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ft-g)" style="mix-blend-mode:multiply"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ft-g)" style="mix-blend-mode:multiply" transform="rotate(45,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ft-g)" style="mix-blend-mode:multiply" transform="rotate(90,512,512)"/><ellipse cx="512" cy="512" rx="68" ry="370" fill="url(#ft-g)" style="mix-blend-mode:multiply" transform="rotate(135,512,512)"/><circle cx="512" cy="512" r="102" fill="url(#ft-g)"/><circle cx="512" cy="512" r="46" fill="white"/></svg>
+  <p style="font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:4px;color:var(--slate);text-transform:uppercase">Celeste Brand Book v1.0</p>
+  <p style="font-size:11px;color:#C4A8B0;margin-top:6px">The Girl Club · Nexwork · 2026 · Confidential</p>
+</footer>
+
+</body>
+</html>
